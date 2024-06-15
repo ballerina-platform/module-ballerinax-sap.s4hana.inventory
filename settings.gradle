@@ -30,10 +30,16 @@ plugins {
 
 rootProject.name = "module-ballerinax-sap.s4hana.inventory"
 
+include ':inventory-ballerina'
+include ':inventory-ballerina:inventory'
+include ':inventory-examples'
 include ':inventoryt-ballerina'
 include ':inventory-examples'
 
 
+project(':inventory-ballerina').projectDir = file("ballerina")
+project(':inventory-ballerina:inventory').projectDir = file("ballerina/inventory")
+project(':inventory-examples').projectDir = file("examples")
 project(':inventory-ballerina').projectDir = file("ballerina")
 project(':inventory-examples').projectDir = file("examples")
 
