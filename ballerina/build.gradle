@@ -15,6 +15,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+import groovy.json.JsonSlurper
+import org.apache.tools.ant.taskdefs.condition.Os
+
 description = 'Ballerina - SAP S/4HANA Inventory APIs'
 
 subprojects {

@@ -10,7 +10,7 @@
 [S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
 designed for large-scale enterprises by SAP SE.
 
-This repository encompasses all Ballerina packages pertaining to the S/4HANA sourcing & inventory submodule. Notably:
+This repository encompasses all Ballerina packages pertaining to the S/4HANA inventory submodule. Notably:
 
 ## Issues and projects
 
