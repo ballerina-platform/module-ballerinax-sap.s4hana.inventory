@@ -1,6 +1,6 @@
 # SAP S/4HANA OpenAPI Specification Sanitization
 
-_Author_:@Ajai-Suvendran and @DevAakif
+_Author_:@Ajai-Suvendran @DevAakif
 _Reviwer_: @niveathika \
 _Created_: 2024/06/26 \
 _Updated_: 2024/06/26 \
