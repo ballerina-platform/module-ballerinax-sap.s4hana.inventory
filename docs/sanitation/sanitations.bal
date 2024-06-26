@@ -1,3 +1,4 @@
+
 // Copyright (c) 2024, WSO2 LLC. (http://www.wso2.org) All Rights Reserved.
 //
 // WSO2 LLC. licenses this file to you under the Apache License,
@@ -132,6 +133,26 @@ function sanitizeEnumParamters(string specPath) returns error? {
                 continue;
             }
             string sanitizedParamName = getSanitizedParameterName(key, param.name ?: "");
+            if sanitizedParamName.includes("ByKey") {
+                int startIndex = <int>sanitizedParamName.indexOf("ByKey");
+                string newSanitizedName = sanitizedParamName.substring(0,startIndex).concat(sanitizedParamName.substring(startIndex+5));
+                EnumSchema? schema = selectedSchemas[newSanitizedName];
+                if schema is EnumSchema{
+                    string[] item = schema.items.'enum;
+                    int count = 0;
+                    string[] itemsArray = <string[]> items.'enum;
+                    foreach int j in 0 ... item.length()-1{
+                        foreach int k in 0 ... itemsArray.length()-1 {
+                            if item[j] == itemsArray[k]{
+                                count += 1;
+                            }
+                        }
+                    }
+                    if count == item.length(){
+                        sanitizedParamName = newSanitizedName;
+                    }
+                }
+            }
 
             selectedSchemas[sanitizedParamName] = check param.schema.cloneWithType(EnumSchema);
             selectedParameters[sanitizedParamName] = {
