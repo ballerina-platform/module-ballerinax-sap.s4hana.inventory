@@ -8,7 +8,7 @@ _Edition_: Swan Lake
 
 ## Sanitization Steps
 
-1. Move inline enum parameters to schemas. This simplifies function definitions and enhances documentation. Schema names
+1. Move inline enum parameters to schemas. Use EnumSchema consistently to avoid duplication. This simplifies function definitions and enhances documentation. Schema names
    are generated based on the following pattern:
    `${The Resource Name}Of${Base Path Name}`
 
