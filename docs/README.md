@@ -1,9 +1,9 @@
 # SAP S/4HANA OpenAPI Specification Sanitization
 
-_Author_:@Ajai-Suvendran @DevAakif
+_Author_:@Ajai-Suvendran @DevAakif \
 _Reviwer_: @niveathika \
 _Created_: 2024/06/26 \
-_Updated_: 2024/06/26 \
+_Updated_: 2024/06/28 \
 _Edition_: Swan Lake  
 
 ## Sanitization Steps
@@ -15,12 +15,11 @@ _Edition_: Swan Lake
 2. Remove unnecessary grouping prefixes from schema names. For example:
    `Api_sales_contract_srvA_Salesorder` -> `A_Salesorder`
 
-3. Add operation Ids. This is more user-friendly with SAP-specific scripts. The logic for parameter sanitization is
-   reused, making it less complicated for the tool. The pattern is as follows:
-   `${HTTP Method}${The Resource Name}Of${Base Path Name}`
-   `/salesorder(asdad)/to_Item` => `getTo_ItemOfSalesorder`
+3. Improve response schema names by removing unnecessary prefixes and suffixes and renaming them to be more descriptive.
+   `wrapper` -> `A_InspectionlotWrapper`
+   `Collection of A_InspectionlotType` -> `CollectionOfA_Inspectionlot`
 
-        Exceptions: /rejectApprovalRequest, /releaseApprovalRequest, /$batch
+4. Add operation Ids. This is more user-friendly with SAP-specific scripts. The logic for parameter sanitization is
 
 ## Sanitization for SAP S/4HANA OpenAPI Generated Client
 
