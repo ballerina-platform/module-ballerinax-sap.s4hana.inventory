@@ -38,6 +38,7 @@ This repository only contains the source code for the package.
 3. Download and install [Docker](https://www.docker.com/get-started).
 
    > **Note**: Ensure that the Docker daemon is running before executing any tests.
+
 ### Build options
 
 Execute the commands below to build from the source.
