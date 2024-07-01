@@ -70,6 +70,7 @@ Execute the commands below to build from the source.
    | API Name                  |            Connector                            |
    | --------------------------| ----------------------------------------------- |
    | api_material_document_srv | ballerinax/sap.s4hana.api_material_document_srv |
+   | api_material_stock_srv    | ballerinax/sap.s4hana.api_material_stock_srv    |
 
 5. To run tests against different environment:
 
