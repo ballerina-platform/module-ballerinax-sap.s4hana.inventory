@@ -1,11 +1,11 @@
 [package]
 org = "ballerinax"
-name = "sap.s4hana.inventory"
+name = "sap.s4hana.api_material_document_srv"
 version = "1.0.0"
 distribution = "2201.9.0"
 authors = ["Ballerina"]
-keywords = ["Business Management/ERP", "Cost/Paid", "Vendor/SAP", "Materials Management", "MM"]
-export = ["sap.s4hana.inventory"]
+keywords = ["Business Management/ERP", "Cost/Paid", "Vendor/SAP"]
+export = ["sap.s4hana.api_material_document_srv"]
 repository = "https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory"
 icon = "../icon.png"
 license = ["Apache-2.0"]

@@ -1,9 +1,9 @@
-## Overview
+## Package Overview
 
 [S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
 designed for large-scale enterprises by SAP SE.
 
-
+The `ballerinax/sap.s4hana.api_material_document_srv` package provides APIs that enable seamless integration with the [Material Document - Read,Create API v1.3.0](https://api.sap.com/api/API_MATERIAL_DOCUMENT_SRV/overview). This service enables you to retrieve and create material documents, for example, to post a goods receipt for a purchase order or to document the transfer of materials between two storage locations. Additionally, the service allows you to cancel existing material documents or single items. It can be consumed by external systems and user interfaces.
 
 ## Setup guide
 
@@ -13,7 +13,7 @@ designed for large-scale enterprises by SAP SE.
 
    ![Display Scenarios](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-1-display-scenarios.png)
 
-3. In the search bar, type `` and select the corresponding scenario from the results.
+3. In the search bar, type `Material Document Integration` and select the corresponding scenario from the results.
 
    ![Search Sales Order](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-2-search-sales-order.png)
 
@@ -35,14 +35,14 @@ designed for large-scale enterprises by SAP SE.
 
 ## Quickstart
 
-To use the `sap.s4hana.inventory` connector in your Ballerina application, modify the `.bal` file as follows:
+To use the `sap.s4hana.api_material_document_srv` connector in your Ballerina application, modify the `.bal` file as follows:
 
 ### Step 1: Import the module
 
-Import the `sap.s4hana.inventory` module.
+Import the `sap.s4hana.api_material_document_srv` module.
 
 ```ballerina
-
+import ballerinax/sap.s4hana.api_material_document_srv as materialdocument;
 ```
 
 ### Step 2: Instantiate a new connector
@@ -54,7 +54,7 @@ configurable string hostname = ?;
 configurable string username = ?;
 configurable string password = ?;
 
-
+matrialdocument:Client materialDocumentClient = check new (
     hostname = hostname,
     config = {
         auth: {
@@ -70,7 +70,7 @@ configurable string password = ?;
 Now, utilize the available connector operations.
 
 ```ballerina
-
+materialdocument:CollectionOfA_MaterialDocumentItemWrapper listAMaterialDocumentItems = check materialDocumentClient->listA_MaterialDocumentItems();
 ```
 
 ### Step 4: Run the Ballerina application
@@ -78,3 +78,13 @@ Now, utilize the available connector operations.
 ```bash
 bal run
 ```
+
+## Report Issues
+
+To report bugs, request new features, start new discussions, view project boards, etc., go to
+the [Ballerina library parent repository](https://github.com/ballerina-platform/ballerina-library).
+
+## Useful Links
+
+- Chat live with us via our [Discord server](https://discord.gg/ballerinalang).
+- Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
