@@ -8,7 +8,7 @@ on:
         description: Select Connector
         required: true
         options:
-          - inventory
+          
 
 jobs:
   call_workflow:
