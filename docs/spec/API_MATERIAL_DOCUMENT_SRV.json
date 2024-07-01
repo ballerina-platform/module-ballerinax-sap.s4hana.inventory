@@ -112,93 +112,13 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "MaterialDocumentYear",
-                  "MaterialDocumentYear desc",
-                  "MaterialDocument",
-                  "MaterialDocument desc",
-                  "InventoryTransactionType",
-                  "InventoryTransactionType desc",
-                  "DocumentDate",
-                  "DocumentDate desc",
-                  "PostingDate",
-                  "PostingDate desc",
-                  "CreationDate",
-                  "CreationDate desc",
-                  "CreationTime",
-                  "CreationTime desc",
-                  "CreatedByUser",
-                  "CreatedByUser desc",
-                  "MaterialDocumentHeaderText",
-                  "MaterialDocumentHeaderText desc",
-                  "ReferenceDocument",
-                  "ReferenceDocument desc",
-                  "VersionForPrintingSlip",
-                  "VersionForPrintingSlip desc",
-                  "ManualPrintIsTriggered",
-                  "ManualPrintIsTriggered desc",
-                  "CtrlPostgForExtWhseMgmtSyst",
-                  "CtrlPostgForExtWhseMgmtSyst desc",
-                  "GoodsMovementCode",
-                  "GoodsMovementCode desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_MaterialDocumentHeaderOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "MaterialDocumentYear",
-                  "MaterialDocument",
-                  "InventoryTransactionType",
-                  "DocumentDate",
-                  "PostingDate",
-                  "CreationDate",
-                  "CreationTime",
-                  "CreatedByUser",
-                  "MaterialDocumentHeaderText",
-                  "ReferenceDocument",
-                  "VersionForPrintingSlip",
-                  "ManualPrintIsTriggered",
-                  "CtrlPostgForExtWhseMgmtSyst",
-                  "GoodsMovementCode",
-                  "to_MaterialDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_MaterialDocumentHeaderSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_MaterialDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_MaterialDocumentHeaderExpandOptions"
           }
         ],
         "responses": {
@@ -207,11 +127,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Wrapper",
+                  "title": "CollectionOfA_MaterialDocumentHeaderWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "title": "Collection of A_MaterialDocumentHeaderType",
+                      "title": "CollectionOfA_MaterialDocumentHeader",
                       "type": "object",
                       "properties": {
                         "__count": {
@@ -220,7 +140,7 @@
                         "results": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType"
+                            "$ref": "#/components/schemas/A_MaterialDocumentHeader"
                           }
                         }
                       }
@@ -247,7 +167,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType-create"
+                "$ref": "#/components/schemas/CreateA_MaterialDocumentHeader"
               }
             }
           }
@@ -258,11 +178,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_MaterialDocumentHeaderType",
+                  "title": "A_MaterialDocumentHeaderWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType"
+                      "$ref": "#/components/schemas/A_MaterialDocumentHeader"
                     }
                   }
                 }
@@ -306,50 +226,10 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "MaterialDocumentYear",
-                  "MaterialDocument",
-                  "InventoryTransactionType",
-                  "DocumentDate",
-                  "PostingDate",
-                  "CreationDate",
-                  "CreationTime",
-                  "CreatedByUser",
-                  "MaterialDocumentHeaderText",
-                  "ReferenceDocument",
-                  "VersionForPrintingSlip",
-                  "ManualPrintIsTriggered",
-                  "CtrlPostgForExtWhseMgmtSyst",
-                  "GoodsMovementCode",
-                  "to_MaterialDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_MaterialDocumentHeaderByKeySelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_MaterialDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_MaterialDocumentHeaderByKeyExpandOptions"
           }
         ],
         "responses": {
@@ -358,11 +238,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_MaterialDocumentHeaderType",
+                  "title": "A_MaterialDocumentHeaderWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType"
+                      "$ref": "#/components/schemas/A_MaterialDocumentHeader"
                     }
                   }
                 }
@@ -424,299 +304,13 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "MaterialDocumentYear",
-                  "MaterialDocumentYear desc",
-                  "MaterialDocument",
-                  "MaterialDocument desc",
-                  "MaterialDocumentItem",
-                  "MaterialDocumentItem desc",
-                  "Material",
-                  "Material desc",
-                  "Plant",
-                  "Plant desc",
-                  "StorageLocation",
-                  "StorageLocation desc",
-                  "Batch",
-                  "Batch desc",
-                  "GoodsMovementType",
-                  "GoodsMovementType desc",
-                  "InventoryStockType",
-                  "InventoryStockType desc",
-                  "InventoryValuationType",
-                  "InventoryValuationType desc",
-                  "InventorySpecialStockType",
-                  "InventorySpecialStockType desc",
-                  "Supplier",
-                  "Supplier desc",
-                  "Customer",
-                  "Customer desc",
-                  "SalesOrder",
-                  "SalesOrder desc",
-                  "SalesOrderItem",
-                  "SalesOrderItem desc",
-                  "SalesOrderScheduleLine",
-                  "SalesOrderScheduleLine desc",
-                  "PurchaseOrder",
-                  "PurchaseOrder desc",
-                  "PurchaseOrderItem",
-                  "PurchaseOrderItem desc",
-                  "WBSElement",
-                  "WBSElement desc",
-                  "ManufacturingOrder",
-                  "ManufacturingOrder desc",
-                  "ManufacturingOrderItem",
-                  "ManufacturingOrderItem desc",
-                  "GoodsMovementRefDocType",
-                  "GoodsMovementRefDocType desc",
-                  "GoodsMovementReasonCode",
-                  "GoodsMovementReasonCode desc",
-                  "Delivery",
-                  "Delivery desc",
-                  "DeliveryItem",
-                  "DeliveryItem desc",
-                  "AccountAssignmentCategory",
-                  "AccountAssignmentCategory desc",
-                  "CostCenter",
-                  "CostCenter desc",
-                  "ControllingArea",
-                  "ControllingArea desc",
-                  "CostObject",
-                  "CostObject desc",
-                  "GLAccount",
-                  "GLAccount desc",
-                  "FunctionalArea",
-                  "FunctionalArea desc",
-                  "ProfitabilitySegment",
-                  "ProfitabilitySegment desc",
-                  "ProfitCenter",
-                  "ProfitCenter desc",
-                  "MasterFixedAsset",
-                  "MasterFixedAsset desc",
-                  "FixedAsset",
-                  "FixedAsset desc",
-                  "MaterialBaseUnit",
-                  "MaterialBaseUnit desc",
-                  "QuantityInBaseUnit",
-                  "QuantityInBaseUnit desc",
-                  "EntryUnit",
-                  "EntryUnit desc",
-                  "QuantityInEntryUnit",
-                  "QuantityInEntryUnit desc",
-                  "CompanyCodeCurrency",
-                  "CompanyCodeCurrency desc",
-                  "GdsMvtExtAmtInCoCodeCrcy",
-                  "GdsMvtExtAmtInCoCodeCrcy desc",
-                  "SlsPrcAmtInclVATInCoCodeCrcy",
-                  "SlsPrcAmtInclVATInCoCodeCrcy desc",
-                  "FiscalYear",
-                  "FiscalYear desc",
-                  "FiscalYearPeriod",
-                  "FiscalYearPeriod desc",
-                  "FiscalYearVariant",
-                  "FiscalYearVariant desc",
-                  "IssgOrRcvgMaterial",
-                  "IssgOrRcvgMaterial desc",
-                  "IssgOrRcvgBatch",
-                  "IssgOrRcvgBatch desc",
-                  "IssuingOrReceivingPlant",
-                  "IssuingOrReceivingPlant desc",
-                  "IssuingOrReceivingStorageLoc",
-                  "IssuingOrReceivingStorageLoc desc",
-                  "IssuingOrReceivingStockType",
-                  "IssuingOrReceivingStockType desc",
-                  "IssgOrRcvgSpclStockInd",
-                  "IssgOrRcvgSpclStockInd desc",
-                  "IssuingOrReceivingValType",
-                  "IssuingOrReceivingValType desc",
-                  "IsCompletelyDelivered",
-                  "IsCompletelyDelivered desc",
-                  "MaterialDocumentItemText",
-                  "MaterialDocumentItemText desc",
-                  "GoodsRecipientName",
-                  "GoodsRecipientName desc",
-                  "UnloadingPointName",
-                  "UnloadingPointName desc",
-                  "ShelfLifeExpirationDate",
-                  "ShelfLifeExpirationDate desc",
-                  "ManufactureDate",
-                  "ManufactureDate desc",
-                  "SerialNumbersAreCreatedAutomly",
-                  "SerialNumbersAreCreatedAutomly desc",
-                  "Reservation",
-                  "Reservation desc",
-                  "ReservationItem",
-                  "ReservationItem desc",
-                  "ReservationItemRecordType",
-                  "ReservationItemRecordType desc",
-                  "ReservationIsFinallyIssued",
-                  "ReservationIsFinallyIssued desc",
-                  "SpecialStockIdfgSalesOrder",
-                  "SpecialStockIdfgSalesOrder desc",
-                  "SpecialStockIdfgSalesOrderItem",
-                  "SpecialStockIdfgSalesOrderItem desc",
-                  "SpecialStockIdfgWBSElement",
-                  "SpecialStockIdfgWBSElement desc",
-                  "IsAutomaticallyCreated",
-                  "IsAutomaticallyCreated desc",
-                  "MaterialDocumentLine",
-                  "MaterialDocumentLine desc",
-                  "MaterialDocumentParentLine",
-                  "MaterialDocumentParentLine desc",
-                  "HierarchyNodeLevel",
-                  "HierarchyNodeLevel desc",
-                  "GoodsMovementIsCancelled",
-                  "GoodsMovementIsCancelled desc",
-                  "ReversedMaterialDocumentYear",
-                  "ReversedMaterialDocumentYear desc",
-                  "ReversedMaterialDocument",
-                  "ReversedMaterialDocument desc",
-                  "ReversedMaterialDocumentItem",
-                  "ReversedMaterialDocumentItem desc",
-                  "ReferenceDocumentFiscalYear",
-                  "ReferenceDocumentFiscalYear desc",
-                  "InvtryMgmtRefDocumentItem",
-                  "InvtryMgmtRefDocumentItem desc",
-                  "InvtryMgmtReferenceDocument",
-                  "InvtryMgmtReferenceDocument desc",
-                  "MaterialDocumentPostingType",
-                  "MaterialDocumentPostingType desc",
-                  "InventoryUsabilityCode",
-                  "InventoryUsabilityCode desc",
-                  "EWMWarehouse",
-                  "EWMWarehouse desc",
-                  "EWMStorageBin",
-                  "EWMStorageBin desc",
-                  "DebitCreditCode",
-                  "DebitCreditCode desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/MaterialDocumentItemOfA_MaterialDocumentHeaderOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "MaterialDocumentYear",
-                  "MaterialDocument",
-                  "MaterialDocumentItem",
-                  "Material",
-                  "Plant",
-                  "StorageLocation",
-                  "Batch",
-                  "GoodsMovementType",
-                  "InventoryStockType",
-                  "InventoryValuationType",
-                  "InventorySpecialStockType",
-                  "Supplier",
-                  "Customer",
-                  "SalesOrder",
-                  "SalesOrderItem",
-                  "SalesOrderScheduleLine",
-                  "PurchaseOrder",
-                  "PurchaseOrderItem",
-                  "WBSElement",
-                  "ManufacturingOrder",
-                  "ManufacturingOrderItem",
-                  "GoodsMovementRefDocType",
-                  "GoodsMovementReasonCode",
-                  "Delivery",
-                  "DeliveryItem",
-                  "AccountAssignmentCategory",
-                  "CostCenter",
-                  "ControllingArea",
-                  "CostObject",
-                  "GLAccount",
-                  "FunctionalArea",
-                  "ProfitabilitySegment",
-                  "ProfitCenter",
-                  "MasterFixedAsset",
-                  "FixedAsset",
-                  "MaterialBaseUnit",
-                  "QuantityInBaseUnit",
-                  "EntryUnit",
-                  "QuantityInEntryUnit",
-                  "CompanyCodeCurrency",
-                  "GdsMvtExtAmtInCoCodeCrcy",
-                  "SlsPrcAmtInclVATInCoCodeCrcy",
-                  "FiscalYear",
-                  "FiscalYearPeriod",
-                  "FiscalYearVariant",
-                  "IssgOrRcvgMaterial",
-                  "IssgOrRcvgBatch",
-                  "IssuingOrReceivingPlant",
-                  "IssuingOrReceivingStorageLoc",
-                  "IssuingOrReceivingStockType",
-                  "IssgOrRcvgSpclStockInd",
-                  "IssuingOrReceivingValType",
-                  "IsCompletelyDelivered",
-                  "MaterialDocumentItemText",
-                  "GoodsRecipientName",
-                  "UnloadingPointName",
-                  "ShelfLifeExpirationDate",
-                  "ManufactureDate",
-                  "SerialNumbersAreCreatedAutomly",
-                  "Reservation",
-                  "ReservationItem",
-                  "ReservationItemRecordType",
-                  "ReservationIsFinallyIssued",
-                  "SpecialStockIdfgSalesOrder",
-                  "SpecialStockIdfgSalesOrderItem",
-                  "SpecialStockIdfgWBSElement",
-                  "IsAutomaticallyCreated",
-                  "MaterialDocumentLine",
-                  "MaterialDocumentParentLine",
-                  "HierarchyNodeLevel",
-                  "GoodsMovementIsCancelled",
-                  "ReversedMaterialDocumentYear",
-                  "ReversedMaterialDocument",
-                  "ReversedMaterialDocumentItem",
-                  "ReferenceDocumentFiscalYear",
-                  "InvtryMgmtRefDocumentItem",
-                  "InvtryMgmtReferenceDocument",
-                  "MaterialDocumentPostingType",
-                  "InventoryUsabilityCode",
-                  "EWMWarehouse",
-                  "EWMStorageBin",
-                  "DebitCreditCode",
-                  "to_MaterialDocumentHeader",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/MaterialDocumentItemOfA_MaterialDocumentHeaderSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_MaterialDocumentHeader",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/MaterialDocumentItemOfA_MaterialDocumentHeaderExpandOptions"
           }
         ],
         "responses": {
@@ -725,11 +319,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Wrapper",
+                  "title": "CollectionOfA_MaterialDocumentItemWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "title": "Collection of A_MaterialDocumentItemType",
+                      "title": "CollectionOfA_MaterialDocumentItem",
                       "type": "object",
                       "properties": {
                         "__count": {
@@ -738,7 +332,7 @@
                         "results": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentItemType"
+                            "$ref": "#/components/schemas/A_MaterialDocumentItem"
                           }
                         }
                       }
@@ -780,299 +374,13 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "MaterialDocumentYear",
-                  "MaterialDocumentYear desc",
-                  "MaterialDocument",
-                  "MaterialDocument desc",
-                  "MaterialDocumentItem",
-                  "MaterialDocumentItem desc",
-                  "Material",
-                  "Material desc",
-                  "Plant",
-                  "Plant desc",
-                  "StorageLocation",
-                  "StorageLocation desc",
-                  "Batch",
-                  "Batch desc",
-                  "GoodsMovementType",
-                  "GoodsMovementType desc",
-                  "InventoryStockType",
-                  "InventoryStockType desc",
-                  "InventoryValuationType",
-                  "InventoryValuationType desc",
-                  "InventorySpecialStockType",
-                  "InventorySpecialStockType desc",
-                  "Supplier",
-                  "Supplier desc",
-                  "Customer",
-                  "Customer desc",
-                  "SalesOrder",
-                  "SalesOrder desc",
-                  "SalesOrderItem",
-                  "SalesOrderItem desc",
-                  "SalesOrderScheduleLine",
-                  "SalesOrderScheduleLine desc",
-                  "PurchaseOrder",
-                  "PurchaseOrder desc",
-                  "PurchaseOrderItem",
-                  "PurchaseOrderItem desc",
-                  "WBSElement",
-                  "WBSElement desc",
-                  "ManufacturingOrder",
-                  "ManufacturingOrder desc",
-                  "ManufacturingOrderItem",
-                  "ManufacturingOrderItem desc",
-                  "GoodsMovementRefDocType",
-                  "GoodsMovementRefDocType desc",
-                  "GoodsMovementReasonCode",
-                  "GoodsMovementReasonCode desc",
-                  "Delivery",
-                  "Delivery desc",
-                  "DeliveryItem",
-                  "DeliveryItem desc",
-                  "AccountAssignmentCategory",
-                  "AccountAssignmentCategory desc",
-                  "CostCenter",
-                  "CostCenter desc",
-                  "ControllingArea",
-                  "ControllingArea desc",
-                  "CostObject",
-                  "CostObject desc",
-                  "GLAccount",
-                  "GLAccount desc",
-                  "FunctionalArea",
-                  "FunctionalArea desc",
-                  "ProfitabilitySegment",
-                  "ProfitabilitySegment desc",
-                  "ProfitCenter",
-                  "ProfitCenter desc",
-                  "MasterFixedAsset",
-                  "MasterFixedAsset desc",
-                  "FixedAsset",
-                  "FixedAsset desc",
-                  "MaterialBaseUnit",
-                  "MaterialBaseUnit desc",
-                  "QuantityInBaseUnit",
-                  "QuantityInBaseUnit desc",
-                  "EntryUnit",
-                  "EntryUnit desc",
-                  "QuantityInEntryUnit",
-                  "QuantityInEntryUnit desc",
-                  "CompanyCodeCurrency",
-                  "CompanyCodeCurrency desc",
-                  "GdsMvtExtAmtInCoCodeCrcy",
-                  "GdsMvtExtAmtInCoCodeCrcy desc",
-                  "SlsPrcAmtInclVATInCoCodeCrcy",
-                  "SlsPrcAmtInclVATInCoCodeCrcy desc",
-                  "FiscalYear",
-                  "FiscalYear desc",
-                  "FiscalYearPeriod",
-                  "FiscalYearPeriod desc",
-                  "FiscalYearVariant",
-                  "FiscalYearVariant desc",
-                  "IssgOrRcvgMaterial",
-                  "IssgOrRcvgMaterial desc",
-                  "IssgOrRcvgBatch",
-                  "IssgOrRcvgBatch desc",
-                  "IssuingOrReceivingPlant",
-                  "IssuingOrReceivingPlant desc",
-                  "IssuingOrReceivingStorageLoc",
-                  "IssuingOrReceivingStorageLoc desc",
-                  "IssuingOrReceivingStockType",
-                  "IssuingOrReceivingStockType desc",
-                  "IssgOrRcvgSpclStockInd",
-                  "IssgOrRcvgSpclStockInd desc",
-                  "IssuingOrReceivingValType",
-                  "IssuingOrReceivingValType desc",
-                  "IsCompletelyDelivered",
-                  "IsCompletelyDelivered desc",
-                  "MaterialDocumentItemText",
-                  "MaterialDocumentItemText desc",
-                  "GoodsRecipientName",
-                  "GoodsRecipientName desc",
-                  "UnloadingPointName",
-                  "UnloadingPointName desc",
-                  "ShelfLifeExpirationDate",
-                  "ShelfLifeExpirationDate desc",
-                  "ManufactureDate",
-                  "ManufactureDate desc",
-                  "SerialNumbersAreCreatedAutomly",
-                  "SerialNumbersAreCreatedAutomly desc",
-                  "Reservation",
-                  "Reservation desc",
-                  "ReservationItem",
-                  "ReservationItem desc",
-                  "ReservationItemRecordType",
-                  "ReservationItemRecordType desc",
-                  "ReservationIsFinallyIssued",
-                  "ReservationIsFinallyIssued desc",
-                  "SpecialStockIdfgSalesOrder",
-                  "SpecialStockIdfgSalesOrder desc",
-                  "SpecialStockIdfgSalesOrderItem",
-                  "SpecialStockIdfgSalesOrderItem desc",
-                  "SpecialStockIdfgWBSElement",
-                  "SpecialStockIdfgWBSElement desc",
-                  "IsAutomaticallyCreated",
-                  "IsAutomaticallyCreated desc",
-                  "MaterialDocumentLine",
-                  "MaterialDocumentLine desc",
-                  "MaterialDocumentParentLine",
-                  "MaterialDocumentParentLine desc",
-                  "HierarchyNodeLevel",
-                  "HierarchyNodeLevel desc",
-                  "GoodsMovementIsCancelled",
-                  "GoodsMovementIsCancelled desc",
-                  "ReversedMaterialDocumentYear",
-                  "ReversedMaterialDocumentYear desc",
-                  "ReversedMaterialDocument",
-                  "ReversedMaterialDocument desc",
-                  "ReversedMaterialDocumentItem",
-                  "ReversedMaterialDocumentItem desc",
-                  "ReferenceDocumentFiscalYear",
-                  "ReferenceDocumentFiscalYear desc",
-                  "InvtryMgmtRefDocumentItem",
-                  "InvtryMgmtRefDocumentItem desc",
-                  "InvtryMgmtReferenceDocument",
-                  "InvtryMgmtReferenceDocument desc",
-                  "MaterialDocumentPostingType",
-                  "MaterialDocumentPostingType desc",
-                  "InventoryUsabilityCode",
-                  "InventoryUsabilityCode desc",
-                  "EWMWarehouse",
-                  "EWMWarehouse desc",
-                  "EWMStorageBin",
-                  "EWMStorageBin desc",
-                  "DebitCreditCode",
-                  "DebitCreditCode desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_MaterialDocumentItemOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "MaterialDocumentYear",
-                  "MaterialDocument",
-                  "MaterialDocumentItem",
-                  "Material",
-                  "Plant",
-                  "StorageLocation",
-                  "Batch",
-                  "GoodsMovementType",
-                  "InventoryStockType",
-                  "InventoryValuationType",
-                  "InventorySpecialStockType",
-                  "Supplier",
-                  "Customer",
-                  "SalesOrder",
-                  "SalesOrderItem",
-                  "SalesOrderScheduleLine",
-                  "PurchaseOrder",
-                  "PurchaseOrderItem",
-                  "WBSElement",
-                  "ManufacturingOrder",
-                  "ManufacturingOrderItem",
-                  "GoodsMovementRefDocType",
-                  "GoodsMovementReasonCode",
-                  "Delivery",
-                  "DeliveryItem",
-                  "AccountAssignmentCategory",
-                  "CostCenter",
-                  "ControllingArea",
-                  "CostObject",
-                  "GLAccount",
-                  "FunctionalArea",
-                  "ProfitabilitySegment",
-                  "ProfitCenter",
-                  "MasterFixedAsset",
-                  "FixedAsset",
-                  "MaterialBaseUnit",
-                  "QuantityInBaseUnit",
-                  "EntryUnit",
-                  "QuantityInEntryUnit",
-                  "CompanyCodeCurrency",
-                  "GdsMvtExtAmtInCoCodeCrcy",
-                  "SlsPrcAmtInclVATInCoCodeCrcy",
-                  "FiscalYear",
-                  "FiscalYearPeriod",
-                  "FiscalYearVariant",
-                  "IssgOrRcvgMaterial",
-                  "IssgOrRcvgBatch",
-                  "IssuingOrReceivingPlant",
-                  "IssuingOrReceivingStorageLoc",
-                  "IssuingOrReceivingStockType",
-                  "IssgOrRcvgSpclStockInd",
-                  "IssuingOrReceivingValType",
-                  "IsCompletelyDelivered",
-                  "MaterialDocumentItemText",
-                  "GoodsRecipientName",
-                  "UnloadingPointName",
-                  "ShelfLifeExpirationDate",
-                  "ManufactureDate",
-                  "SerialNumbersAreCreatedAutomly",
-                  "Reservation",
-                  "ReservationItem",
-                  "ReservationItemRecordType",
-                  "ReservationIsFinallyIssued",
-                  "SpecialStockIdfgSalesOrder",
-                  "SpecialStockIdfgSalesOrderItem",
-                  "SpecialStockIdfgWBSElement",
-                  "IsAutomaticallyCreated",
-                  "MaterialDocumentLine",
-                  "MaterialDocumentParentLine",
-                  "HierarchyNodeLevel",
-                  "GoodsMovementIsCancelled",
-                  "ReversedMaterialDocumentYear",
-                  "ReversedMaterialDocument",
-                  "ReversedMaterialDocumentItem",
-                  "ReferenceDocumentFiscalYear",
-                  "InvtryMgmtRefDocumentItem",
-                  "InvtryMgmtReferenceDocument",
-                  "MaterialDocumentPostingType",
-                  "InventoryUsabilityCode",
-                  "EWMWarehouse",
-                  "EWMStorageBin",
-                  "DebitCreditCode",
-                  "to_MaterialDocumentHeader",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_MaterialDocumentItemSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_MaterialDocumentHeader",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_MaterialDocumentItemExpandOptions"
           }
         ],
         "responses": {
@@ -1081,11 +389,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Wrapper",
+                  "title": "CollectionOfA_MaterialDocumentItemWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "title": "Collection of A_MaterialDocumentItemType",
+                      "title": "CollectionOfA_MaterialDocumentItem",
                       "type": "object",
                       "properties": {
                         "__count": {
@@ -1094,7 +402,7 @@
                         "results": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentItemType"
+                            "$ref": "#/components/schemas/A_MaterialDocumentItem"
                           }
                         }
                       }
@@ -1151,120 +459,10 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "MaterialDocumentYear",
-                  "MaterialDocument",
-                  "MaterialDocumentItem",
-                  "Material",
-                  "Plant",
-                  "StorageLocation",
-                  "Batch",
-                  "GoodsMovementType",
-                  "InventoryStockType",
-                  "InventoryValuationType",
-                  "InventorySpecialStockType",
-                  "Supplier",
-                  "Customer",
-                  "SalesOrder",
-                  "SalesOrderItem",
-                  "SalesOrderScheduleLine",
-                  "PurchaseOrder",
-                  "PurchaseOrderItem",
-                  "WBSElement",
-                  "ManufacturingOrder",
-                  "ManufacturingOrderItem",
-                  "GoodsMovementRefDocType",
-                  "GoodsMovementReasonCode",
-                  "Delivery",
-                  "DeliveryItem",
-                  "AccountAssignmentCategory",
-                  "CostCenter",
-                  "ControllingArea",
-                  "CostObject",
-                  "GLAccount",
-                  "FunctionalArea",
-                  "ProfitabilitySegment",
-                  "ProfitCenter",
-                  "MasterFixedAsset",
-                  "FixedAsset",
-                  "MaterialBaseUnit",
-                  "QuantityInBaseUnit",
-                  "EntryUnit",
-                  "QuantityInEntryUnit",
-                  "CompanyCodeCurrency",
-                  "GdsMvtExtAmtInCoCodeCrcy",
-                  "SlsPrcAmtInclVATInCoCodeCrcy",
-                  "FiscalYear",
-                  "FiscalYearPeriod",
-                  "FiscalYearVariant",
-                  "IssgOrRcvgMaterial",
-                  "IssgOrRcvgBatch",
-                  "IssuingOrReceivingPlant",
-                  "IssuingOrReceivingStorageLoc",
-                  "IssuingOrReceivingStockType",
-                  "IssgOrRcvgSpclStockInd",
-                  "IssuingOrReceivingValType",
-                  "IsCompletelyDelivered",
-                  "MaterialDocumentItemText",
-                  "GoodsRecipientName",
-                  "UnloadingPointName",
-                  "ShelfLifeExpirationDate",
-                  "ManufactureDate",
-                  "SerialNumbersAreCreatedAutomly",
-                  "Reservation",
-                  "ReservationItem",
-                  "ReservationItemRecordType",
-                  "ReservationIsFinallyIssued",
-                  "SpecialStockIdfgSalesOrder",
-                  "SpecialStockIdfgSalesOrderItem",
-                  "SpecialStockIdfgWBSElement",
-                  "IsAutomaticallyCreated",
-                  "MaterialDocumentLine",
-                  "MaterialDocumentParentLine",
-                  "HierarchyNodeLevel",
-                  "GoodsMovementIsCancelled",
-                  "ReversedMaterialDocumentYear",
-                  "ReversedMaterialDocument",
-                  "ReversedMaterialDocumentItem",
-                  "ReferenceDocumentFiscalYear",
-                  "InvtryMgmtRefDocumentItem",
-                  "InvtryMgmtReferenceDocument",
-                  "MaterialDocumentPostingType",
-                  "InventoryUsabilityCode",
-                  "EWMWarehouse",
-                  "EWMStorageBin",
-                  "DebitCreditCode",
-                  "to_MaterialDocumentHeader",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_MaterialDocumentItemByKeySelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_MaterialDocumentHeader",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_MaterialDocumentItemByKeyExpandOptions"
           }
         ],
         "responses": {
@@ -1273,11 +471,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_MaterialDocumentItemType",
+                  "title": "A_MaterialDocumentItemWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentItemType"
+                      "$ref": "#/components/schemas/A_MaterialDocumentItem"
                     }
                   }
                 }
@@ -1332,50 +530,10 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "MaterialDocumentYear",
-                  "MaterialDocument",
-                  "InventoryTransactionType",
-                  "DocumentDate",
-                  "PostingDate",
-                  "CreationDate",
-                  "CreationTime",
-                  "CreatedByUser",
-                  "MaterialDocumentHeaderText",
-                  "ReferenceDocument",
-                  "VersionForPrintingSlip",
-                  "ManualPrintIsTriggered",
-                  "CtrlPostgForExtWhseMgmtSyst",
-                  "GoodsMovementCode",
-                  "to_MaterialDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/MaterialDocumentHeaderOfA_MaterialDocumentItemSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_MaterialDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/MaterialDocumentHeaderOfA_MaterialDocumentItemExpandOptions"
           }
         ],
         "responses": {
@@ -1384,11 +542,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_MaterialDocumentHeaderType",
+                  "title": "A_MaterialDocumentHeaderWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType"
+                      "$ref": "#/components/schemas/A_MaterialDocumentHeader"
                     }
                   }
                 }
@@ -1460,52 +618,10 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Material",
-                  "Material desc",
-                  "SerialNumber",
-                  "SerialNumber desc",
-                  "MaterialDocument",
-                  "MaterialDocument desc",
-                  "MaterialDocumentItem",
-                  "MaterialDocumentItem desc",
-                  "MaterialDocumentYear",
-                  "MaterialDocumentYear desc",
-                  "ManufacturerSerialNumber",
-                  "ManufacturerSerialNumber desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/SerialNumbersOfA_MaterialDocumentItemOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Material",
-                  "SerialNumber",
-                  "MaterialDocument",
-                  "MaterialDocumentItem",
-                  "MaterialDocumentYear",
-                  "ManufacturerSerialNumber"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/SerialNumbersOfA_MaterialDocumentItemSelectOptions"
           }
         ],
         "responses": {
@@ -1514,11 +630,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Wrapper",
+                  "title": "CollectionOfA_SerialNumberMaterialDocumentWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "title": "Collection of A_SerialNumberMaterialDocumentType",
+                      "title": "CollectionOfA_SerialNumberMaterialDocument",
                       "type": "object",
                       "properties": {
                         "__count": {
@@ -1527,7 +643,7 @@
                         "results": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_SerialNumberMaterialDocumentType"
+                            "$ref": "#/components/schemas/A_SerialNumberMaterialDocument"
                           }
                         }
                       }
@@ -1569,52 +685,10 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Material",
-                  "Material desc",
-                  "SerialNumber",
-                  "SerialNumber desc",
-                  "MaterialDocument",
-                  "MaterialDocument desc",
-                  "MaterialDocumentItem",
-                  "MaterialDocumentItem desc",
-                  "MaterialDocumentYear",
-                  "MaterialDocumentYear desc",
-                  "ManufacturerSerialNumber",
-                  "ManufacturerSerialNumber desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_SerialNumberMaterialDocumentOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Material",
-                  "SerialNumber",
-                  "MaterialDocument",
-                  "MaterialDocumentItem",
-                  "MaterialDocumentYear",
-                  "ManufacturerSerialNumber"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_SerialNumberMaterialDocumentSelectOptions"
           }
         ],
         "responses": {
@@ -1623,11 +697,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Wrapper",
+                  "title": "CollectionOfA_SerialNumberMaterialDocumentWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "title": "Collection of A_SerialNumberMaterialDocumentType",
+                      "title": "CollectionOfA_SerialNumberMaterialDocument",
                       "type": "object",
                       "properties": {
                         "__count": {
@@ -1636,7 +710,7 @@
                         "results": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_SerialNumberMaterialDocumentType"
+                            "$ref": "#/components/schemas/A_SerialNumberMaterialDocument"
                           }
                         }
                       }
@@ -1713,25 +787,7 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Material",
-                  "SerialNumber",
-                  "MaterialDocument",
-                  "MaterialDocumentItem",
-                  "MaterialDocumentYear",
-                  "ManufacturerSerialNumber"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_SerialNumberMaterialDocumentByKeySelectOptions"
           }
         ],
         "responses": {
@@ -1740,11 +796,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_SerialNumberMaterialDocumentType",
+                  "title": "A_SerialNumberMaterialDocumentWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_SerialNumberMaterialDocumentType"
+                      "$ref": "#/components/schemas/A_SerialNumberMaterialDocument"
                     }
                   }
                 }
@@ -1804,11 +860,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_MaterialDocumentHeaderType",
+                  "title": "A_MaterialDocumentHeaderWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType"
+                      "$ref": "#/components/schemas/A_MaterialDocumentHeader"
                     }
                   }
                 }
@@ -1879,11 +935,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_MaterialDocumentItemType",
+                  "title": "A_MaterialDocumentItemWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentItemType"
+                      "$ref": "#/components/schemas/A_MaterialDocumentItem"
                     }
                   }
                 }
@@ -1936,7 +992,7 @@
   },
   "components": {
     "schemas": {
-      "API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType": {
+      "A_MaterialDocumentHeader": {
         "type": "object",
         "properties": {
           "MaterialDocumentYear": {
@@ -2039,7 +1095,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentItemType"
+                  "$ref": "#/components/schemas/A_MaterialDocumentItem"
                 }
               }
             }
@@ -2047,7 +1103,7 @@
         },
         "title": "Document Header"
       },
-      "API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType-create": {
+      "CreateA_MaterialDocumentHeader": {
         "type": "object",
         "properties": {
           "MaterialDocumentYear": {
@@ -2150,7 +1206,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentItemType-create"
+                  "$ref": "#/components/schemas/CreateA_MaterialDocumentItem"
                 }
               }
             }
@@ -2162,7 +1218,7 @@
         ],
         "title": "Document Header (for create)"
       },
-      "API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType-update": {
+      "UpdateA_MaterialDocumentHeader": {
         "type": "object",
         "properties": {
           "InventoryTransactionType": {
@@ -2251,7 +1307,7 @@
         },
         "title": "Document Header (for update)"
       },
-      "API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentItemType": {
+      "A_MaterialDocumentItem": {
         "type": "object",
         "properties": {
           "MaterialDocumentYear": {
@@ -2827,7 +1883,7 @@
             "description": "Debit/Credit Indicator"
           },
           "to_MaterialDocumentHeader": {
-            "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType"
+            "$ref": "#/components/schemas/A_MaterialDocumentHeader"
           },
           "to_SerialNumbers": {
             "type": "object",
@@ -2835,7 +1891,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_SerialNumberMaterialDocumentType"
+                  "$ref": "#/components/schemas/A_SerialNumberMaterialDocument"
                 }
               }
             }
@@ -2843,7 +1899,7 @@
         },
         "title": "Document Items"
       },
-      "API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentItemType-create": {
+      "CreateA_MaterialDocumentItem": {
         "type": "object",
         "properties": {
           "MaterialDocumentYear": {
@@ -3419,7 +2475,7 @@
             "description": "Debit/Credit Indicator"
           },
           "to_MaterialDocumentHeader": {
-            "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentHeaderType-create"
+            "$ref": "#/components/schemas/CreateA_MaterialDocumentHeader"
           },
           "to_SerialNumbers": {
             "type": "object",
@@ -3427,7 +2483,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/API_MATERIAL_DOCUMENT_SRV.A_SerialNumberMaterialDocumentType-create"
+                  "$ref": "#/components/schemas/CreateA_SerialNumberMaterialDocument"
                 }
               }
             }
@@ -3440,7 +2496,7 @@
         ],
         "title": "Document Items (for create)"
       },
-      "API_MATERIAL_DOCUMENT_SRV.A_MaterialDocumentItemType-update": {
+      "UpdateA_MaterialDocumentItem": {
         "type": "object",
         "properties": {
           "Material": {
@@ -4002,7 +3058,7 @@
         },
         "title": "Document Items (for update)"
       },
-      "API_MATERIAL_DOCUMENT_SRV.A_SerialNumberMaterialDocumentType": {
+      "A_SerialNumberMaterialDocument": {
         "type": "object",
         "properties": {
           "Material": {
@@ -4042,7 +3098,7 @@
         },
         "title": "Serial Numbers"
       },
-      "API_MATERIAL_DOCUMENT_SRV.A_SerialNumberMaterialDocumentType-create": {
+      "CreateA_SerialNumberMaterialDocument": {
         "type": "object",
         "properties": {
           "Material": {
@@ -4089,7 +3145,7 @@
         ],
         "title": "Serial Numbers (for create)"
       },
-      "API_MATERIAL_DOCUMENT_SRV.A_SerialNumberMaterialDocumentType-update": {
+      "UpdateA_SerialNumberMaterialDocument": {
         "type": "object",
         "properties": {
           "ManufacturerSerialNumber": {
@@ -4144,6 +3200,737 @@
             }
           }
         }
+      },
+      "A_MaterialDocumentHeaderOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "MaterialDocumentYear",
+            "MaterialDocumentYear desc",
+            "MaterialDocument",
+            "MaterialDocument desc",
+            "InventoryTransactionType",
+            "InventoryTransactionType desc",
+            "DocumentDate",
+            "DocumentDate desc",
+            "PostingDate",
+            "PostingDate desc",
+            "CreationDate",
+            "CreationDate desc",
+            "CreationTime",
+            "CreationTime desc",
+            "CreatedByUser",
+            "CreatedByUser desc",
+            "MaterialDocumentHeaderText",
+            "MaterialDocumentHeaderText desc",
+            "ReferenceDocument",
+            "ReferenceDocument desc",
+            "VersionForPrintingSlip",
+            "VersionForPrintingSlip desc",
+            "ManualPrintIsTriggered",
+            "ManualPrintIsTriggered desc",
+            "CtrlPostgForExtWhseMgmtSyst",
+            "CtrlPostgForExtWhseMgmtSyst desc",
+            "GoodsMovementCode",
+            "GoodsMovementCode desc"
+          ]
+        }
+      },
+      "A_MaterialDocumentHeaderSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "MaterialDocumentYear",
+            "MaterialDocument",
+            "InventoryTransactionType",
+            "DocumentDate",
+            "PostingDate",
+            "CreationDate",
+            "CreationTime",
+            "CreatedByUser",
+            "MaterialDocumentHeaderText",
+            "ReferenceDocument",
+            "VersionForPrintingSlip",
+            "ManualPrintIsTriggered",
+            "CtrlPostgForExtWhseMgmtSyst",
+            "GoodsMovementCode",
+            "to_MaterialDocumentItem"
+          ]
+        }
+      },
+      "A_MaterialDocumentHeaderExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MaterialDocumentItem"
+          ]
+        }
+      },
+      "MaterialDocumentItemOfA_MaterialDocumentHeaderOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "MaterialDocumentYear",
+            "MaterialDocumentYear desc",
+            "MaterialDocument",
+            "MaterialDocument desc",
+            "MaterialDocumentItem",
+            "MaterialDocumentItem desc",
+            "Material",
+            "Material desc",
+            "Plant",
+            "Plant desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "Batch",
+            "Batch desc",
+            "GoodsMovementType",
+            "GoodsMovementType desc",
+            "InventoryStockType",
+            "InventoryStockType desc",
+            "InventoryValuationType",
+            "InventoryValuationType desc",
+            "InventorySpecialStockType",
+            "InventorySpecialStockType desc",
+            "Supplier",
+            "Supplier desc",
+            "Customer",
+            "Customer desc",
+            "SalesOrder",
+            "SalesOrder desc",
+            "SalesOrderItem",
+            "SalesOrderItem desc",
+            "SalesOrderScheduleLine",
+            "SalesOrderScheduleLine desc",
+            "PurchaseOrder",
+            "PurchaseOrder desc",
+            "PurchaseOrderItem",
+            "PurchaseOrderItem desc",
+            "WBSElement",
+            "WBSElement desc",
+            "ManufacturingOrder",
+            "ManufacturingOrder desc",
+            "ManufacturingOrderItem",
+            "ManufacturingOrderItem desc",
+            "GoodsMovementRefDocType",
+            "GoodsMovementRefDocType desc",
+            "GoodsMovementReasonCode",
+            "GoodsMovementReasonCode desc",
+            "Delivery",
+            "Delivery desc",
+            "DeliveryItem",
+            "DeliveryItem desc",
+            "AccountAssignmentCategory",
+            "AccountAssignmentCategory desc",
+            "CostCenter",
+            "CostCenter desc",
+            "ControllingArea",
+            "ControllingArea desc",
+            "CostObject",
+            "CostObject desc",
+            "GLAccount",
+            "GLAccount desc",
+            "FunctionalArea",
+            "FunctionalArea desc",
+            "ProfitabilitySegment",
+            "ProfitabilitySegment desc",
+            "ProfitCenter",
+            "ProfitCenter desc",
+            "MasterFixedAsset",
+            "MasterFixedAsset desc",
+            "FixedAsset",
+            "FixedAsset desc",
+            "MaterialBaseUnit",
+            "MaterialBaseUnit desc",
+            "QuantityInBaseUnit",
+            "QuantityInBaseUnit desc",
+            "EntryUnit",
+            "EntryUnit desc",
+            "QuantityInEntryUnit",
+            "QuantityInEntryUnit desc",
+            "CompanyCodeCurrency",
+            "CompanyCodeCurrency desc",
+            "GdsMvtExtAmtInCoCodeCrcy",
+            "GdsMvtExtAmtInCoCodeCrcy desc",
+            "SlsPrcAmtInclVATInCoCodeCrcy",
+            "SlsPrcAmtInclVATInCoCodeCrcy desc",
+            "FiscalYear",
+            "FiscalYear desc",
+            "FiscalYearPeriod",
+            "FiscalYearPeriod desc",
+            "FiscalYearVariant",
+            "FiscalYearVariant desc",
+            "IssgOrRcvgMaterial",
+            "IssgOrRcvgMaterial desc",
+            "IssgOrRcvgBatch",
+            "IssgOrRcvgBatch desc",
+            "IssuingOrReceivingPlant",
+            "IssuingOrReceivingPlant desc",
+            "IssuingOrReceivingStorageLoc",
+            "IssuingOrReceivingStorageLoc desc",
+            "IssuingOrReceivingStockType",
+            "IssuingOrReceivingStockType desc",
+            "IssgOrRcvgSpclStockInd",
+            "IssgOrRcvgSpclStockInd desc",
+            "IssuingOrReceivingValType",
+            "IssuingOrReceivingValType desc",
+            "IsCompletelyDelivered",
+            "IsCompletelyDelivered desc",
+            "MaterialDocumentItemText",
+            "MaterialDocumentItemText desc",
+            "GoodsRecipientName",
+            "GoodsRecipientName desc",
+            "UnloadingPointName",
+            "UnloadingPointName desc",
+            "ShelfLifeExpirationDate",
+            "ShelfLifeExpirationDate desc",
+            "ManufactureDate",
+            "ManufactureDate desc",
+            "SerialNumbersAreCreatedAutomly",
+            "SerialNumbersAreCreatedAutomly desc",
+            "Reservation",
+            "Reservation desc",
+            "ReservationItem",
+            "ReservationItem desc",
+            "ReservationItemRecordType",
+            "ReservationItemRecordType desc",
+            "ReservationIsFinallyIssued",
+            "ReservationIsFinallyIssued desc",
+            "SpecialStockIdfgSalesOrder",
+            "SpecialStockIdfgSalesOrder desc",
+            "SpecialStockIdfgSalesOrderItem",
+            "SpecialStockIdfgSalesOrderItem desc",
+            "SpecialStockIdfgWBSElement",
+            "SpecialStockIdfgWBSElement desc",
+            "IsAutomaticallyCreated",
+            "IsAutomaticallyCreated desc",
+            "MaterialDocumentLine",
+            "MaterialDocumentLine desc",
+            "MaterialDocumentParentLine",
+            "MaterialDocumentParentLine desc",
+            "HierarchyNodeLevel",
+            "HierarchyNodeLevel desc",
+            "GoodsMovementIsCancelled",
+            "GoodsMovementIsCancelled desc",
+            "ReversedMaterialDocumentYear",
+            "ReversedMaterialDocumentYear desc",
+            "ReversedMaterialDocument",
+            "ReversedMaterialDocument desc",
+            "ReversedMaterialDocumentItem",
+            "ReversedMaterialDocumentItem desc",
+            "ReferenceDocumentFiscalYear",
+            "ReferenceDocumentFiscalYear desc",
+            "InvtryMgmtRefDocumentItem",
+            "InvtryMgmtRefDocumentItem desc",
+            "InvtryMgmtReferenceDocument",
+            "InvtryMgmtReferenceDocument desc",
+            "MaterialDocumentPostingType",
+            "MaterialDocumentPostingType desc",
+            "InventoryUsabilityCode",
+            "InventoryUsabilityCode desc",
+            "EWMWarehouse",
+            "EWMWarehouse desc",
+            "EWMStorageBin",
+            "EWMStorageBin desc",
+            "DebitCreditCode",
+            "DebitCreditCode desc"
+          ]
+        }
+      },
+      "MaterialDocumentItemOfA_MaterialDocumentHeaderSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "MaterialDocumentYear",
+            "MaterialDocument",
+            "MaterialDocumentItem",
+            "Material",
+            "Plant",
+            "StorageLocation",
+            "Batch",
+            "GoodsMovementType",
+            "InventoryStockType",
+            "InventoryValuationType",
+            "InventorySpecialStockType",
+            "Supplier",
+            "Customer",
+            "SalesOrder",
+            "SalesOrderItem",
+            "SalesOrderScheduleLine",
+            "PurchaseOrder",
+            "PurchaseOrderItem",
+            "WBSElement",
+            "ManufacturingOrder",
+            "ManufacturingOrderItem",
+            "GoodsMovementRefDocType",
+            "GoodsMovementReasonCode",
+            "Delivery",
+            "DeliveryItem",
+            "AccountAssignmentCategory",
+            "CostCenter",
+            "ControllingArea",
+            "CostObject",
+            "GLAccount",
+            "FunctionalArea",
+            "ProfitabilitySegment",
+            "ProfitCenter",
+            "MasterFixedAsset",
+            "FixedAsset",
+            "MaterialBaseUnit",
+            "QuantityInBaseUnit",
+            "EntryUnit",
+            "QuantityInEntryUnit",
+            "CompanyCodeCurrency",
+            "GdsMvtExtAmtInCoCodeCrcy",
+            "SlsPrcAmtInclVATInCoCodeCrcy",
+            "FiscalYear",
+            "FiscalYearPeriod",
+            "FiscalYearVariant",
+            "IssgOrRcvgMaterial",
+            "IssgOrRcvgBatch",
+            "IssuingOrReceivingPlant",
+            "IssuingOrReceivingStorageLoc",
+            "IssuingOrReceivingStockType",
+            "IssgOrRcvgSpclStockInd",
+            "IssuingOrReceivingValType",
+            "IsCompletelyDelivered",
+            "MaterialDocumentItemText",
+            "GoodsRecipientName",
+            "UnloadingPointName",
+            "ShelfLifeExpirationDate",
+            "ManufactureDate",
+            "SerialNumbersAreCreatedAutomly",
+            "Reservation",
+            "ReservationItem",
+            "ReservationItemRecordType",
+            "ReservationIsFinallyIssued",
+            "SpecialStockIdfgSalesOrder",
+            "SpecialStockIdfgSalesOrderItem",
+            "SpecialStockIdfgWBSElement",
+            "IsAutomaticallyCreated",
+            "MaterialDocumentLine",
+            "MaterialDocumentParentLine",
+            "HierarchyNodeLevel",
+            "GoodsMovementIsCancelled",
+            "ReversedMaterialDocumentYear",
+            "ReversedMaterialDocument",
+            "ReversedMaterialDocumentItem",
+            "ReferenceDocumentFiscalYear",
+            "InvtryMgmtRefDocumentItem",
+            "InvtryMgmtReferenceDocument",
+            "MaterialDocumentPostingType",
+            "InventoryUsabilityCode",
+            "EWMWarehouse",
+            "EWMStorageBin",
+            "DebitCreditCode",
+            "to_MaterialDocumentHeader",
+            "to_SerialNumbers"
+          ]
+        }
+      },
+      "MaterialDocumentItemOfA_MaterialDocumentHeaderExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MaterialDocumentHeader",
+            "to_SerialNumbers"
+          ]
+        }
+      },
+      "A_MaterialDocumentItemOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "MaterialDocumentYear",
+            "MaterialDocumentYear desc",
+            "MaterialDocument",
+            "MaterialDocument desc",
+            "MaterialDocumentItem",
+            "MaterialDocumentItem desc",
+            "Material",
+            "Material desc",
+            "Plant",
+            "Plant desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "Batch",
+            "Batch desc",
+            "GoodsMovementType",
+            "GoodsMovementType desc",
+            "InventoryStockType",
+            "InventoryStockType desc",
+            "InventoryValuationType",
+            "InventoryValuationType desc",
+            "InventorySpecialStockType",
+            "InventorySpecialStockType desc",
+            "Supplier",
+            "Supplier desc",
+            "Customer",
+            "Customer desc",
+            "SalesOrder",
+            "SalesOrder desc",
+            "SalesOrderItem",
+            "SalesOrderItem desc",
+            "SalesOrderScheduleLine",
+            "SalesOrderScheduleLine desc",
+            "PurchaseOrder",
+            "PurchaseOrder desc",
+            "PurchaseOrderItem",
+            "PurchaseOrderItem desc",
+            "WBSElement",
+            "WBSElement desc",
+            "ManufacturingOrder",
+            "ManufacturingOrder desc",
+            "ManufacturingOrderItem",
+            "ManufacturingOrderItem desc",
+            "GoodsMovementRefDocType",
+            "GoodsMovementRefDocType desc",
+            "GoodsMovementReasonCode",
+            "GoodsMovementReasonCode desc",
+            "Delivery",
+            "Delivery desc",
+            "DeliveryItem",
+            "DeliveryItem desc",
+            "AccountAssignmentCategory",
+            "AccountAssignmentCategory desc",
+            "CostCenter",
+            "CostCenter desc",
+            "ControllingArea",
+            "ControllingArea desc",
+            "CostObject",
+            "CostObject desc",
+            "GLAccount",
+            "GLAccount desc",
+            "FunctionalArea",
+            "FunctionalArea desc",
+            "ProfitabilitySegment",
+            "ProfitabilitySegment desc",
+            "ProfitCenter",
+            "ProfitCenter desc",
+            "MasterFixedAsset",
+            "MasterFixedAsset desc",
+            "FixedAsset",
+            "FixedAsset desc",
+            "MaterialBaseUnit",
+            "MaterialBaseUnit desc",
+            "QuantityInBaseUnit",
+            "QuantityInBaseUnit desc",
+            "EntryUnit",
+            "EntryUnit desc",
+            "QuantityInEntryUnit",
+            "QuantityInEntryUnit desc",
+            "CompanyCodeCurrency",
+            "CompanyCodeCurrency desc",
+            "GdsMvtExtAmtInCoCodeCrcy",
+            "GdsMvtExtAmtInCoCodeCrcy desc",
+            "SlsPrcAmtInclVATInCoCodeCrcy",
+            "SlsPrcAmtInclVATInCoCodeCrcy desc",
+            "FiscalYear",
+            "FiscalYear desc",
+            "FiscalYearPeriod",
+            "FiscalYearPeriod desc",
+            "FiscalYearVariant",
+            "FiscalYearVariant desc",
+            "IssgOrRcvgMaterial",
+            "IssgOrRcvgMaterial desc",
+            "IssgOrRcvgBatch",
+            "IssgOrRcvgBatch desc",
+            "IssuingOrReceivingPlant",
+            "IssuingOrReceivingPlant desc",
+            "IssuingOrReceivingStorageLoc",
+            "IssuingOrReceivingStorageLoc desc",
+            "IssuingOrReceivingStockType",
+            "IssuingOrReceivingStockType desc",
+            "IssgOrRcvgSpclStockInd",
+            "IssgOrRcvgSpclStockInd desc",
+            "IssuingOrReceivingValType",
+            "IssuingOrReceivingValType desc",
+            "IsCompletelyDelivered",
+            "IsCompletelyDelivered desc",
+            "MaterialDocumentItemText",
+            "MaterialDocumentItemText desc",
+            "GoodsRecipientName",
+            "GoodsRecipientName desc",
+            "UnloadingPointName",
+            "UnloadingPointName desc",
+            "ShelfLifeExpirationDate",
+            "ShelfLifeExpirationDate desc",
+            "ManufactureDate",
+            "ManufactureDate desc",
+            "SerialNumbersAreCreatedAutomly",
+            "SerialNumbersAreCreatedAutomly desc",
+            "Reservation",
+            "Reservation desc",
+            "ReservationItem",
+            "ReservationItem desc",
+            "ReservationItemRecordType",
+            "ReservationItemRecordType desc",
+            "ReservationIsFinallyIssued",
+            "ReservationIsFinallyIssued desc",
+            "SpecialStockIdfgSalesOrder",
+            "SpecialStockIdfgSalesOrder desc",
+            "SpecialStockIdfgSalesOrderItem",
+            "SpecialStockIdfgSalesOrderItem desc",
+            "SpecialStockIdfgWBSElement",
+            "SpecialStockIdfgWBSElement desc",
+            "IsAutomaticallyCreated",
+            "IsAutomaticallyCreated desc",
+            "MaterialDocumentLine",
+            "MaterialDocumentLine desc",
+            "MaterialDocumentParentLine",
+            "MaterialDocumentParentLine desc",
+            "HierarchyNodeLevel",
+            "HierarchyNodeLevel desc",
+            "GoodsMovementIsCancelled",
+            "GoodsMovementIsCancelled desc",
+            "ReversedMaterialDocumentYear",
+            "ReversedMaterialDocumentYear desc",
+            "ReversedMaterialDocument",
+            "ReversedMaterialDocument desc",
+            "ReversedMaterialDocumentItem",
+            "ReversedMaterialDocumentItem desc",
+            "ReferenceDocumentFiscalYear",
+            "ReferenceDocumentFiscalYear desc",
+            "InvtryMgmtRefDocumentItem",
+            "InvtryMgmtRefDocumentItem desc",
+            "InvtryMgmtReferenceDocument",
+            "InvtryMgmtReferenceDocument desc",
+            "MaterialDocumentPostingType",
+            "MaterialDocumentPostingType desc",
+            "InventoryUsabilityCode",
+            "InventoryUsabilityCode desc",
+            "EWMWarehouse",
+            "EWMWarehouse desc",
+            "EWMStorageBin",
+            "EWMStorageBin desc",
+            "DebitCreditCode",
+            "DebitCreditCode desc"
+          ]
+        }
+      },
+      "A_MaterialDocumentItemSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "MaterialDocumentYear",
+            "MaterialDocument",
+            "MaterialDocumentItem",
+            "Material",
+            "Plant",
+            "StorageLocation",
+            "Batch",
+            "GoodsMovementType",
+            "InventoryStockType",
+            "InventoryValuationType",
+            "InventorySpecialStockType",
+            "Supplier",
+            "Customer",
+            "SalesOrder",
+            "SalesOrderItem",
+            "SalesOrderScheduleLine",
+            "PurchaseOrder",
+            "PurchaseOrderItem",
+            "WBSElement",
+            "ManufacturingOrder",
+            "ManufacturingOrderItem",
+            "GoodsMovementRefDocType",
+            "GoodsMovementReasonCode",
+            "Delivery",
+            "DeliveryItem",
+            "AccountAssignmentCategory",
+            "CostCenter",
+            "ControllingArea",
+            "CostObject",
+            "GLAccount",
+            "FunctionalArea",
+            "ProfitabilitySegment",
+            "ProfitCenter",
+            "MasterFixedAsset",
+            "FixedAsset",
+            "MaterialBaseUnit",
+            "QuantityInBaseUnit",
+            "EntryUnit",
+            "QuantityInEntryUnit",
+            "CompanyCodeCurrency",
+            "GdsMvtExtAmtInCoCodeCrcy",
+            "SlsPrcAmtInclVATInCoCodeCrcy",
+            "FiscalYear",
+            "FiscalYearPeriod",
+            "FiscalYearVariant",
+            "IssgOrRcvgMaterial",
+            "IssgOrRcvgBatch",
+            "IssuingOrReceivingPlant",
+            "IssuingOrReceivingStorageLoc",
+            "IssuingOrReceivingStockType",
+            "IssgOrRcvgSpclStockInd",
+            "IssuingOrReceivingValType",
+            "IsCompletelyDelivered",
+            "MaterialDocumentItemText",
+            "GoodsRecipientName",
+            "UnloadingPointName",
+            "ShelfLifeExpirationDate",
+            "ManufactureDate",
+            "SerialNumbersAreCreatedAutomly",
+            "Reservation",
+            "ReservationItem",
+            "ReservationItemRecordType",
+            "ReservationIsFinallyIssued",
+            "SpecialStockIdfgSalesOrder",
+            "SpecialStockIdfgSalesOrderItem",
+            "SpecialStockIdfgWBSElement",
+            "IsAutomaticallyCreated",
+            "MaterialDocumentLine",
+            "MaterialDocumentParentLine",
+            "HierarchyNodeLevel",
+            "GoodsMovementIsCancelled",
+            "ReversedMaterialDocumentYear",
+            "ReversedMaterialDocument",
+            "ReversedMaterialDocumentItem",
+            "ReferenceDocumentFiscalYear",
+            "InvtryMgmtRefDocumentItem",
+            "InvtryMgmtReferenceDocument",
+            "MaterialDocumentPostingType",
+            "InventoryUsabilityCode",
+            "EWMWarehouse",
+            "EWMStorageBin",
+            "DebitCreditCode",
+            "to_MaterialDocumentHeader",
+            "to_SerialNumbers"
+          ]
+        }
+      },
+      "A_MaterialDocumentItemExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MaterialDocumentHeader",
+            "to_SerialNumbers"
+          ]
+        }
+      },
+      "MaterialDocumentHeaderOfA_MaterialDocumentItemSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "MaterialDocumentYear",
+            "MaterialDocument",
+            "InventoryTransactionType",
+            "DocumentDate",
+            "PostingDate",
+            "CreationDate",
+            "CreationTime",
+            "CreatedByUser",
+            "MaterialDocumentHeaderText",
+            "ReferenceDocument",
+            "VersionForPrintingSlip",
+            "ManualPrintIsTriggered",
+            "CtrlPostgForExtWhseMgmtSyst",
+            "GoodsMovementCode",
+            "to_MaterialDocumentItem"
+          ]
+        }
+      },
+      "MaterialDocumentHeaderOfA_MaterialDocumentItemExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MaterialDocumentItem"
+          ]
+        }
+      },
+      "SerialNumbersOfA_MaterialDocumentItemOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Material desc",
+            "SerialNumber",
+            "SerialNumber desc",
+            "MaterialDocument",
+            "MaterialDocument desc",
+            "MaterialDocumentItem",
+            "MaterialDocumentItem desc",
+            "MaterialDocumentYear",
+            "MaterialDocumentYear desc",
+            "ManufacturerSerialNumber",
+            "ManufacturerSerialNumber desc"
+          ]
+        }
+      },
+      "SerialNumbersOfA_MaterialDocumentItemSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "SerialNumber",
+            "MaterialDocument",
+            "MaterialDocumentItem",
+            "MaterialDocumentYear",
+            "ManufacturerSerialNumber"
+          ]
+        }
+      },
+      "A_SerialNumberMaterialDocumentOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Material desc",
+            "SerialNumber",
+            "SerialNumber desc",
+            "MaterialDocument",
+            "MaterialDocument desc",
+            "MaterialDocumentItem",
+            "MaterialDocumentItem desc",
+            "MaterialDocumentYear",
+            "MaterialDocumentYear desc",
+            "ManufacturerSerialNumber",
+            "ManufacturerSerialNumber desc"
+          ]
+        }
+      },
+      "A_SerialNumberMaterialDocumentSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "SerialNumber",
+            "MaterialDocument",
+            "MaterialDocumentItem",
+            "MaterialDocumentYear",
+            "ManufacturerSerialNumber"
+          ]
+        }
       }
     },
     "parameters": {
@@ -4176,6 +3963,186 @@
             "allpages",
             "none"
           ]
+        }
+      },
+      "A_MaterialDocumentHeaderOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialDocumentHeaderOrderByOptions"
+        }
+      },
+      "A_MaterialDocumentHeaderSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialDocumentHeaderSelectOptions"
+        }
+      },
+      "A_MaterialDocumentHeaderExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialDocumentHeaderExpandOptions"
+        }
+      },
+      "A_MaterialDocumentHeaderByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialDocumentHeaderSelectOptions"
+        }
+      },
+      "A_MaterialDocumentHeaderByKeyExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialDocumentHeaderExpandOptions"
+        }
+      },
+      "MaterialDocumentItemOfA_MaterialDocumentHeaderOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MaterialDocumentItemOfA_MaterialDocumentHeaderOrderByOptions"
+        }
+      },
+      "MaterialDocumentItemOfA_MaterialDocumentHeaderSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MaterialDocumentItemOfA_MaterialDocumentHeaderSelectOptions"
+        }
+      },
+      "MaterialDocumentItemOfA_MaterialDocumentHeaderExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MaterialDocumentItemOfA_MaterialDocumentHeaderExpandOptions"
+        }
+      },
+      "A_MaterialDocumentItemOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialDocumentItemOrderByOptions"
+        }
+      },
+      "A_MaterialDocumentItemSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialDocumentItemSelectOptions"
+        }
+      },
+      "A_MaterialDocumentItemExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialDocumentItemExpandOptions"
+        }
+      },
+      "A_MaterialDocumentItemByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialDocumentItemSelectOptions"
+        }
+      },
+      "A_MaterialDocumentItemByKeyExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialDocumentItemExpandOptions"
+        }
+      },
+      "MaterialDocumentHeaderOfA_MaterialDocumentItemSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MaterialDocumentHeaderOfA_MaterialDocumentItemSelectOptions"
+        }
+      },
+      "MaterialDocumentHeaderOfA_MaterialDocumentItemExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MaterialDocumentHeaderOfA_MaterialDocumentItemExpandOptions"
+        }
+      },
+      "SerialNumbersOfA_MaterialDocumentItemOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/SerialNumbersOfA_MaterialDocumentItemOrderByOptions"
+        }
+      },
+      "SerialNumbersOfA_MaterialDocumentItemSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/SerialNumbersOfA_MaterialDocumentItemSelectOptions"
+        }
+      },
+      "A_SerialNumberMaterialDocumentOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_SerialNumberMaterialDocumentOrderByOptions"
+        }
+      },
+      "A_SerialNumberMaterialDocumentSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_SerialNumberMaterialDocumentSelectOptions"
+        }
+      },
+      "A_SerialNumberMaterialDocumentByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_SerialNumberMaterialDocumentSelectOptions"
         }
       }
     },
