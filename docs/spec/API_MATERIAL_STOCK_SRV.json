@@ -87,6 +87,7 @@
   "paths": {
     "/A_MaterialSerialNumber": {
       "get": {
+        "operationId": "listA_MaterialSerialNumbers",
         "summary": "Get entities from A_MaterialSerialNumber",
         "tags": [
           "Serial Numbers with Material Stock"
@@ -178,6 +179,7 @@
         }
       ],
       "get": {
+        "operationId": "getA_MaterialSerialNumber",
         "summary": "Get entity from A_MaterialSerialNumber by key",
         "tags": [
           "Serial Numbers with Material Stock"
@@ -237,6 +239,7 @@
         }
       ],
       "get": {
+        "operationId": "listMatlStkInAcctModsOfA_MaterialSerialNumber",
         "summary": "Get entities from related to_MatlStkInAcctMod",
         "tags": [
           "Serial Numbers with Material Stock",
@@ -307,6 +310,7 @@
     },
     "/A_MaterialStock": {
       "get": {
+        "operationId": "listA_MaterialStocks",
         "summary": "Reads material ID and base unit of measure",
         "description": "Reads material ID and base unit of measure for which a certain stock has been posted.",
         "tags": [
@@ -389,6 +393,7 @@
         }
       ],
       "get": {
+        "operationId": "getA_MaterialStock",
         "summary": "Reads material ID and base unit of measure for a specific material",
         "description": "Reads material ID and base unit of measure for which a certain stock has been posted for a specific material.",
         "tags": [
@@ -439,6 +444,7 @@
         }
       ],
       "get": {
+        "operationId": "listMatlStkInAcctModsOfA_MaterialStock",
         "summary": "Reads material stock information for a specific material",
         "description": "Reads material stock information in the account model for a specific material for which a certain stock has been posted.",
         "tags": [
@@ -510,6 +516,7 @@
     },
     "/A_MatlStkInAcctMod": {
       "get": {
+        "operationId": "listA_MatlStkInAcctMods",
         "summary": "Reads material stocks in account model",
         "description": "Reads material stocks in account model for which a certain stock has been posted.",
         "tags": [
@@ -695,6 +702,7 @@
         }
       ],
       "get": {
+        "operationId": "getA_MatlStkInAcctMod",
         "summary": "Reads material stocks in account model for a specific set of stock identifiers",
         "description": "Reads material stocks in account model for which a certain stock has been posted for a specific set of stock identifiers.",
         "tags": [
@@ -848,6 +856,7 @@
         }
       ],
       "get": {
+        "operationId": "listMaterialSerialNumbersOfA_MatlStkInAcctMod",
         "summary": "Get entities from related to_MaterialSerialNumber",
         "tags": [
           "Material Stock",
@@ -1033,6 +1042,7 @@
         }
       ],
       "get": {
+        "operationId": "getMaterialStockOfA_MatlStkInAcctMod",
         "summary": "Reads material stocks in account model for a specific set of stock identifiers including material ID and base unit",
         "description": "Reads material stocks in account model for which a certain stock has been posted for a specific set of stock identifiers including material ID and base unit.",
         "tags": [
@@ -1072,6 +1082,7 @@
     },
     "/$batch": {
       "post": {
+        "operationId": "performBatchOperation",
         "summary": "Send a group of requests",
         "description": "Group multiple requests into a single request payload, see [Batch Requests](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=152).\n\n*Please note that \"Try it out\" is not supported for this request.*",
         "tags": [
