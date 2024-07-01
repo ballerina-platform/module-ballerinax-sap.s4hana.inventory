@@ -88,6 +88,7 @@
   "paths": {
     "/A_MaterialDocumentHeader": {
       "get": {
+        "operationId": "listA_MaterialDocumentHeaders",
         "summary": "Reads information on material document header level",
         "description": "Reads material document header information to get an overview of the material document postings.",
         "tags": [
@@ -156,6 +157,7 @@
         }
       },
       "post": {
+        "operationId": "createA_MaterialDocumentHeader",
         "summary": "Creates a material document",
         "description": "Creates a material document compost by header and item for a specific business process.",
         "tags": [
@@ -219,6 +221,7 @@
         }
       ],
       "get": {
+        "operationId": "getA_MaterialDocumentHeader",
         "summary": "Reads information for a specific material document header",
         "description": "Reads material document header information for a specific material document to get an overview of the material document posting.",
         "tags": [
@@ -279,6 +282,7 @@
         }
       ],
       "get": {
+        "operationId": "listMaterialDocumentItemsOfA_MaterialDocumentHeader",
         "summary": "Reads information for a specific material document header and material document items",
         "description": "Reads material document header and material documents items information for a specific material document to get an overview of the material document posting.",
         "tags": [
@@ -350,6 +354,7 @@
     },
     "/A_MaterialDocumentItem": {
       "get": {
+        "operationId": "listA_MaterialDocumentItems",
         "summary": "Reads information on material document items level",
         "description": "Reads material document items information to get an overview of the material document postings.",
         "tags": [
@@ -452,6 +457,7 @@
         }
       ],
       "get": {
+        "operationId": "getA_MaterialDocumentItem",
         "summary": "Reads information on material document items level for a specific material document",
         "description": "Reads material document items information for a specific material document and year to get an overview of the material document postings.",
         "tags": [
@@ -522,6 +528,7 @@
         }
       ],
       "get": {
+        "operationId": "getMaterialDocumentHeaderOfA_MaterialDocumentItem",
         "summary": "Reads information on material document item and header level for a specific material document item",
         "description": "Reads material document item and header information for a specific material document, year and item to get an overview of the material document posting.",
         "tags": [
@@ -593,6 +600,7 @@
         }
       ],
       "get": {
+        "operationId": "listSerialNumberssOfA_MaterialDocumentItem",
         "summary": "Reads information on serial numbers for a specific material document item",
         "description": "Reads information on serial numbers for a specific material document item to get an overview of the posted serial numbers.",
         "tags": [
@@ -661,6 +669,7 @@
     },
     "/A_SerialNumberMaterialDocument": {
       "get": {
+        "operationId": "listA_SerialNumberMaterialDocuments",
         "summary": "Reads information of serial numbers on material document items level",
         "description": "Reads information of serial numbers of material document items to get an overview of the posted serial numbers.",
         "tags": [
@@ -780,6 +789,7 @@
         }
       ],
       "get": {
+        "operationId": "getA_SerialNumberMaterialDocument",
         "summary": "Reads information of serial number on material document item level for a specific material document, item, year and material",
         "description": "Reads information of serial number of a specific material document, item, year and material to get an overview of the posted serial numbers.",
         "tags": [
@@ -815,6 +825,7 @@
     },
     "/Cancel": {
       "post": {
+        "operationId": "createCancel",
         "summary": "Cancels a material document",
         "description": "Cancels a complete material document that you specify by the material document number and year.",
         "tags": [
@@ -879,6 +890,7 @@
     },
     "/CancelItem": {
       "post": {
+        "operationId": "createCancelItem",
         "summary": "Cancels a material document item",
         "description": "Cancels a material document item that you specify by the material document number, year and item number.",
         "tags": [
@@ -954,6 +966,7 @@
     },
     "/$batch": {
       "post": {
+        "operationId": "performBatchOperation",
         "summary": "Send a group of requests",
         "description": "Group multiple requests into a single request payload, see [Batch Requests](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=152).\n\n*Please note that \"Try it out\" is not supported for this request.*",
         "tags": [
