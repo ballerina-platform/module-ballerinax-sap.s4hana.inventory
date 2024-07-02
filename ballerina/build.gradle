@@ -90,6 +90,7 @@ task build {
     dependsOn(':inventory-ballerina:api_material_stock_srv:commitTomlFiles')
     dependsOn(':inventory-ballerina:api_physical_inventory_doc_srv:commitTomlFiles')
     dependsOn(':inventory-ballerina:api_reservation_document_srv:commitTomlFiles')
+    dependsOn(':inventory-ballerina:ce_apireservationdocument_0001:commitTomlFiles')
 }
 
 publishToMavenLocal.dependsOn build

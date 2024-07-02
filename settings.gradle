@@ -35,6 +35,7 @@ include ':inventory-ballerina:api_material_document_srv'
 include ':inventory-ballerina:api_material_stock_srv'
 include ':inventory-ballerina:api_physical_inventory_doc_srv'
 include ':inventory-ballerina:api_reservation_document_srv'
+include ':inventory-ballerina:ce_apireservationdocument_0001'
 include ':inventory-examples'
 
 project(':inventory-ballerina').projectDir = file("ballerina")
@@ -42,6 +43,7 @@ project(':inventory-ballerina:api_material_document_srv').projectDir = file("bal
 project(':inventory-ballerina:api_material_stock_srv').projectDir = file("ballerina/api_material_stock_srv")
 project(':inventory-ballerina:api_physical_inventory_doc_srv').projectDir = file("ballerina/api_physical_inventory_doc_srv")
 project(':inventory-ballerina:api_reservation_document_srv').projectDir = file("ballerina/api_reservation_document_srv")
+project(':inventory-ballerina:ce_apireservationdocument_0001').projectDir = file("ballerina/ce_apireservationdocument_0001")
 project(':inventory-examples').projectDir = file("examples")
 
 

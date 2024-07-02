@@ -3,7 +3,7 @@
 [S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
 designed for large-scale enterprises by SAP SE.
 
-The `ballerinax/sap.s4hana.api_reservation_document_srv` package provides APIs that enable seamless integration with the [Reservation Document API v1.0.0](https://api.sap.com/api/API_RESERVATION_DOCUMENT_SRV/overview). This service allows user to retrieve, create, update and delete reservation documents.
+The `ballerinax/sap.s4hana.ce_apireservationdocument_0001` package provides APIs that enable seamless integration with the [Reservation Document (A2X) API v1.0.3](https://api.sap.com/api/CE_APIRESERVATIONDOCUMENT_0001/overview). This service allows you to create, update, and delete reservation documents for materials, assigning them to cost centers, sales orders, or assets, and handling transfer postings between plants. It can be consumed by external systems and user interfaces.
 
 ## Setup guide
 
@@ -35,14 +35,14 @@ The `ballerinax/sap.s4hana.api_reservation_document_srv` package provides APIs t
 
 ## Quickstart
 
-To use the `sap.s4hana.api_reservation_document_srv` connector in your Ballerina application, modify the `.bal` file as follows:
+To use the `sap.s4hana.ce_apireservationdocument_0001` connector in your Ballerina application, modify the `.bal` file as follows:
 
 ### Step 1: Import the module
 
-Import the `sap.s4hana.api_reservation_document_srv` module.
+Import the `sap.s4hana.ce_apireservationdocument_0001` module.
 
 ```ballerina
-import ballerinax/sap.s4hana.api_reservation_document_srv as rsvDoc;
+import ballerinax/sap.s4hana.ce_apireservationdocument_0001 as ceRsvDoc;
 ```
 
 ### Step 2: Instantiate a new connector
@@ -54,7 +54,7 @@ configurable string hostname = ?;
 configurable string username = ?;
 configurable string password = ?;
 
-rsvDoc:Client reservationDocumentClient = check new (
+ceRsvDoc:Client ceReservationDocumentClient = check new (
     hostname = hostname,
     config = {
         auth: {
@@ -70,7 +70,7 @@ rsvDoc:Client reservationDocumentClient = check new (
 Now, utilize the available connector operations.
 
 ```ballerina
-rsvDoc:CollectionOfA_ReservationDocumentItemWrapper listAReservationDocumentItems = check reservationDocumentClient->listA_ReservationDocumentItems();
+ceRsvDoc:CollectionOfA_ReservationDocumentItem_2 listReservationDocItems = check ceReservationDocumentClient->listReservationDocumentItems();
 ```
 
 ### Step 4: Run the Ballerina application

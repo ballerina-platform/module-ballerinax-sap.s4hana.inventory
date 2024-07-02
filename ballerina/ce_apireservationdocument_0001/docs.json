@@ -1,0 +1,7 @@
+{
+  "description": "The `ballerinax/sap.s4hana.ce_apireservationdocument_0001` package provides APIs that enable seamless integration with the [Reservation Document (A2X) API v1.0.3](https://api.sap.com/api/CE_APIRESERVATIONDOCUMENT_0001/overview). This service allows you to create, update, and delete reservation documents for materials, assigning them to cost centers, sales orders, or assets, and handling transfer postings between plants. It can be consumed by external systems and user interfaces.",
+  "communication-scenario": "Reservation Integration",
+  "import-statement": "import ballerinax/sap.s4hana.ce_apireservationdocument_0001 as ceRsvDoc;",
+  "client-init": "ceRsvDoc:Client ceReservationDocumentClient = check new (",
+  "api-invocation": "ceRsvDoc:CollectionOfA_ReservationDocumentItem_2 listReservationDocItems = check ceReservationDocumentClient->listReservationDocumentItems();"
+}

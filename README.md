@@ -73,6 +73,7 @@ Execute the commands below to build from the source.
    | api_material_stock_srv          | ballerinax/sap.s4hana.api_material_stock_srv         |
    | api_physical_inventory_doc_srv  | ballerinax/sap.s4hana.api_physical_inventory_doc_srv |
    | api_reservation_document_srv    | ballerinax/sap.s4hana.api_reservation_document_srv   |
+   | ce_apireservationdocument_0001  | ballerinax/sap.s4hana.ce_apireservationdocument_0001 |
 
 5. To run tests against different environment:
 
