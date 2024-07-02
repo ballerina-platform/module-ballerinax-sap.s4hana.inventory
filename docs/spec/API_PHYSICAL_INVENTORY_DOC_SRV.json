@@ -111,123 +111,13 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "FiscalYear",
-                  "FiscalYear desc",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocument desc",
-                  "InventoryTransactionType",
-                  "InventoryTransactionType desc",
-                  "Plant",
-                  "Plant desc",
-                  "StorageLocation",
-                  "StorageLocation desc",
-                  "InventorySpecialStockType",
-                  "InventorySpecialStockType desc",
-                  "DocumentDate",
-                  "DocumentDate desc",
-                  "PhysInventoryPlannedCountDate",
-                  "PhysInventoryPlannedCountDate desc",
-                  "PhysicalInventoryLastCountDate",
-                  "PhysicalInventoryLastCountDate desc",
-                  "PostingDate",
-                  "PostingDate desc",
-                  "FiscalPeriod",
-                  "FiscalPeriod desc",
-                  "CreatedByUser",
-                  "CreatedByUser desc",
-                  "PostingIsBlockedForPhysInvtry",
-                  "PostingIsBlockedForPhysInvtry desc",
-                  "PhysicalInventoryCountStatus",
-                  "PhysicalInventoryCountStatus desc",
-                  "PhysInvtryAdjustmentPostingSts",
-                  "PhysInvtryAdjustmentPostingSts desc",
-                  "PhysInvtryDeletionStatus",
-                  "PhysInvtryDeletionStatus desc",
-                  "PhysInvtryDocHasQtySnapshot",
-                  "PhysInvtryDocHasQtySnapshot desc",
-                  "PhysicalInventoryGroupType",
-                  "PhysicalInventoryGroupType desc",
-                  "PhysicalInventoryGroup",
-                  "PhysicalInventoryGroup desc",
-                  "PhysicalInventoryNumber",
-                  "PhysicalInventoryNumber desc",
-                  "PhysInventoryReferenceNumber",
-                  "PhysInventoryReferenceNumber desc",
-                  "PhysicalInventoryDocumentDesc",
-                  "PhysicalInventoryDocumentDesc desc",
-                  "PhysicalInventoryType",
-                  "PhysicalInventoryType desc",
-                  "LastChangeDateTime",
-                  "LastChangeDateTime desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_PhysInventoryDocHeaderOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "FiscalYear",
-                  "PhysicalInventoryDocument",
-                  "InventoryTransactionType",
-                  "Plant",
-                  "StorageLocation",
-                  "InventorySpecialStockType",
-                  "DocumentDate",
-                  "PhysInventoryPlannedCountDate",
-                  "PhysicalInventoryLastCountDate",
-                  "PostingDate",
-                  "FiscalPeriod",
-                  "CreatedByUser",
-                  "PostingIsBlockedForPhysInvtry",
-                  "PhysicalInventoryCountStatus",
-                  "PhysInvtryAdjustmentPostingSts",
-                  "PhysInvtryDeletionStatus",
-                  "PhysInvtryDocHasQtySnapshot",
-                  "PhysicalInventoryGroupType",
-                  "PhysicalInventoryGroup",
-                  "PhysicalInventoryNumber",
-                  "PhysInventoryReferenceNumber",
-                  "PhysicalInventoryDocumentDesc",
-                  "PhysicalInventoryType",
-                  "LastChangeDateTime",
-                  "to_PhysicalInventoryDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_PhysInventoryDocHeaderSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_PhysicalInventoryDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_PhysInventoryDocHeaderExpandOptions"
           }
         ],
         "responses": {
@@ -236,11 +126,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Wrapper",
+                  "title": "CollectionOfA_PhysInventoryDocHeaderWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "title": "Collection of A_PhysInventoryDocHeaderType",
+                      "title": "CollectionOfA_PhysInventoryDocHeader",
                       "type": "object",
                       "properties": {
                         "__count": {
@@ -249,7 +139,7 @@
                         "results": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"
+                            "$ref": "#/components/schemas/A_PhysInventoryDocHeader"
                           }
                         }
                       }
@@ -276,7 +166,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType-create"
+                "$ref": "#/components/schemas/CreateA_PhysInventoryDocHeader"
               }
             }
           }
@@ -287,11 +177,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_PhysInventoryDocHeaderType",
+                  "title": "A_PhysInventoryDocHeader",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"
+                      "$ref": "#/components/schemas/A_PhysInventoryDocHeader"
                     }
                   }
                 }
@@ -335,60 +225,10 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "FiscalYear",
-                  "PhysicalInventoryDocument",
-                  "InventoryTransactionType",
-                  "Plant",
-                  "StorageLocation",
-                  "InventorySpecialStockType",
-                  "DocumentDate",
-                  "PhysInventoryPlannedCountDate",
-                  "PhysicalInventoryLastCountDate",
-                  "PostingDate",
-                  "FiscalPeriod",
-                  "CreatedByUser",
-                  "PostingIsBlockedForPhysInvtry",
-                  "PhysicalInventoryCountStatus",
-                  "PhysInvtryAdjustmentPostingSts",
-                  "PhysInvtryDeletionStatus",
-                  "PhysInvtryDocHasQtySnapshot",
-                  "PhysicalInventoryGroupType",
-                  "PhysicalInventoryGroup",
-                  "PhysicalInventoryNumber",
-                  "PhysInventoryReferenceNumber",
-                  "PhysicalInventoryDocumentDesc",
-                  "PhysicalInventoryType",
-                  "LastChangeDateTime",
-                  "to_PhysicalInventoryDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_PhysInventoryDocHeaderByKeySelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_PhysicalInventoryDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_PhysInventoryDocHeaderByKeyExpandOptions"
           }
         ],
         "responses": {
@@ -397,11 +237,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_PhysInventoryDocHeaderType",
+                  "title": "A_PhysInventoryDocHeaderWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"
+                      "$ref": "#/components/schemas/A_PhysInventoryDocHeader"
                     }
                   }
                 }
@@ -463,191 +303,13 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "FiscalYear",
-                  "FiscalYear desc",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocument desc",
-                  "PhysicalInventoryDocumentItem",
-                  "PhysicalInventoryDocumentItem desc",
-                  "Plant",
-                  "Plant desc",
-                  "StorageLocation",
-                  "StorageLocation desc",
-                  "Material",
-                  "Material desc",
-                  "Batch",
-                  "Batch desc",
-                  "InventorySpecialStockType",
-                  "InventorySpecialStockType desc",
-                  "PhysicalInventoryStockType",
-                  "PhysicalInventoryStockType desc",
-                  "SalesOrder",
-                  "SalesOrder desc",
-                  "SalesOrderItem",
-                  "SalesOrderItem desc",
-                  "Supplier",
-                  "Supplier desc",
-                  "Customer",
-                  "Customer desc",
-                  "WBSElement",
-                  "WBSElement desc",
-                  "LastChangeUser",
-                  "LastChangeUser desc",
-                  "LastChangeDate",
-                  "LastChangeDate desc",
-                  "CountedByUser",
-                  "CountedByUser desc",
-                  "PhysicalInventoryLastCountDate",
-                  "PhysicalInventoryLastCountDate desc",
-                  "AdjustmentPostingMadeByUser",
-                  "AdjustmentPostingMadeByUser desc",
-                  "PostingDate",
-                  "PostingDate desc",
-                  "PhysicalInventoryItemIsCounted",
-                  "PhysicalInventoryItemIsCounted desc",
-                  "PhysInvtryDifferenceIsPosted",
-                  "PhysInvtryDifferenceIsPosted desc",
-                  "PhysInvtryItemIsRecounted",
-                  "PhysInvtryItemIsRecounted desc",
-                  "PhysInvtryItemIsDeleted",
-                  "PhysInvtryItemIsDeleted desc",
-                  "IsHandledInAltvUnitOfMsr",
-                  "IsHandledInAltvUnitOfMsr desc",
-                  "CycleCountType",
-                  "CycleCountType desc",
-                  "IsValueOnlyMaterial",
-                  "IsValueOnlyMaterial desc",
-                  "PhysInventoryReferenceNumber",
-                  "PhysInventoryReferenceNumber desc",
-                  "MaterialDocument",
-                  "MaterialDocument desc",
-                  "MaterialDocumentYear",
-                  "MaterialDocumentYear desc",
-                  "MaterialDocumentItem",
-                  "MaterialDocumentItem desc",
-                  "PhysInvtryRecountDocument",
-                  "PhysInvtryRecountDocument desc",
-                  "PhysicalInventoryItemIsZero",
-                  "PhysicalInventoryItemIsZero desc",
-                  "ReasonForPhysInvtryDifference",
-                  "ReasonForPhysInvtryDifference desc",
-                  "MaterialBaseUnit",
-                  "MaterialBaseUnit desc",
-                  "BookQtyBfrCountInMatlBaseUnit",
-                  "BookQtyBfrCountInMatlBaseUnit desc",
-                  "Quantity",
-                  "Quantity desc",
-                  "UnitOfEntry",
-                  "UnitOfEntry desc",
-                  "QuantityInUnitOfEntry",
-                  "QuantityInUnitOfEntry desc",
-                  "Currency",
-                  "Currency desc",
-                  "DifferenceAmountInCoCodeCrcy",
-                  "DifferenceAmountInCoCodeCrcy desc",
-                  "EnteredSlsAmtInCoCodeCrcy",
-                  "EnteredSlsAmtInCoCodeCrcy desc",
-                  "SlsPriceAmountInCoCodeCrcy",
-                  "SlsPriceAmountInCoCodeCrcy desc",
-                  "PhysInvtryCtAmtInCoCodeCrcy",
-                  "PhysInvtryCtAmtInCoCodeCrcy desc",
-                  "BookQtyAmountInCoCodeCrcy",
-                  "BookQtyAmountInCoCodeCrcy desc",
-                  "LastChangeDateTime",
-                  "LastChangeDateTime desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "FiscalYear",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocumentItem",
-                  "Plant",
-                  "StorageLocation",
-                  "Material",
-                  "Batch",
-                  "InventorySpecialStockType",
-                  "PhysicalInventoryStockType",
-                  "SalesOrder",
-                  "SalesOrderItem",
-                  "Supplier",
-                  "Customer",
-                  "WBSElement",
-                  "LastChangeUser",
-                  "LastChangeDate",
-                  "CountedByUser",
-                  "PhysicalInventoryLastCountDate",
-                  "AdjustmentPostingMadeByUser",
-                  "PostingDate",
-                  "PhysicalInventoryItemIsCounted",
-                  "PhysInvtryDifferenceIsPosted",
-                  "PhysInvtryItemIsRecounted",
-                  "PhysInvtryItemIsDeleted",
-                  "IsHandledInAltvUnitOfMsr",
-                  "CycleCountType",
-                  "IsValueOnlyMaterial",
-                  "PhysInventoryReferenceNumber",
-                  "MaterialDocument",
-                  "MaterialDocumentYear",
-                  "MaterialDocumentItem",
-                  "PhysInvtryRecountDocument",
-                  "PhysicalInventoryItemIsZero",
-                  "ReasonForPhysInvtryDifference",
-                  "MaterialBaseUnit",
-                  "BookQtyBfrCountInMatlBaseUnit",
-                  "Quantity",
-                  "UnitOfEntry",
-                  "QuantityInUnitOfEntry",
-                  "Currency",
-                  "DifferenceAmountInCoCodeCrcy",
-                  "EnteredSlsAmtInCoCodeCrcy",
-                  "SlsPriceAmountInCoCodeCrcy",
-                  "PhysInvtryCtAmtInCoCodeCrcy",
-                  "BookQtyAmountInCoCodeCrcy",
-                  "LastChangeDateTime",
-                  "to_PhysicalInventoryDocument",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_PhysicalInventoryDocument",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderExpandOptions"
           }
         ],
         "responses": {
@@ -656,11 +318,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Wrapper",
+                  "title": "CollectionOfA_PhysInventoryDocItemWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "title": "Collection of A_PhysInventoryDocItemType",
+                      "title": "CollectionOfA_PhysInventoryDocItem",
                       "type": "object",
                       "properties": {
                         "__count": {
@@ -669,7 +331,7 @@
                         "results": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType"
+                            "$ref": "#/components/schemas/A_PhysInventoryDocItem"
                           }
                         }
                       }
@@ -711,191 +373,13 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "FiscalYear",
-                  "FiscalYear desc",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocument desc",
-                  "PhysicalInventoryDocumentItem",
-                  "PhysicalInventoryDocumentItem desc",
-                  "Plant",
-                  "Plant desc",
-                  "StorageLocation",
-                  "StorageLocation desc",
-                  "Material",
-                  "Material desc",
-                  "Batch",
-                  "Batch desc",
-                  "InventorySpecialStockType",
-                  "InventorySpecialStockType desc",
-                  "PhysicalInventoryStockType",
-                  "PhysicalInventoryStockType desc",
-                  "SalesOrder",
-                  "SalesOrder desc",
-                  "SalesOrderItem",
-                  "SalesOrderItem desc",
-                  "Supplier",
-                  "Supplier desc",
-                  "Customer",
-                  "Customer desc",
-                  "WBSElement",
-                  "WBSElement desc",
-                  "LastChangeUser",
-                  "LastChangeUser desc",
-                  "LastChangeDate",
-                  "LastChangeDate desc",
-                  "CountedByUser",
-                  "CountedByUser desc",
-                  "PhysicalInventoryLastCountDate",
-                  "PhysicalInventoryLastCountDate desc",
-                  "AdjustmentPostingMadeByUser",
-                  "AdjustmentPostingMadeByUser desc",
-                  "PostingDate",
-                  "PostingDate desc",
-                  "PhysicalInventoryItemIsCounted",
-                  "PhysicalInventoryItemIsCounted desc",
-                  "PhysInvtryDifferenceIsPosted",
-                  "PhysInvtryDifferenceIsPosted desc",
-                  "PhysInvtryItemIsRecounted",
-                  "PhysInvtryItemIsRecounted desc",
-                  "PhysInvtryItemIsDeleted",
-                  "PhysInvtryItemIsDeleted desc",
-                  "IsHandledInAltvUnitOfMsr",
-                  "IsHandledInAltvUnitOfMsr desc",
-                  "CycleCountType",
-                  "CycleCountType desc",
-                  "IsValueOnlyMaterial",
-                  "IsValueOnlyMaterial desc",
-                  "PhysInventoryReferenceNumber",
-                  "PhysInventoryReferenceNumber desc",
-                  "MaterialDocument",
-                  "MaterialDocument desc",
-                  "MaterialDocumentYear",
-                  "MaterialDocumentYear desc",
-                  "MaterialDocumentItem",
-                  "MaterialDocumentItem desc",
-                  "PhysInvtryRecountDocument",
-                  "PhysInvtryRecountDocument desc",
-                  "PhysicalInventoryItemIsZero",
-                  "PhysicalInventoryItemIsZero desc",
-                  "ReasonForPhysInvtryDifference",
-                  "ReasonForPhysInvtryDifference desc",
-                  "MaterialBaseUnit",
-                  "MaterialBaseUnit desc",
-                  "BookQtyBfrCountInMatlBaseUnit",
-                  "BookQtyBfrCountInMatlBaseUnit desc",
-                  "Quantity",
-                  "Quantity desc",
-                  "UnitOfEntry",
-                  "UnitOfEntry desc",
-                  "QuantityInUnitOfEntry",
-                  "QuantityInUnitOfEntry desc",
-                  "Currency",
-                  "Currency desc",
-                  "DifferenceAmountInCoCodeCrcy",
-                  "DifferenceAmountInCoCodeCrcy desc",
-                  "EnteredSlsAmtInCoCodeCrcy",
-                  "EnteredSlsAmtInCoCodeCrcy desc",
-                  "SlsPriceAmountInCoCodeCrcy",
-                  "SlsPriceAmountInCoCodeCrcy desc",
-                  "PhysInvtryCtAmtInCoCodeCrcy",
-                  "PhysInvtryCtAmtInCoCodeCrcy desc",
-                  "BookQtyAmountInCoCodeCrcy",
-                  "BookQtyAmountInCoCodeCrcy desc",
-                  "LastChangeDateTime",
-                  "LastChangeDateTime desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_PhysInventoryDocItemOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "FiscalYear",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocumentItem",
-                  "Plant",
-                  "StorageLocation",
-                  "Material",
-                  "Batch",
-                  "InventorySpecialStockType",
-                  "PhysicalInventoryStockType",
-                  "SalesOrder",
-                  "SalesOrderItem",
-                  "Supplier",
-                  "Customer",
-                  "WBSElement",
-                  "LastChangeUser",
-                  "LastChangeDate",
-                  "CountedByUser",
-                  "PhysicalInventoryLastCountDate",
-                  "AdjustmentPostingMadeByUser",
-                  "PostingDate",
-                  "PhysicalInventoryItemIsCounted",
-                  "PhysInvtryDifferenceIsPosted",
-                  "PhysInvtryItemIsRecounted",
-                  "PhysInvtryItemIsDeleted",
-                  "IsHandledInAltvUnitOfMsr",
-                  "CycleCountType",
-                  "IsValueOnlyMaterial",
-                  "PhysInventoryReferenceNumber",
-                  "MaterialDocument",
-                  "MaterialDocumentYear",
-                  "MaterialDocumentItem",
-                  "PhysInvtryRecountDocument",
-                  "PhysicalInventoryItemIsZero",
-                  "ReasonForPhysInvtryDifference",
-                  "MaterialBaseUnit",
-                  "BookQtyBfrCountInMatlBaseUnit",
-                  "Quantity",
-                  "UnitOfEntry",
-                  "QuantityInUnitOfEntry",
-                  "Currency",
-                  "DifferenceAmountInCoCodeCrcy",
-                  "EnteredSlsAmtInCoCodeCrcy",
-                  "SlsPriceAmountInCoCodeCrcy",
-                  "PhysInvtryCtAmtInCoCodeCrcy",
-                  "BookQtyAmountInCoCodeCrcy",
-                  "LastChangeDateTime",
-                  "to_PhysicalInventoryDocument",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_PhysInventoryDocItemSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_PhysicalInventoryDocument",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_PhysInventoryDocItemExpandOptions"
           }
         ],
         "responses": {
@@ -904,11 +388,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Wrapper",
+                  "title": "CollectionOfA_PhysInventoryDocItemWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "title": "Collection of A_PhysInventoryDocItemType",
+                      "title": "CollectionOfA_PhysInventoryDocItem",
                       "type": "object",
                       "properties": {
                         "__count": {
@@ -917,7 +401,7 @@
                         "results": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType"
+                            "$ref": "#/components/schemas/A_PhysInventoryDocItem"
                           }
                         }
                       }
@@ -974,84 +458,10 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "FiscalYear",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocumentItem",
-                  "Plant",
-                  "StorageLocation",
-                  "Material",
-                  "Batch",
-                  "InventorySpecialStockType",
-                  "PhysicalInventoryStockType",
-                  "SalesOrder",
-                  "SalesOrderItem",
-                  "Supplier",
-                  "Customer",
-                  "WBSElement",
-                  "LastChangeUser",
-                  "LastChangeDate",
-                  "CountedByUser",
-                  "PhysicalInventoryLastCountDate",
-                  "AdjustmentPostingMadeByUser",
-                  "PostingDate",
-                  "PhysicalInventoryItemIsCounted",
-                  "PhysInvtryDifferenceIsPosted",
-                  "PhysInvtryItemIsRecounted",
-                  "PhysInvtryItemIsDeleted",
-                  "IsHandledInAltvUnitOfMsr",
-                  "CycleCountType",
-                  "IsValueOnlyMaterial",
-                  "PhysInventoryReferenceNumber",
-                  "MaterialDocument",
-                  "MaterialDocumentYear",
-                  "MaterialDocumentItem",
-                  "PhysInvtryRecountDocument",
-                  "PhysicalInventoryItemIsZero",
-                  "ReasonForPhysInvtryDifference",
-                  "MaterialBaseUnit",
-                  "BookQtyBfrCountInMatlBaseUnit",
-                  "Quantity",
-                  "UnitOfEntry",
-                  "QuantityInUnitOfEntry",
-                  "Currency",
-                  "DifferenceAmountInCoCodeCrcy",
-                  "EnteredSlsAmtInCoCodeCrcy",
-                  "SlsPriceAmountInCoCodeCrcy",
-                  "PhysInvtryCtAmtInCoCodeCrcy",
-                  "BookQtyAmountInCoCodeCrcy",
-                  "LastChangeDateTime",
-                  "to_PhysicalInventoryDocument",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_PhysInventoryDocItemByKeySelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_PhysicalInventoryDocument",
-                  "to_SerialNumbers"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_PhysInventoryDocItemByKeyExpandOptions"
           }
         ],
         "responses": {
@@ -1060,11 +470,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_PhysInventoryDocItemType",
+                  "title": "A_PhysInventoryDocItemWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType"
+                      "$ref": "#/components/schemas/A_PhysInventoryDocItem"
                     }
                   }
                 }
@@ -1092,7 +502,7 @@
                 "type": "object",
                 "properties": {
                   "d": {
-                    "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType-update"
+                    "$ref": "#/components/schemas/UpdateA_PhysInventoryDocItem"
                   }
                 }
               }
@@ -1151,60 +561,10 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "FiscalYear",
-                  "PhysicalInventoryDocument",
-                  "InventoryTransactionType",
-                  "Plant",
-                  "StorageLocation",
-                  "InventorySpecialStockType",
-                  "DocumentDate",
-                  "PhysInventoryPlannedCountDate",
-                  "PhysicalInventoryLastCountDate",
-                  "PostingDate",
-                  "FiscalPeriod",
-                  "CreatedByUser",
-                  "PostingIsBlockedForPhysInvtry",
-                  "PhysicalInventoryCountStatus",
-                  "PhysInvtryAdjustmentPostingSts",
-                  "PhysInvtryDeletionStatus",
-                  "PhysInvtryDocHasQtySnapshot",
-                  "PhysicalInventoryGroupType",
-                  "PhysicalInventoryGroup",
-                  "PhysicalInventoryNumber",
-                  "PhysInventoryReferenceNumber",
-                  "PhysicalInventoryDocumentDesc",
-                  "PhysicalInventoryType",
-                  "LastChangeDateTime",
-                  "to_PhysicalInventoryDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/PhysicalInventoryDocumentOfA_PhysInventoryDocItemSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "to_PhysicalInventoryDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/PhysicalInventoryDocumentOfA_PhysInventoryDocItemExpandOptions"
           }
         ],
         "responses": {
@@ -1213,11 +573,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_PhysInventoryDocHeaderType",
+                  "title": "A_PhysInventoryDocHeaderWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"
+                      "$ref": "#/components/schemas/A_PhysInventoryDocHeader"
                     }
                   }
                 }
@@ -1289,55 +649,10 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Equipment",
-                  "Equipment desc",
-                  "FiscalYear",
-                  "FiscalYear desc",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocument desc",
-                  "PhysicalInventoryDocumentItem",
-                  "PhysicalInventoryDocumentItem desc",
-                  "SerialNumberPhysicalInvtryType",
-                  "SerialNumberPhysicalInvtryType desc",
-                  "Material",
-                  "Material desc",
-                  "SerialNumber",
-                  "SerialNumber desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/SerialNumbersOfA_PhysInventoryDocItemOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Equipment",
-                  "FiscalYear",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocumentItem",
-                  "SerialNumberPhysicalInvtryType",
-                  "Material",
-                  "SerialNumber"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/SerialNumbersOfA_PhysInventoryDocItemSelectOptions"
           }
         ],
         "responses": {
@@ -1346,11 +661,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Wrapper",
+                  "title": "CollectionOfA_SerialNumberPhysInventoryDocWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "title": "Collection of A_SerialNumberPhysInventoryDocType",
+                      "title": "CollectionOfA_SerialNumberPhysInventoryDoc",
                       "type": "object",
                       "properties": {
                         "__count": {
@@ -1359,7 +674,7 @@
                         "results": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_SerialNumberPhysInventoryDocType"
+                            "$ref": "#/components/schemas/A_SerialNumberPhysInventoryDoc"
                           }
                         }
                       }
@@ -1401,55 +716,10 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Equipment",
-                  "Equipment desc",
-                  "FiscalYear",
-                  "FiscalYear desc",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocument desc",
-                  "PhysicalInventoryDocumentItem",
-                  "PhysicalInventoryDocumentItem desc",
-                  "SerialNumberPhysicalInvtryType",
-                  "SerialNumberPhysicalInvtryType desc",
-                  "Material",
-                  "Material desc",
-                  "SerialNumber",
-                  "SerialNumber desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_SerialNumberPhysInventoryDocOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Equipment",
-                  "FiscalYear",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocumentItem",
-                  "SerialNumberPhysicalInvtryType",
-                  "Material",
-                  "SerialNumber"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_SerialNumberPhysInventoryDocSelectOptions"
           }
         ],
         "responses": {
@@ -1458,11 +728,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Wrapper",
+                  "title": "CollectionOfA_SerialNumberPhysInventoryDocWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "title": "Collection of A_SerialNumberPhysInventoryDocType",
+                      "title": "CollectionOfA_SerialNumberPhysInventoryDoc",
                       "type": "object",
                       "properties": {
                         "__count": {
@@ -1471,7 +741,7 @@
                         "results": {
                           "type": "array",
                           "items": {
-                            "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_SerialNumberPhysInventoryDocType"
+                            "$ref": "#/components/schemas/A_SerialNumberPhysInventoryDoc"
                           }
                         }
                       }
@@ -1548,26 +818,7 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Equipment",
-                  "FiscalYear",
-                  "PhysicalInventoryDocument",
-                  "PhysicalInventoryDocumentItem",
-                  "SerialNumberPhysicalInvtryType",
-                  "Material",
-                  "SerialNumber"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/A_SerialNumberPhysInventoryDocByKeySelectOptions"
           }
         ],
         "responses": {
@@ -1576,11 +827,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_SerialNumberPhysInventoryDocType",
+                  "title": "A_SerialNumberPhysInventoryDocWrapper",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_SerialNumberPhysInventoryDocType"
+                      "$ref": "#/components/schemas/A_SerialNumberPhysInventoryDoc"
                     }
                   }
                 }
@@ -1608,7 +859,7 @@
                 "type": "object",
                 "properties": {
                   "d": {
-                    "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_SerialNumberPhysInventoryDocType-update"
+                    "$ref": "#/components/schemas/UpdateA_SerialNumberPhysInventoryDoc"
                   }
                 }
               }
@@ -1686,11 +937,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_PhysInventoryDocHeaderType",
+                  "title": "A_PhysInventoryDocHeader",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"
+                      "$ref": "#/components/schemas/A_PhysInventoryDocHeader"
                     }
                   }
                 }
@@ -1794,11 +1045,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_PhysInventoryDocItemType",
+                  "title": "A_PhysInventoryDocItem",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType"
+                      "$ref": "#/components/schemas/A_PhysInventoryDocItem"
                     }
                   }
                 }
@@ -1933,11 +1184,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_PhysInventoryDocHeaderType",
+                  "title": "A_PhysInventoryDocHeader",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"
+                      "$ref": "#/components/schemas/A_PhysInventoryDocHeader"
                     }
                   }
                 }
@@ -2069,11 +1320,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "A_PhysInventoryDocItemType",
+                  "title": "A_PhysInventoryDocItem",
                   "type": "object",
                   "properties": {
                     "d": {
-                      "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType"
+                      "$ref": "#/components/schemas/A_PhysInventoryDocItem"
                     }
                   }
                 }
@@ -2126,7 +1377,7 @@
   },
   "components": {
     "schemas": {
-      "API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType": {
+      "A_PhysInventoryDocHeader": {
         "type": "object",
         "properties": {
           "FiscalYear": {
@@ -2289,7 +1540,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType"
+                  "$ref": "#/components/schemas/A_PhysInventoryDocItem"
                 }
               }
             }
@@ -2297,7 +1548,7 @@
         },
         "title": "Document Header"
       },
-      "API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType-create": {
+      "CreateA_PhysInventoryDocHeader": {
         "type": "object",
         "properties": {
           "FiscalYear": {
@@ -2460,7 +1711,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType-create"
+                  "$ref": "#/components/schemas/CreateA_PhysInventoryDocItem"
                 }
               }
             }
@@ -2472,7 +1723,7 @@
         ],
         "title": "Document Header (for create)"
       },
-      "API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType-update": {
+      "UpdateA_PhysInventoryDocHeader": {
         "type": "object",
         "properties": {
           "InventoryTransactionType": {
@@ -2622,7 +1873,7 @@
         },
         "title": "Document Header (for update)"
       },
-      "API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType": {
+      "A_PhysInventoryDocItem": {
         "type": "object",
         "properties": {
           "FiscalYear": {
@@ -2965,7 +2216,7 @@
             "description": "Last Change Timestamp"
           },
           "to_PhysicalInventoryDocument": {
-            "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType"
+            "$ref": "#/components/schemas/A_PhysInventoryDocHeader"
           },
           "to_SerialNumbers": {
             "type": "object",
@@ -2973,7 +2224,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_SerialNumberPhysInventoryDocType"
+                  "$ref": "#/components/schemas/A_SerialNumberPhysInventoryDoc"
                 }
               }
             }
@@ -2981,7 +2232,7 @@
         },
         "title": "Document Items"
       },
-      "API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType-create": {
+      "CreateA_PhysInventoryDocItem": {
         "type": "object",
         "properties": {
           "FiscalYear": {
@@ -3324,7 +2575,7 @@
             "description": "Last Change Timestamp"
           },
           "to_PhysicalInventoryDocument": {
-            "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocHeaderType-create"
+            "$ref": "#/components/schemas/CreateA_PhysInventoryDocHeader"
           },
           "to_SerialNumbers": {
             "type": "object",
@@ -3332,7 +2583,7 @@
               "results": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/components/schemas/API_PHYSICAL_INVENTORY_DOC_SRV.A_SerialNumberPhysInventoryDocType-create"
+                  "$ref": "#/components/schemas/CreateA_SerialNumberPhysInventoryDoc"
                 }
               }
             }
@@ -3345,7 +2596,7 @@
         ],
         "title": "Document Items (for create)"
       },
-      "API_PHYSICAL_INVENTORY_DOC_SRV.A_PhysInventoryDocItemType-update": {
+      "UpdateA_PhysInventoryDocItem": {
         "type": "object",
         "properties": {
           "Plant": {
@@ -3674,7 +2925,7 @@
         },
         "title": "Document Items (for update)"
       },
-      "API_PHYSICAL_INVENTORY_DOC_SRV.A_SerialNumberPhysInventoryDocType": {
+      "A_SerialNumberPhysInventoryDoc": {
         "type": "object",
         "properties": {
           "Equipment": {
@@ -3721,7 +2972,7 @@
         },
         "title": "Document Serial Number"
       },
-      "API_PHYSICAL_INVENTORY_DOC_SRV.A_SerialNumberPhysInventoryDocType-create": {
+      "CreateA_SerialNumberPhysInventoryDoc": {
         "type": "object",
         "properties": {
           "Equipment": {
@@ -3775,7 +3026,7 @@
         ],
         "title": "Document Serial Number (for create)"
       },
-      "API_PHYSICAL_INVENTORY_DOC_SRV.A_SerialNumberPhysInventoryDocType-update": {
+      "UpdateA_SerialNumberPhysInventoryDoc": {
         "type": "object",
         "properties": {
           "Material": {
@@ -3836,6 +3087,567 @@
             }
           }
         }
+      },
+      "A_PhysInventoryDocHeaderOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "FiscalYear",
+            "FiscalYear desc",
+            "PhysicalInventoryDocument",
+            "PhysicalInventoryDocument desc",
+            "InventoryTransactionType",
+            "InventoryTransactionType desc",
+            "Plant",
+            "Plant desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "InventorySpecialStockType",
+            "InventorySpecialStockType desc",
+            "DocumentDate",
+            "DocumentDate desc",
+            "PhysInventoryPlannedCountDate",
+            "PhysInventoryPlannedCountDate desc",
+            "PhysicalInventoryLastCountDate",
+            "PhysicalInventoryLastCountDate desc",
+            "PostingDate",
+            "PostingDate desc",
+            "FiscalPeriod",
+            "FiscalPeriod desc",
+            "CreatedByUser",
+            "CreatedByUser desc",
+            "PostingIsBlockedForPhysInvtry",
+            "PostingIsBlockedForPhysInvtry desc",
+            "PhysicalInventoryCountStatus",
+            "PhysicalInventoryCountStatus desc",
+            "PhysInvtryAdjustmentPostingSts",
+            "PhysInvtryAdjustmentPostingSts desc",
+            "PhysInvtryDeletionStatus",
+            "PhysInvtryDeletionStatus desc",
+            "PhysInvtryDocHasQtySnapshot",
+            "PhysInvtryDocHasQtySnapshot desc",
+            "PhysicalInventoryGroupType",
+            "PhysicalInventoryGroupType desc",
+            "PhysicalInventoryGroup",
+            "PhysicalInventoryGroup desc",
+            "PhysicalInventoryNumber",
+            "PhysicalInventoryNumber desc",
+            "PhysInventoryReferenceNumber",
+            "PhysInventoryReferenceNumber desc",
+            "PhysicalInventoryDocumentDesc",
+            "PhysicalInventoryDocumentDesc desc",
+            "PhysicalInventoryType",
+            "PhysicalInventoryType desc",
+            "LastChangeDateTime",
+            "LastChangeDateTime desc"
+          ]
+        }
+      },
+      "A_PhysInventoryDocHeaderSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "FiscalYear",
+            "PhysicalInventoryDocument",
+            "InventoryTransactionType",
+            "Plant",
+            "StorageLocation",
+            "InventorySpecialStockType",
+            "DocumentDate",
+            "PhysInventoryPlannedCountDate",
+            "PhysicalInventoryLastCountDate",
+            "PostingDate",
+            "FiscalPeriod",
+            "CreatedByUser",
+            "PostingIsBlockedForPhysInvtry",
+            "PhysicalInventoryCountStatus",
+            "PhysInvtryAdjustmentPostingSts",
+            "PhysInvtryDeletionStatus",
+            "PhysInvtryDocHasQtySnapshot",
+            "PhysicalInventoryGroupType",
+            "PhysicalInventoryGroup",
+            "PhysicalInventoryNumber",
+            "PhysInventoryReferenceNumber",
+            "PhysicalInventoryDocumentDesc",
+            "PhysicalInventoryType",
+            "LastChangeDateTime",
+            "to_PhysicalInventoryDocumentItem"
+          ]
+        }
+      },
+      "A_PhysInventoryDocHeaderExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_PhysicalInventoryDocumentItem"
+          ]
+        }
+      },
+      "PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "FiscalYear",
+            "FiscalYear desc",
+            "PhysicalInventoryDocument",
+            "PhysicalInventoryDocument desc",
+            "PhysicalInventoryDocumentItem",
+            "PhysicalInventoryDocumentItem desc",
+            "Plant",
+            "Plant desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "Material",
+            "Material desc",
+            "Batch",
+            "Batch desc",
+            "InventorySpecialStockType",
+            "InventorySpecialStockType desc",
+            "PhysicalInventoryStockType",
+            "PhysicalInventoryStockType desc",
+            "SalesOrder",
+            "SalesOrder desc",
+            "SalesOrderItem",
+            "SalesOrderItem desc",
+            "Supplier",
+            "Supplier desc",
+            "Customer",
+            "Customer desc",
+            "WBSElement",
+            "WBSElement desc",
+            "LastChangeUser",
+            "LastChangeUser desc",
+            "LastChangeDate",
+            "LastChangeDate desc",
+            "CountedByUser",
+            "CountedByUser desc",
+            "PhysicalInventoryLastCountDate",
+            "PhysicalInventoryLastCountDate desc",
+            "AdjustmentPostingMadeByUser",
+            "AdjustmentPostingMadeByUser desc",
+            "PostingDate",
+            "PostingDate desc",
+            "PhysicalInventoryItemIsCounted",
+            "PhysicalInventoryItemIsCounted desc",
+            "PhysInvtryDifferenceIsPosted",
+            "PhysInvtryDifferenceIsPosted desc",
+            "PhysInvtryItemIsRecounted",
+            "PhysInvtryItemIsRecounted desc",
+            "PhysInvtryItemIsDeleted",
+            "PhysInvtryItemIsDeleted desc",
+            "IsHandledInAltvUnitOfMsr",
+            "IsHandledInAltvUnitOfMsr desc",
+            "CycleCountType",
+            "CycleCountType desc",
+            "IsValueOnlyMaterial",
+            "IsValueOnlyMaterial desc",
+            "PhysInventoryReferenceNumber",
+            "PhysInventoryReferenceNumber desc",
+            "MaterialDocument",
+            "MaterialDocument desc",
+            "MaterialDocumentYear",
+            "MaterialDocumentYear desc",
+            "MaterialDocumentItem",
+            "MaterialDocumentItem desc",
+            "PhysInvtryRecountDocument",
+            "PhysInvtryRecountDocument desc",
+            "PhysicalInventoryItemIsZero",
+            "PhysicalInventoryItemIsZero desc",
+            "ReasonForPhysInvtryDifference",
+            "ReasonForPhysInvtryDifference desc",
+            "MaterialBaseUnit",
+            "MaterialBaseUnit desc",
+            "BookQtyBfrCountInMatlBaseUnit",
+            "BookQtyBfrCountInMatlBaseUnit desc",
+            "Quantity",
+            "Quantity desc",
+            "UnitOfEntry",
+            "UnitOfEntry desc",
+            "QuantityInUnitOfEntry",
+            "QuantityInUnitOfEntry desc",
+            "Currency",
+            "Currency desc",
+            "DifferenceAmountInCoCodeCrcy",
+            "DifferenceAmountInCoCodeCrcy desc",
+            "EnteredSlsAmtInCoCodeCrcy",
+            "EnteredSlsAmtInCoCodeCrcy desc",
+            "SlsPriceAmountInCoCodeCrcy",
+            "SlsPriceAmountInCoCodeCrcy desc",
+            "PhysInvtryCtAmtInCoCodeCrcy",
+            "PhysInvtryCtAmtInCoCodeCrcy desc",
+            "BookQtyAmountInCoCodeCrcy",
+            "BookQtyAmountInCoCodeCrcy desc",
+            "LastChangeDateTime",
+            "LastChangeDateTime desc"
+          ]
+        }
+      },
+      "PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "FiscalYear",
+            "PhysicalInventoryDocument",
+            "PhysicalInventoryDocumentItem",
+            "Plant",
+            "StorageLocation",
+            "Material",
+            "Batch",
+            "InventorySpecialStockType",
+            "PhysicalInventoryStockType",
+            "SalesOrder",
+            "SalesOrderItem",
+            "Supplier",
+            "Customer",
+            "WBSElement",
+            "LastChangeUser",
+            "LastChangeDate",
+            "CountedByUser",
+            "PhysicalInventoryLastCountDate",
+            "AdjustmentPostingMadeByUser",
+            "PostingDate",
+            "PhysicalInventoryItemIsCounted",
+            "PhysInvtryDifferenceIsPosted",
+            "PhysInvtryItemIsRecounted",
+            "PhysInvtryItemIsDeleted",
+            "IsHandledInAltvUnitOfMsr",
+            "CycleCountType",
+            "IsValueOnlyMaterial",
+            "PhysInventoryReferenceNumber",
+            "MaterialDocument",
+            "MaterialDocumentYear",
+            "MaterialDocumentItem",
+            "PhysInvtryRecountDocument",
+            "PhysicalInventoryItemIsZero",
+            "ReasonForPhysInvtryDifference",
+            "MaterialBaseUnit",
+            "BookQtyBfrCountInMatlBaseUnit",
+            "Quantity",
+            "UnitOfEntry",
+            "QuantityInUnitOfEntry",
+            "Currency",
+            "DifferenceAmountInCoCodeCrcy",
+            "EnteredSlsAmtInCoCodeCrcy",
+            "SlsPriceAmountInCoCodeCrcy",
+            "PhysInvtryCtAmtInCoCodeCrcy",
+            "BookQtyAmountInCoCodeCrcy",
+            "LastChangeDateTime",
+            "to_PhysicalInventoryDocument",
+            "to_SerialNumbers"
+          ]
+        }
+      },
+      "PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_PhysicalInventoryDocument",
+            "to_SerialNumbers"
+          ]
+        }
+      },
+      "A_PhysInventoryDocItemOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "FiscalYear",
+            "FiscalYear desc",
+            "PhysicalInventoryDocument",
+            "PhysicalInventoryDocument desc",
+            "PhysicalInventoryDocumentItem",
+            "PhysicalInventoryDocumentItem desc",
+            "Plant",
+            "Plant desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "Material",
+            "Material desc",
+            "Batch",
+            "Batch desc",
+            "InventorySpecialStockType",
+            "InventorySpecialStockType desc",
+            "PhysicalInventoryStockType",
+            "PhysicalInventoryStockType desc",
+            "SalesOrder",
+            "SalesOrder desc",
+            "SalesOrderItem",
+            "SalesOrderItem desc",
+            "Supplier",
+            "Supplier desc",
+            "Customer",
+            "Customer desc",
+            "WBSElement",
+            "WBSElement desc",
+            "LastChangeUser",
+            "LastChangeUser desc",
+            "LastChangeDate",
+            "LastChangeDate desc",
+            "CountedByUser",
+            "CountedByUser desc",
+            "PhysicalInventoryLastCountDate",
+            "PhysicalInventoryLastCountDate desc",
+            "AdjustmentPostingMadeByUser",
+            "AdjustmentPostingMadeByUser desc",
+            "PostingDate",
+            "PostingDate desc",
+            "PhysicalInventoryItemIsCounted",
+            "PhysicalInventoryItemIsCounted desc",
+            "PhysInvtryDifferenceIsPosted",
+            "PhysInvtryDifferenceIsPosted desc",
+            "PhysInvtryItemIsRecounted",
+            "PhysInvtryItemIsRecounted desc",
+            "PhysInvtryItemIsDeleted",
+            "PhysInvtryItemIsDeleted desc",
+            "IsHandledInAltvUnitOfMsr",
+            "IsHandledInAltvUnitOfMsr desc",
+            "CycleCountType",
+            "CycleCountType desc",
+            "IsValueOnlyMaterial",
+            "IsValueOnlyMaterial desc",
+            "PhysInventoryReferenceNumber",
+            "PhysInventoryReferenceNumber desc",
+            "MaterialDocument",
+            "MaterialDocument desc",
+            "MaterialDocumentYear",
+            "MaterialDocumentYear desc",
+            "MaterialDocumentItem",
+            "MaterialDocumentItem desc",
+            "PhysInvtryRecountDocument",
+            "PhysInvtryRecountDocument desc",
+            "PhysicalInventoryItemIsZero",
+            "PhysicalInventoryItemIsZero desc",
+            "ReasonForPhysInvtryDifference",
+            "ReasonForPhysInvtryDifference desc",
+            "MaterialBaseUnit",
+            "MaterialBaseUnit desc",
+            "BookQtyBfrCountInMatlBaseUnit",
+            "BookQtyBfrCountInMatlBaseUnit desc",
+            "Quantity",
+            "Quantity desc",
+            "UnitOfEntry",
+            "UnitOfEntry desc",
+            "QuantityInUnitOfEntry",
+            "QuantityInUnitOfEntry desc",
+            "Currency",
+            "Currency desc",
+            "DifferenceAmountInCoCodeCrcy",
+            "DifferenceAmountInCoCodeCrcy desc",
+            "EnteredSlsAmtInCoCodeCrcy",
+            "EnteredSlsAmtInCoCodeCrcy desc",
+            "SlsPriceAmountInCoCodeCrcy",
+            "SlsPriceAmountInCoCodeCrcy desc",
+            "PhysInvtryCtAmtInCoCodeCrcy",
+            "PhysInvtryCtAmtInCoCodeCrcy desc",
+            "BookQtyAmountInCoCodeCrcy",
+            "BookQtyAmountInCoCodeCrcy desc",
+            "LastChangeDateTime",
+            "LastChangeDateTime desc"
+          ]
+        }
+      },
+      "A_PhysInventoryDocItemSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "FiscalYear",
+            "PhysicalInventoryDocument",
+            "PhysicalInventoryDocumentItem",
+            "Plant",
+            "StorageLocation",
+            "Material",
+            "Batch",
+            "InventorySpecialStockType",
+            "PhysicalInventoryStockType",
+            "SalesOrder",
+            "SalesOrderItem",
+            "Supplier",
+            "Customer",
+            "WBSElement",
+            "LastChangeUser",
+            "LastChangeDate",
+            "CountedByUser",
+            "PhysicalInventoryLastCountDate",
+            "AdjustmentPostingMadeByUser",
+            "PostingDate",
+            "PhysicalInventoryItemIsCounted",
+            "PhysInvtryDifferenceIsPosted",
+            "PhysInvtryItemIsRecounted",
+            "PhysInvtryItemIsDeleted",
+            "IsHandledInAltvUnitOfMsr",
+            "CycleCountType",
+            "IsValueOnlyMaterial",
+            "PhysInventoryReferenceNumber",
+            "MaterialDocument",
+            "MaterialDocumentYear",
+            "MaterialDocumentItem",
+            "PhysInvtryRecountDocument",
+            "PhysicalInventoryItemIsZero",
+            "ReasonForPhysInvtryDifference",
+            "MaterialBaseUnit",
+            "BookQtyBfrCountInMatlBaseUnit",
+            "Quantity",
+            "UnitOfEntry",
+            "QuantityInUnitOfEntry",
+            "Currency",
+            "DifferenceAmountInCoCodeCrcy",
+            "EnteredSlsAmtInCoCodeCrcy",
+            "SlsPriceAmountInCoCodeCrcy",
+            "PhysInvtryCtAmtInCoCodeCrcy",
+            "BookQtyAmountInCoCodeCrcy",
+            "LastChangeDateTime",
+            "to_PhysicalInventoryDocument",
+            "to_SerialNumbers"
+          ]
+        }
+      },
+      "A_PhysInventoryDocItemExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_PhysicalInventoryDocument",
+            "to_SerialNumbers"
+          ]
+        }
+      },
+      "PhysicalInventoryDocumentOfA_PhysInventoryDocItemSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "FiscalYear",
+            "PhysicalInventoryDocument",
+            "InventoryTransactionType",
+            "Plant",
+            "StorageLocation",
+            "InventorySpecialStockType",
+            "DocumentDate",
+            "PhysInventoryPlannedCountDate",
+            "PhysicalInventoryLastCountDate",
+            "PostingDate",
+            "FiscalPeriod",
+            "CreatedByUser",
+            "PostingIsBlockedForPhysInvtry",
+            "PhysicalInventoryCountStatus",
+            "PhysInvtryAdjustmentPostingSts",
+            "PhysInvtryDeletionStatus",
+            "PhysInvtryDocHasQtySnapshot",
+            "PhysicalInventoryGroupType",
+            "PhysicalInventoryGroup",
+            "PhysicalInventoryNumber",
+            "PhysInventoryReferenceNumber",
+            "PhysicalInventoryDocumentDesc",
+            "PhysicalInventoryType",
+            "LastChangeDateTime",
+            "to_PhysicalInventoryDocumentItem"
+          ]
+        }
+      },
+      "PhysicalInventoryDocumentOfA_PhysInventoryDocItemExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_PhysicalInventoryDocumentItem"
+          ]
+        }
+      },
+      "SerialNumbersOfA_PhysInventoryDocItemOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Equipment",
+            "Equipment desc",
+            "FiscalYear",
+            "FiscalYear desc",
+            "PhysicalInventoryDocument",
+            "PhysicalInventoryDocument desc",
+            "PhysicalInventoryDocumentItem",
+            "PhysicalInventoryDocumentItem desc",
+            "SerialNumberPhysicalInvtryType",
+            "SerialNumberPhysicalInvtryType desc",
+            "Material",
+            "Material desc",
+            "SerialNumber",
+            "SerialNumber desc"
+          ]
+        }
+      },
+      "SerialNumbersOfA_PhysInventoryDocItemSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Equipment",
+            "FiscalYear",
+            "PhysicalInventoryDocument",
+            "PhysicalInventoryDocumentItem",
+            "SerialNumberPhysicalInvtryType",
+            "Material",
+            "SerialNumber"
+          ]
+        }
+      },
+      "A_SerialNumberPhysInventoryDocOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Equipment",
+            "Equipment desc",
+            "FiscalYear",
+            "FiscalYear desc",
+            "PhysicalInventoryDocument",
+            "PhysicalInventoryDocument desc",
+            "PhysicalInventoryDocumentItem",
+            "PhysicalInventoryDocumentItem desc",
+            "SerialNumberPhysicalInvtryType",
+            "SerialNumberPhysicalInvtryType desc",
+            "Material",
+            "Material desc",
+            "SerialNumber",
+            "SerialNumber desc"
+          ]
+        }
+      },
+      "A_SerialNumberPhysInventoryDocSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Equipment",
+            "FiscalYear",
+            "PhysicalInventoryDocument",
+            "PhysicalInventoryDocumentItem",
+            "SerialNumberPhysicalInvtryType",
+            "Material",
+            "SerialNumber"
+          ]
+        }
       }
     },
     "parameters": {
@@ -3868,6 +3680,186 @@
             "allpages",
             "none"
           ]
+        }
+      },
+      "A_PhysInventoryDocHeaderOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_PhysInventoryDocHeaderOrderByOptions"
+        }
+      },
+      "A_PhysInventoryDocHeaderSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_PhysInventoryDocHeaderSelectOptions"
+        }
+      },
+      "A_PhysInventoryDocHeaderExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_PhysInventoryDocHeaderExpandOptions"
+        }
+      },
+      "A_PhysInventoryDocHeaderByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_PhysInventoryDocHeaderSelectOptions"
+        }
+      },
+      "A_PhysInventoryDocHeaderByKeyExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_PhysInventoryDocHeaderExpandOptions"
+        }
+      },
+      "PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderOrderByOptions"
+        }
+      },
+      "PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderSelectOptions"
+        }
+      },
+      "PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/PhysicalInventoryDocumentItemOfA_PhysInventoryDocHeaderExpandOptions"
+        }
+      },
+      "A_PhysInventoryDocItemOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_PhysInventoryDocItemOrderByOptions"
+        }
+      },
+      "A_PhysInventoryDocItemSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_PhysInventoryDocItemSelectOptions"
+        }
+      },
+      "A_PhysInventoryDocItemExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_PhysInventoryDocItemExpandOptions"
+        }
+      },
+      "A_PhysInventoryDocItemByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_PhysInventoryDocItemSelectOptions"
+        }
+      },
+      "A_PhysInventoryDocItemByKeyExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_PhysInventoryDocItemExpandOptions"
+        }
+      },
+      "PhysicalInventoryDocumentOfA_PhysInventoryDocItemSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/PhysicalInventoryDocumentOfA_PhysInventoryDocItemSelectOptions"
+        }
+      },
+      "PhysicalInventoryDocumentOfA_PhysInventoryDocItemExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/PhysicalInventoryDocumentOfA_PhysInventoryDocItemExpandOptions"
+        }
+      },
+      "SerialNumbersOfA_PhysInventoryDocItemOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/SerialNumbersOfA_PhysInventoryDocItemOrderByOptions"
+        }
+      },
+      "SerialNumbersOfA_PhysInventoryDocItemSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/SerialNumbersOfA_PhysInventoryDocItemSelectOptions"
+        }
+      },
+      "A_SerialNumberPhysInventoryDocOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_SerialNumberPhysInventoryDocOrderByOptions"
+        }
+      },
+      "A_SerialNumberPhysInventoryDocSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_SerialNumberPhysInventoryDocSelectOptions"
+        }
+      },
+      "A_SerialNumberPhysInventoryDocByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_SerialNumberPhysInventoryDocSelectOptions"
         }
       }
     },
