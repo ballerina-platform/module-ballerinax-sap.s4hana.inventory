@@ -3,7 +3,7 @@
 [S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
 designed for large-scale enterprises by SAP SE.
 
-
+The `ballerinax/sap.s4hana.api_physical_inventory_doc_srv` package provides APIs that enable seamless integration with the [Physical Inventory Documents - Read, Creat API v1.0.0](https://api.sap.com/api/API_PHYSICAL_INVENTORY_DOC_SRV/overview). You can count items and post differences on both document and item level. The service can be consumed by external systems.
 
 ## Setup guide
 
@@ -13,7 +13,7 @@ designed for large-scale enterprises by SAP SE.
 
    ![Display Scenarios](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-1-display-scenarios.png)
 
-3. In the search bar, type `` and select the corresponding scenario from the results.
+3. In the search bar, type `Physical Inventory Document Integration` and select the corresponding scenario from the results.
 
    ![Search Sales Order](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-2-search-sales-order.png)
 
@@ -42,6 +42,7 @@ To use the `sap.s4hana.api_physical_inventory_doc_srv` connector in your Balleri
 Import the `sap.s4hana.api_physical_inventory_doc_srv` module.
 
 ```ballerina
+import ballerinax/sap.s4hana.api_physical_inventory_doc_srv as physicalinventorydoc;
 ```
 
 ### Step 2: Instantiate a new connector
@@ -52,6 +53,8 @@ Use the hostname and credentials to initiate a client
 configurable string hostname = ?;
 configurable string username = ?;
 configurable string password = ?;
+
+physicalinventorydoc:Client physicalInventoryDocClient = check new (
     hostname = hostname,
     config = {
         auth: {
@@ -67,6 +70,7 @@ configurable string password = ?;
 Now, utilize the available connector operations.
 
 ```ballerina
+physicalinventorydoc:CollectionOfA_PhysInventoryDocItemWrapper listAPhysInventoryDocItems = check physicalInventoryDocClient->listA_PhysInventoryDocItems();
 ```
 
 ### Step 4: Run the Ballerina application
