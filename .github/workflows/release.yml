@@ -12,6 +12,7 @@ on:
           - api_material_stock_srv
           - api_physical_inventory_doc_srv
           - api_reservation_document_srv
+          - ce_apireservationdocument_0001
 
 jobs:
   call_workflow:
