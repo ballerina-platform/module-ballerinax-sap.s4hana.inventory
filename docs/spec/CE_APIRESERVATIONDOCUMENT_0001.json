@@ -117,114 +117,13 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Reservation",
-                  "Reservation desc",
-                  "GoodsMovementType",
-                  "GoodsMovementType desc",
-                  "CostCenter",
-                  "CostCenter desc",
-                  "AssetNumber",
-                  "AssetNumber desc",
-                  "AssetSubNumber",
-                  "AssetSubNumber desc",
-                  "IssuingOrReceivingPlant",
-                  "IssuingOrReceivingPlant desc",
-                  "IssuingOrReceivingStorageLoc",
-                  "IssuingOrReceivingStorageLoc desc",
-                  "SalesOrder",
-                  "SalesOrder desc",
-                  "SalesOrderItem",
-                  "SalesOrderItem desc",
-                  "SalesOrderScheduleLine",
-                  "SalesOrderScheduleLine desc",
-                  "ReservationDate",
-                  "ReservationDate desc",
-                  "IsCheckedAgainstFactoryCal",
-                  "IsCheckedAgainstFactoryCal desc",
-                  "WBSElement",
-                  "WBSElement desc",
-                  "ControllingArea",
-                  "ControllingArea desc",
-                  "OrderID",
-                  "OrderID desc",
-                  "UserID",
-                  "UserID desc",
-                  "CreationDateTime",
-                  "CreationDateTime desc",
-                  "LastChangedByUser",
-                  "LastChangedByUser desc",
-                  "LastChangeDateTime",
-                  "LastChangeDateTime desc",
-                  "ResvnVerificationCompanyCode",
-                  "ResvnVerificationCompanyCode desc",
-                  "SAP__Messages",
-                  "SAP__Messages desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Reservation",
-                  "GoodsMovementType",
-                  "CostCenter",
-                  "AssetNumber",
-                  "AssetSubNumber",
-                  "IssuingOrReceivingPlant",
-                  "IssuingOrReceivingStorageLoc",
-                  "SalesOrder",
-                  "SalesOrderItem",
-                  "SalesOrderScheduleLine",
-                  "ReservationDate",
-                  "IsCheckedAgainstFactoryCal",
-                  "WBSElement",
-                  "ControllingArea",
-                  "OrderID",
-                  "UserID",
-                  "CreationDateTime",
-                  "LastChangedByUser",
-                  "LastChangeDateTime",
-                  "ResvnVerificationCompanyCode",
-                  "SAP__Messages"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "*",
-                  "_ReservationDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentExpandOptions"
           }
         ],
         "responses": {
@@ -233,7 +132,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Collection of A_ReservationDocumentHeader_2_Type",
+                  "title": "CollectionOfA_ReservationDocumentHeader_2",
                   "type": "object",
                   "properties": {
                     "@odata.count": {
@@ -242,7 +141,7 @@
                     "value": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type"
+                        "$ref": "#/components/schemas/A_ReservationDocumentHeader_2"
                       }
                     }
                   }
@@ -266,7 +165,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type-create"
+                "$ref": "#/components/schemas/CreateA_ReservationDocumentHeader_2"
               }
             }
           }
@@ -277,7 +176,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type"
+                  "$ref": "#/components/schemas/A_ReservationDocumentHeader_2"
                 }
               }
             }
@@ -308,57 +207,10 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Reservation",
-                  "GoodsMovementType",
-                  "CostCenter",
-                  "AssetNumber",
-                  "AssetSubNumber",
-                  "IssuingOrReceivingPlant",
-                  "IssuingOrReceivingStorageLoc",
-                  "SalesOrder",
-                  "SalesOrderItem",
-                  "SalesOrderScheduleLine",
-                  "ReservationDate",
-                  "IsCheckedAgainstFactoryCal",
-                  "WBSElement",
-                  "ControllingArea",
-                  "OrderID",
-                  "UserID",
-                  "CreationDateTime",
-                  "LastChangedByUser",
-                  "LastChangeDateTime",
-                  "ResvnVerificationCompanyCode",
-                  "SAP__Messages"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentByKeySelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "*",
-                  "_ReservationDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentByKeyExpandOptions"
           }
         ],
         "responses": {
@@ -367,7 +219,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type"
+                  "$ref": "#/components/schemas/A_ReservationDocumentHeader_2"
                 }
               }
             }
@@ -388,7 +240,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type-update"
+                "$ref": "#/components/schemas/UpdateA_ReservationDocumentHeader_2"
               }
             }
           }
@@ -455,135 +307,13 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Reservation",
-                  "Reservation desc",
-                  "ReservationItem",
-                  "ReservationItem desc",
-                  "RecordType",
-                  "RecordType desc",
-                  "Product",
-                  "Product desc",
-                  "RequirementType",
-                  "RequirementType desc",
-                  "MatlCompRequirementDate",
-                  "MatlCompRequirementDate desc",
-                  "Plant",
-                  "Plant desc",
-                  "GoodsMovementIsAllowed",
-                  "GoodsMovementIsAllowed desc",
-                  "StorageLocation",
-                  "StorageLocation desc",
-                  "Batch",
-                  "Batch desc",
-                  "ValuationType",
-                  "ValuationType desc",
-                  "DebitCreditCode",
-                  "DebitCreditCode desc",
-                  "BaseUnit",
-                  "BaseUnit desc",
-                  "GLAccount",
-                  "GLAccount desc",
-                  "ResvnAccountIsEnteredManually",
-                  "ResvnAccountIsEnteredManually desc",
-                  "GoodsMovementType",
-                  "GoodsMovementType desc",
-                  "EntryUnit",
-                  "EntryUnit desc",
-                  "Supplier",
-                  "Supplier desc",
-                  "ResvnItmRequiredQtyInBaseUnit",
-                  "ResvnItmRequiredQtyInBaseUnit desc",
-                  "ReservationItemIsFinallyIssued",
-                  "ReservationItemIsFinallyIssued desc",
-                  "ReservationItmIsMarkedForDeltn",
-                  "ReservationItmIsMarkedForDeltn desc",
-                  "ResvnItmRequiredQtyInEntryUnit",
-                  "ResvnItmRequiredQtyInEntryUnit desc",
-                  "ResvnItmWithdrawnQtyInBaseUnit",
-                  "ResvnItmWithdrawnQtyInBaseUnit desc",
-                  "GoodsRecipientName",
-                  "GoodsRecipientName desc",
-                  "UnloadingPointName",
-                  "UnloadingPointName desc",
-                  "ReservationItemText",
-                  "ReservationItemText desc",
-                  "ConfdQtyForATPInBaseUoM",
-                  "ConfdQtyForATPInBaseUoM desc",
-                  "SAP__Messages",
-                  "SAP__Messages desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentItemOfReservationDocumentOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Reservation",
-                  "ReservationItem",
-                  "RecordType",
-                  "Product",
-                  "RequirementType",
-                  "MatlCompRequirementDate",
-                  "Plant",
-                  "GoodsMovementIsAllowed",
-                  "StorageLocation",
-                  "Batch",
-                  "ValuationType",
-                  "DebitCreditCode",
-                  "BaseUnit",
-                  "GLAccount",
-                  "ResvnAccountIsEnteredManually",
-                  "GoodsMovementType",
-                  "EntryUnit",
-                  "Supplier",
-                  "ResvnItmRequiredQtyInBaseUnit",
-                  "ReservationItemIsFinallyIssued",
-                  "ReservationItmIsMarkedForDeltn",
-                  "ResvnItmRequiredQtyInEntryUnit",
-                  "ResvnItmWithdrawnQtyInBaseUnit",
-                  "GoodsRecipientName",
-                  "UnloadingPointName",
-                  "ReservationItemText",
-                  "ConfdQtyForATPInBaseUoM",
-                  "SAP__Messages"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentItemOfReservationDocumentSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "*",
-                  "_ReservationDocument"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentItemOfReservationDocumentExpandOptions"
           }
         ],
         "responses": {
@@ -592,7 +322,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Collection of A_ReservationDocumentItem_2_Type",
+                  "title": "CollectionOfA_ReservationDocumentItem_2",
                   "type": "object",
                   "properties": {
                     "@odata.count": {
@@ -601,7 +331,7 @@
                     "value": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type"
+                        "$ref": "#/components/schemas/A_ReservationDocumentItem_2"
                       }
                     }
                   }
@@ -626,7 +356,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type-create"
+                "$ref": "#/components/schemas/CreateA_ReservationDocumentItem_2"
               }
             }
           }
@@ -637,7 +367,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type"
+                  "$ref": "#/components/schemas/A_ReservationDocumentItem_2"
                 }
               }
             }
@@ -673,135 +403,13 @@
             "$ref": "#/components/parameters/count"
           },
           {
-            "name": "$orderby",
-            "in": "query",
-            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Reservation",
-                  "Reservation desc",
-                  "ReservationItem",
-                  "ReservationItem desc",
-                  "RecordType",
-                  "RecordType desc",
-                  "Product",
-                  "Product desc",
-                  "RequirementType",
-                  "RequirementType desc",
-                  "MatlCompRequirementDate",
-                  "MatlCompRequirementDate desc",
-                  "Plant",
-                  "Plant desc",
-                  "GoodsMovementIsAllowed",
-                  "GoodsMovementIsAllowed desc",
-                  "StorageLocation",
-                  "StorageLocation desc",
-                  "Batch",
-                  "Batch desc",
-                  "ValuationType",
-                  "ValuationType desc",
-                  "DebitCreditCode",
-                  "DebitCreditCode desc",
-                  "BaseUnit",
-                  "BaseUnit desc",
-                  "GLAccount",
-                  "GLAccount desc",
-                  "ResvnAccountIsEnteredManually",
-                  "ResvnAccountIsEnteredManually desc",
-                  "GoodsMovementType",
-                  "GoodsMovementType desc",
-                  "EntryUnit",
-                  "EntryUnit desc",
-                  "Supplier",
-                  "Supplier desc",
-                  "ResvnItmRequiredQtyInBaseUnit",
-                  "ResvnItmRequiredQtyInBaseUnit desc",
-                  "ReservationItemIsFinallyIssued",
-                  "ReservationItemIsFinallyIssued desc",
-                  "ReservationItmIsMarkedForDeltn",
-                  "ReservationItmIsMarkedForDeltn desc",
-                  "ResvnItmRequiredQtyInEntryUnit",
-                  "ResvnItmRequiredQtyInEntryUnit desc",
-                  "ResvnItmWithdrawnQtyInBaseUnit",
-                  "ResvnItmWithdrawnQtyInBaseUnit desc",
-                  "GoodsRecipientName",
-                  "GoodsRecipientName desc",
-                  "UnloadingPointName",
-                  "UnloadingPointName desc",
-                  "ReservationItemText",
-                  "ReservationItemText desc",
-                  "ConfdQtyForATPInBaseUoM",
-                  "ConfdQtyForATPInBaseUoM desc",
-                  "SAP__Messages",
-                  "SAP__Messages desc"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentItemOrderByOptions"
           },
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Reservation",
-                  "ReservationItem",
-                  "RecordType",
-                  "Product",
-                  "RequirementType",
-                  "MatlCompRequirementDate",
-                  "Plant",
-                  "GoodsMovementIsAllowed",
-                  "StorageLocation",
-                  "Batch",
-                  "ValuationType",
-                  "DebitCreditCode",
-                  "BaseUnit",
-                  "GLAccount",
-                  "ResvnAccountIsEnteredManually",
-                  "GoodsMovementType",
-                  "EntryUnit",
-                  "Supplier",
-                  "ResvnItmRequiredQtyInBaseUnit",
-                  "ReservationItemIsFinallyIssued",
-                  "ReservationItmIsMarkedForDeltn",
-                  "ResvnItmRequiredQtyInEntryUnit",
-                  "ResvnItmWithdrawnQtyInBaseUnit",
-                  "GoodsRecipientName",
-                  "UnloadingPointName",
-                  "ReservationItemText",
-                  "ConfdQtyForATPInBaseUoM",
-                  "SAP__Messages"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentItemSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "*",
-                  "_ReservationDocument"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentItemExpandOptions"
           }
         ],
         "responses": {
@@ -810,7 +418,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "title": "Collection of A_ReservationDocumentItem_2_Type",
+                  "title": "CollectionOfA_ReservationDocumentItem_2",
                   "type": "object",
                   "properties": {
                     "@odata.count": {
@@ -819,7 +427,7 @@
                     "value": {
                       "type": "array",
                       "items": {
-                        "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type"
+                        "$ref": "#/components/schemas/A_ReservationDocumentItem_2"
                       }
                     }
                   }
@@ -873,64 +481,10 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Reservation",
-                  "ReservationItem",
-                  "RecordType",
-                  "Product",
-                  "RequirementType",
-                  "MatlCompRequirementDate",
-                  "Plant",
-                  "GoodsMovementIsAllowed",
-                  "StorageLocation",
-                  "Batch",
-                  "ValuationType",
-                  "DebitCreditCode",
-                  "BaseUnit",
-                  "GLAccount",
-                  "ResvnAccountIsEnteredManually",
-                  "GoodsMovementType",
-                  "EntryUnit",
-                  "Supplier",
-                  "ResvnItmRequiredQtyInBaseUnit",
-                  "ReservationItemIsFinallyIssued",
-                  "ReservationItmIsMarkedForDeltn",
-                  "ResvnItmRequiredQtyInEntryUnit",
-                  "ResvnItmWithdrawnQtyInBaseUnit",
-                  "GoodsRecipientName",
-                  "UnloadingPointName",
-                  "ReservationItemText",
-                  "ConfdQtyForATPInBaseUoM",
-                  "SAP__Messages"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentItemByKeySelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "*",
-                  "_ReservationDocument"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentItemByKeyExpandOptions"
           }
         ],
         "responses": {
@@ -939,7 +493,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type"
+                  "$ref": "#/components/schemas/A_ReservationDocumentItem_2"
                 }
               }
             }
@@ -960,7 +514,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type-update"
+                "$ref": "#/components/schemas/UpdateA_ReservationDocumentItem_2"
               }
             }
           }
@@ -1016,57 +570,10 @@
         ],
         "parameters": [
           {
-            "name": "$select",
-            "in": "query",
-            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "Reservation",
-                  "GoodsMovementType",
-                  "CostCenter",
-                  "AssetNumber",
-                  "AssetSubNumber",
-                  "IssuingOrReceivingPlant",
-                  "IssuingOrReceivingStorageLoc",
-                  "SalesOrder",
-                  "SalesOrderItem",
-                  "SalesOrderScheduleLine",
-                  "ReservationDate",
-                  "IsCheckedAgainstFactoryCal",
-                  "WBSElement",
-                  "ControllingArea",
-                  "OrderID",
-                  "UserID",
-                  "CreationDateTime",
-                  "LastChangedByUser",
-                  "LastChangeDateTime",
-                  "ResvnVerificationCompanyCode",
-                  "SAP__Messages"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentOfReservationDocumentItemSelectOptions"
           },
           {
-            "name": "$expand",
-            "in": "query",
-            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
-            "explode": false,
-            "schema": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "type": "string",
-                "enum": [
-                  "*",
-                  "_ReservationDocumentItem"
-                ]
-              }
-            }
+            "$ref": "#/components/parameters/ReservationDocumentOfReservationDocumentItemExpandOptions"
           }
         ],
         "responses": {
@@ -1075,7 +582,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type"
+                  "$ref": "#/components/schemas/A_ReservationDocumentHeader_2"
                 }
               }
             }
@@ -1126,7 +633,7 @@
   },
   "components": {
     "schemas": {
-      "com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type": {
+      "A_ReservationDocumentHeader_2": {
         "type": "object",
         "properties": {
           "Reservation": {
@@ -1254,19 +761,19 @@
           "SAP__Messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.SAP__Message"
+              "$ref": "#/components/schemas/SAP__Message"
             }
           },
           "_ReservationDocumentItem": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type"
+              "$ref": "#/components/schemas/A_ReservationDocumentItem_2"
             }
           }
         },
         "title": "Reservation Document Header"
       },
-      "com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type-create": {
+      "CreateA_ReservationDocumentHeader_2": {
         "type": "object",
         "properties": {
           "Reservation": {
@@ -1357,13 +864,13 @@
           "SAP__Messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.SAP__Message-create"
+              "$ref": "#/components/schemas/CreateSAP__Message"
             }
           },
           "_ReservationDocumentItem": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type-create"
+              "$ref": "#/components/schemas/CreateA_ReservationDocumentItem_2"
             }
           }
         },
@@ -1373,7 +880,7 @@
         ],
         "title": "Reservation Document Header (for create)"
       },
-      "com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type-update": {
+      "UpdateA_ReservationDocumentHeader_2": {
         "type": "object",
         "properties": {
           "CostCenter": {
@@ -1451,13 +958,13 @@
           "SAP__Messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.SAP__Message-update"
+              "$ref": "#/components/schemas/UpdateSAP__Message"
             }
           }
         },
         "title": "Reservation Document Header (for update)"
       },
-      "com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type": {
+      "A_ReservationDocumentItem_2": {
         "type": "object",
         "properties": {
           "Reservation": {
@@ -1669,16 +1176,16 @@
           "SAP__Messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.SAP__Message"
+              "$ref": "#/components/schemas/SAP__Message"
             }
           },
           "_ReservationDocument": {
-            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type"
+            "$ref": "#/components/schemas/A_ReservationDocumentHeader_2"
           }
         },
         "title": "Reservation Document Item"
       },
-      "com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type-create": {
+      "CreateA_ReservationDocumentItem_2": {
         "type": "object",
         "properties": {
           "Product": {
@@ -1795,16 +1302,16 @@
           "SAP__Messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.SAP__Message-create"
+              "$ref": "#/components/schemas/CreateSAP__Message"
             }
           },
           "_ReservationDocument": {
-            "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentHeader_2_Type-create"
+            "$ref": "#/components/schemas/CreateA_ReservationDocumentHeader_2"
           }
         },
         "title": "Reservation Document Item (for create)"
       },
-      "com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.A_ReservationDocumentItem_2_Type-update": {
+      "UpdateA_ReservationDocumentItem_2": {
         "type": "object",
         "properties": {
           "MatlCompRequirementDate": {
@@ -1904,13 +1411,13 @@
           "SAP__Messages": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.SAP__Message-update"
+              "$ref": "#/components/schemas/UpdateSAP__Message"
             }
           }
         },
         "title": "Reservation Document Item (for update)"
       },
-      "com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.SAP__Message": {
+      "SAP__Message": {
         "type": "object",
         "properties": {
           "code": {
@@ -1943,7 +1450,7 @@
         },
         "title": "SAP__Message"
       },
-      "com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.SAP__Message-create": {
+      "CreateSAP__Message": {
         "type": "object",
         "properties": {
           "code": {
@@ -1976,7 +1483,7 @@
         },
         "title": "SAP__Message (for create)"
       },
-      "com.sap.gateway.srvd_a2x.api_reservation_document_2.v0001.SAP__Message-update": {
+      "UpdateSAP__Message": {
         "type": "object",
         "properties": {
           "code": {
@@ -2070,6 +1577,211 @@
             }
           }
         }
+      },
+      "ReservationDocumentOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Reservation",
+            "Reservation desc",
+            "GoodsMovementType",
+            "GoodsMovementType desc",
+            "CostCenter",
+            "CostCenter desc",
+            "AssetNumber",
+            "AssetNumber desc",
+            "AssetSubNumber",
+            "AssetSubNumber desc",
+            "IssuingOrReceivingPlant",
+            "IssuingOrReceivingPlant desc",
+            "IssuingOrReceivingStorageLoc",
+            "IssuingOrReceivingStorageLoc desc",
+            "SalesOrder",
+            "SalesOrder desc",
+            "SalesOrderItem",
+            "SalesOrderItem desc",
+            "SalesOrderScheduleLine",
+            "SalesOrderScheduleLine desc",
+            "ReservationDate",
+            "ReservationDate desc",
+            "IsCheckedAgainstFactoryCal",
+            "IsCheckedAgainstFactoryCal desc",
+            "WBSElement",
+            "WBSElement desc",
+            "ControllingArea",
+            "ControllingArea desc",
+            "OrderID",
+            "OrderID desc",
+            "UserID",
+            "UserID desc",
+            "CreationDateTime",
+            "CreationDateTime desc",
+            "LastChangedByUser",
+            "LastChangedByUser desc",
+            "LastChangeDateTime",
+            "LastChangeDateTime desc",
+            "ResvnVerificationCompanyCode",
+            "ResvnVerificationCompanyCode desc",
+            "SAP__Messages",
+            "SAP__Messages desc"
+          ]
+        }
+      },
+      "ReservationDocumentSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Reservation",
+            "GoodsMovementType",
+            "CostCenter",
+            "AssetNumber",
+            "AssetSubNumber",
+            "IssuingOrReceivingPlant",
+            "IssuingOrReceivingStorageLoc",
+            "SalesOrder",
+            "SalesOrderItem",
+            "SalesOrderScheduleLine",
+            "ReservationDate",
+            "IsCheckedAgainstFactoryCal",
+            "WBSElement",
+            "ControllingArea",
+            "OrderID",
+            "UserID",
+            "CreationDateTime",
+            "LastChangedByUser",
+            "LastChangeDateTime",
+            "ResvnVerificationCompanyCode",
+            "SAP__Messages"
+          ]
+        }
+      },
+      "ReservationDocumentExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "*",
+            "_ReservationDocumentItem"
+          ]
+        }
+      },
+      "ReservationDocumentItemOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Reservation",
+            "Reservation desc",
+            "ReservationItem",
+            "ReservationItem desc",
+            "RecordType",
+            "RecordType desc",
+            "Product",
+            "Product desc",
+            "RequirementType",
+            "RequirementType desc",
+            "MatlCompRequirementDate",
+            "MatlCompRequirementDate desc",
+            "Plant",
+            "Plant desc",
+            "GoodsMovementIsAllowed",
+            "GoodsMovementIsAllowed desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "Batch",
+            "Batch desc",
+            "ValuationType",
+            "ValuationType desc",
+            "DebitCreditCode",
+            "DebitCreditCode desc",
+            "BaseUnit",
+            "BaseUnit desc",
+            "GLAccount",
+            "GLAccount desc",
+            "ResvnAccountIsEnteredManually",
+            "ResvnAccountIsEnteredManually desc",
+            "GoodsMovementType",
+            "GoodsMovementType desc",
+            "EntryUnit",
+            "EntryUnit desc",
+            "Supplier",
+            "Supplier desc",
+            "ResvnItmRequiredQtyInBaseUnit",
+            "ResvnItmRequiredQtyInBaseUnit desc",
+            "ReservationItemIsFinallyIssued",
+            "ReservationItemIsFinallyIssued desc",
+            "ReservationItmIsMarkedForDeltn",
+            "ReservationItmIsMarkedForDeltn desc",
+            "ResvnItmRequiredQtyInEntryUnit",
+            "ResvnItmRequiredQtyInEntryUnit desc",
+            "ResvnItmWithdrawnQtyInBaseUnit",
+            "ResvnItmWithdrawnQtyInBaseUnit desc",
+            "GoodsRecipientName",
+            "GoodsRecipientName desc",
+            "UnloadingPointName",
+            "UnloadingPointName desc",
+            "ReservationItemText",
+            "ReservationItemText desc",
+            "ConfdQtyForATPInBaseUoM",
+            "ConfdQtyForATPInBaseUoM desc",
+            "SAP__Messages",
+            "SAP__Messages desc"
+          ]
+        }
+      },
+      "ReservationDocumentItemSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Reservation",
+            "ReservationItem",
+            "RecordType",
+            "Product",
+            "RequirementType",
+            "MatlCompRequirementDate",
+            "Plant",
+            "GoodsMovementIsAllowed",
+            "StorageLocation",
+            "Batch",
+            "ValuationType",
+            "DebitCreditCode",
+            "BaseUnit",
+            "GLAccount",
+            "ResvnAccountIsEnteredManually",
+            "GoodsMovementType",
+            "EntryUnit",
+            "Supplier",
+            "ResvnItmRequiredQtyInBaseUnit",
+            "ReservationItemIsFinallyIssued",
+            "ReservationItmIsMarkedForDeltn",
+            "ResvnItmRequiredQtyInEntryUnit",
+            "ResvnItmWithdrawnQtyInBaseUnit",
+            "GoodsRecipientName",
+            "UnloadingPointName",
+            "ReservationItemText",
+            "ConfdQtyForATPInBaseUoM",
+            "SAP__Messages"
+          ]
+        }
+      },
+      "ReservationDocumentItemExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "*",
+            "_ReservationDocument"
+          ]
+        }
       }
     },
     "parameters": {
@@ -2106,6 +1818,141 @@
         "description": "Search items by search phrases, see [Searching](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionsearch)",
         "schema": {
           "type": "string"
+        }
+      },
+      "ReservationDocumentOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentOrderByOptions"
+        }
+      },
+      "ReservationDocumentSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentSelectOptions"
+        }
+      },
+      "ReservationDocumentExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentExpandOptions"
+        }
+      },
+      "ReservationDocumentByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentSelectOptions"
+        }
+      },
+      "ReservationDocumentByKeyExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentExpandOptions"
+        }
+      },
+      "ReservationDocumentItemOfReservationDocumentOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentItemOrderByOptions"
+        }
+      },
+      "ReservationDocumentItemOfReservationDocumentSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentItemSelectOptions"
+        }
+      },
+      "ReservationDocumentItemOfReservationDocumentExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentItemExpandOptions"
+        }
+      },
+      "ReservationDocumentItemOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentItemOrderByOptions"
+        }
+      },
+      "ReservationDocumentItemSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentItemSelectOptions"
+        }
+      },
+      "ReservationDocumentItemExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentItemExpandOptions"
+        }
+      },
+      "ReservationDocumentItemByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentItemSelectOptions"
+        }
+      },
+      "ReservationDocumentItemByKeyExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentItemExpandOptions"
+        }
+      },
+      "ReservationDocumentOfReservationDocumentItemSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentSelectOptions"
+        }
+      },
+      "ReservationDocumentOfReservationDocumentItemExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/ReservationDocumentExpandOptions"
         }
       }
     },
