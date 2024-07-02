@@ -54,7 +54,7 @@ configurable string hostname = ?;
 configurable string username = ?;
 configurable string password = ?;
 
-rsvdoc:Client reservationDocumentClient = check new (
+rsvDoc:Client reservationDocumentClient = check new (
     hostname = hostname,
     config = {
         auth: {
