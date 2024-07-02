@@ -1,0 +1,1754 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Material Stock - Read",
+    "version": "1.1.0",
+    "description": "\r\n\r\nThis service enables you to retrieve material stock information using the OData protocol with filter data provided in the payload. It can be consumed by external warehouse applications."
+  },
+  "externalDocs": {
+    "description": "Business Documentation",
+    "url": "https://help.sap.com/http.svc/ahp2/SAP_S4HANA_CLOUD/2402.latest/EN/f6/8f51a4dc2e46779877a10a301d9138/frameset.htm"
+  },
+  "x-sap-api-type": "ODATA",
+  "x-sap-shortText": "Use this synchronous inbound service to read material stock information",
+  "x-sap-software-min-version": "2402",
+  "x-sap-ext-overview": [
+    {
+      "name": "Communication Scenario",
+      "values": [
+        {
+          "text": "Material Stock Integration(SAP_COM_0164)",
+          "format": "plain"
+        }
+      ]
+    },
+    {
+      "name": "Scope Items",
+      "values": [
+        {
+          "text": "[Core Inventory Management(BMC)](https://me.sap.com/processnavigator/SolP/BMC \" Link To BP \")",
+          "format": "markdown"
+        },
+        {
+          "text": "[Core Inventory Management(OMC)](https://me.sap.com/processnavigator/SolP/OMC \" Link To BP \")",
+          "format": "markdown"
+        }
+      ]
+    },
+    {
+      "name": "Authentication Methods",
+      "values": [
+        {
+          "text": "x509",
+          "format": "plain"
+        }
+      ]
+    },
+    {
+      "name": "Business Object",
+      "values": [
+        {
+          "text": "Material Stock",
+          "format": "plain"
+        }
+      ]
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://{host}:{port}/sap/opu/odata/sap/API_MATERIAL_STOCK_SRV",
+      "variables": {
+        "host": {
+          "default": ""
+        },
+        "port": {
+          "default": ""
+        }
+      }
+    },
+    {
+      "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_MATERIAL_STOCK_SRV"
+    }
+  ],
+  "x-sap-extensible": {
+    "supported": "no"
+  },
+  "tags": [
+    {
+      "name": "Serial Numbers with Material Stock"
+    },
+    {
+      "name": "Material Master"
+    },
+    {
+      "name": "Material Stock"
+    }
+  ],
+  "paths": {
+    "/A_MaterialSerialNumber": {
+      "get": {
+        "operationId": "listA_MaterialSerialNumbers",
+        "summary": "Get entities from A_MaterialSerialNumber",
+        "tags": [
+          "Serial Numbers with Material Stock"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filter items by property values, see [Filtering](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=64)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "$ref": "#/components/parameters/A_MaterialSerialNumberOrderByOptions"
+          },
+          {
+            "$ref": "#/components/parameters/A_MaterialSerialNumberSelectOptions"
+          },
+          {
+            "$ref": "#/components/parameters/A_MaterialSerialNumberExpandOptions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "CollectionOfA_MaterialSerialNumberWrapper",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "title": "CollectionOfA_MaterialSerialNumber",
+                      "type": "object",
+                      "properties": {
+                        "__count": {
+                          "$ref": "#/components/schemas/count"
+                        },
+                        "results": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/A_MaterialSerialNumber"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/A_MaterialStock": {
+      "get": {
+        "operationId": "listA_MaterialStocks",
+        "summary": "Reads material ID and base unit of measure",
+        "description": "Reads material ID and base unit of measure for which a certain stock has been posted.",
+        "tags": [
+          "Material Master"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filter items by property values, see [Filtering](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=64)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "$ref": "#/components/parameters/A_MaterialStockOrderByOptions"
+          },
+          {
+            "$ref": "#/components/parameters/A_MaterialStockSelectOptions"
+          },
+          {
+            "$ref": "#/components/parameters/A_MaterialStockExpandOptions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "CollectionOfA_MaterialStockWrapper",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "title": "CollectionOfA_MaterialStock",
+                      "type": "object",
+                      "properties": {
+                        "__count": {
+                          "$ref": "#/components/schemas/count"
+                        },
+                        "results": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/A_MaterialStock"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/A_MatlStkInAcctMod": {
+      "get": {
+        "operationId": "listA_MatlStkInAcctMods",
+        "summary": "Reads material stocks in account model",
+        "description": "Reads material stocks in account model for which a certain stock has been posted.",
+        "tags": [
+          "Material Stock"
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/top"
+          },
+          {
+            "$ref": "#/components/parameters/skip"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "Filter items by property values, see [Filtering](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=64)",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/count"
+          },
+          {
+            "$ref": "#/components/parameters/A_MatlStkInAcctModOrderByOptions"
+          },
+          {
+            "$ref": "#/components/parameters/A_MatlStkInAcctModSelectOptions"
+          },
+          {
+            "$ref": "#/components/parameters/A_MatlStkInAcctModExpandOptions"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Retrieved entities",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "CollectionOfA_MatlStkInAcctModWrapper",
+                  "type": "object",
+                  "properties": {
+                    "d": {
+                      "title": "CollectionOfA_MatlStkInAcctMod",
+                      "type": "object",
+                      "properties": {
+                        "__count": {
+                          "$ref": "#/components/schemas/count"
+                        },
+                        "results": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/A_MatlStkInAcctMod"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    },
+    "/$batch": {
+      "post": {
+        "operationId": "performBatchOperation",
+        "summary": "Send a group of requests",
+        "description": "Group multiple requests into a single request payload, see [Batch Requests](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=152).\n\n*Please note that \"Try it out\" is not supported for this request.*",
+        "tags": [
+          "Batch Requests"
+        ],
+        "requestBody": {
+          "required": true,
+          "description": "Batch request",
+          "content": {
+            "multipart/mixed;boundary=request-separator": {
+              "schema": {
+                "type": "string"
+              },
+              "example": "--request-separator\nContent-Type: application/http\nContent-Transfer-Encoding: binary\n\nGET A_MaterialSerialNumber HTTP/1.1\nAccept: application/json\n\n\n--request-separator--"
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Batch response",
+            "content": {
+              "multipart/mixed": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "--response-separator\nContent-Type: application/http\n\nHTTP/1.1 200 OK\nContent-Type: application/json\n\n{...}\n--response-separator--"
+              }
+            }
+          },
+          "4XX": {
+            "$ref": "#/components/responses/error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "A_MaterialSerialNumber": {
+        "type": "object",
+        "properties": {
+          "Material": {
+            "type": "string",
+            "maxLength": 40,
+            "title": "Material",
+            "description": "Material Number"
+          },
+          "SerialNumber": {
+            "type": "string",
+            "maxLength": 18,
+            "title": "Serial Number"
+          },
+          "Plant": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Plant"
+          },
+          "StorageLocation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Storage Location"
+          },
+          "InventorySpecialStockType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Special Stock",
+            "description": "Special Stock Indicator"
+          },
+          "Batch": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Stock batch",
+            "description": "Batch Number"
+          },
+          "InventoryStockType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Stock Type",
+            "description": "Stock Type of Goods Movement (Primary Posting)"
+          },
+          "Equipment": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 18,
+            "title": "Equipment",
+            "description": "Equipment Number"
+          },
+          "Customer": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Spec. stock customer",
+            "description": "Special stock customer account number"
+          },
+          "Supplier": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Special stock vendor",
+            "description": "Account number of the vendor"
+          },
+          "SDDocument": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Sales Order",
+            "description": "Sales Order Number"
+          },
+          "SDDocumentItem": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 6,
+            "title": "Sales Order Item",
+            "description": "Item Number in Sales Order"
+          },
+          "WBSElementInternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Work Breakdown Structure Element (WBS Element)"
+          },
+          "WBSElementExternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Work Breakdown Structure Element (WBS Element) Edited"
+          },
+          "to_MatlStkInAcctMod": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/A_MatlStkInAcctMod"
+                }
+              }
+            }
+          }
+        },
+        "title": "Serial Numbers with Material Stock"
+      },
+      "CreateA_MaterialSerialNumber": {
+        "type": "object",
+        "properties": {
+          "Material": {
+            "type": "string",
+            "maxLength": 40,
+            "title": "Material",
+            "description": "Material Number"
+          },
+          "SerialNumber": {
+            "type": "string",
+            "maxLength": 18,
+            "title": "Serial Number"
+          },
+          "Plant": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Plant"
+          },
+          "StorageLocation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Storage Location"
+          },
+          "InventorySpecialStockType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Special Stock",
+            "description": "Special Stock Indicator"
+          },
+          "Batch": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Stock batch",
+            "description": "Batch Number"
+          },
+          "InventoryStockType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Stock Type",
+            "description": "Stock Type of Goods Movement (Primary Posting)"
+          },
+          "Equipment": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 18,
+            "title": "Equipment",
+            "description": "Equipment Number"
+          },
+          "Customer": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Spec. stock customer",
+            "description": "Special stock customer account number"
+          },
+          "Supplier": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Special stock vendor",
+            "description": "Account number of the vendor"
+          },
+          "SDDocument": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Sales Order",
+            "description": "Sales Order Number"
+          },
+          "SDDocumentItem": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 6,
+            "title": "Sales Order Item",
+            "description": "Item Number in Sales Order"
+          },
+          "WBSElementInternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Work Breakdown Structure Element (WBS Element)"
+          },
+          "WBSElementExternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Work Breakdown Structure Element (WBS Element) Edited"
+          },
+          "to_MatlStkInAcctMod": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CreateA_MatlStkInAcctMod"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "Material",
+          "SerialNumber"
+        ],
+        "title": "Serial Numbers with Material Stock (for create)"
+      },
+      "UpdateA_MaterialSerialNumber": {
+        "type": "object",
+        "properties": {
+          "Plant": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Plant"
+          },
+          "StorageLocation": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 4,
+            "title": "Storage Location"
+          },
+          "InventorySpecialStockType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 1,
+            "title": "Special Stock",
+            "description": "Special Stock Indicator"
+          },
+          "Batch": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Stock batch",
+            "description": "Batch Number"
+          },
+          "InventoryStockType": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 2,
+            "title": "Stock Type",
+            "description": "Stock Type of Goods Movement (Primary Posting)"
+          },
+          "Equipment": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 18,
+            "title": "Equipment",
+            "description": "Equipment Number"
+          },
+          "Customer": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Spec. stock customer",
+            "description": "Special stock customer account number"
+          },
+          "Supplier": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Special stock vendor",
+            "description": "Account number of the vendor"
+          },
+          "SDDocument": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 10,
+            "title": "Sales Order",
+            "description": "Sales Order Number"
+          },
+          "SDDocumentItem": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 6,
+            "title": "Sales Order Item",
+            "description": "Item Number in Sales Order"
+          },
+          "WBSElementInternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Work Breakdown Structure Element (WBS Element)"
+          },
+          "WBSElementExternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Work Breakdown Structure Element (WBS Element) Edited"
+          }
+        },
+        "title": "Serial Numbers with Material Stock (for update)"
+      },
+      "A_MaterialStock": {
+        "type": "object",
+        "properties": {
+          "Material": {
+            "type": "string",
+            "maxLength": 40,
+            "title": "Material",
+            "description": "Material Number"
+          },
+          "MaterialBaseUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Base Unit of Measure"
+          },
+          "to_MatlStkInAcctMod": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/A_MatlStkInAcctMod"
+                }
+              }
+            }
+          }
+        },
+        "title": "Material Master"
+      },
+      "CreateA_MaterialStock": {
+        "type": "object",
+        "properties": {
+          "Material": {
+            "type": "string",
+            "maxLength": 40,
+            "title": "Material",
+            "description": "Material Number"
+          },
+          "MaterialBaseUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Base Unit of Measure"
+          },
+          "to_MatlStkInAcctMod": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CreateA_MatlStkInAcctMod"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "Material"
+        ],
+        "title": "Material Master (for create)"
+      },
+      "UpdateA_MaterialStock": {
+        "type": "object",
+        "properties": {
+          "MaterialBaseUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Base Unit of Measure"
+          }
+        },
+        "title": "Material Master (for update)"
+      },
+      "A_MatlStkInAcctMod": {
+        "type": "object",
+        "properties": {
+          "Material": {
+            "type": "string",
+            "maxLength": 40,
+            "title": "Stock Material",
+            "description": "Material in Respect of Which Stock is Managed"
+          },
+          "Plant": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Plant"
+          },
+          "StorageLocation": {
+            "type": "string",
+            "maxLength": 4,
+            "x-sap-object-node-type-reference": "StorageLocation",
+            "title": "Storage Location"
+          },
+          "Batch": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Batch SID",
+            "description": "Batch Number (Stock Identifier)"
+          },
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier SID",
+            "description": "Supplier for Special Stock"
+          },
+          "Customer": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Customer SID",
+            "description": "Customer for Special Stock"
+          },
+          "WBSElementInternalID": {
+            "type": "string",
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Valuated Sales Order Stock WBS Element"
+          },
+          "SDDocument": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Sales order",
+            "description": "Sales order number of valuated sales order stock"
+          },
+          "SDDocumentItem": {
+            "type": "string",
+            "maxLength": 6,
+            "title": "Sales order item",
+            "description": "Sales Order Item of Valuated Sales Order Stock"
+          },
+          "InventorySpecialStockType": {
+            "type": "string",
+            "maxLength": 1,
+            "x-sap-object-node-type-reference": "InventorySpecialStockType",
+            "title": "Special Stock Type"
+          },
+          "InventoryStockType": {
+            "type": "string",
+            "maxLength": 2,
+            "x-sap-object-node-type-reference": "InventoryStockType",
+            "title": "Stock Type",
+            "description": "Stock Type of Goods Movement (Stock Identifier)"
+          },
+          "WBSElementExternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Work Breakdown Structure Element (WBS Element) Edited"
+          },
+          "MaterialBaseUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Base Unit of Measure"
+          },
+          "MatlWrhsStkQtyInMatlBaseUnit": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 31,
+            "x-sap-scale": 14,
+            "multipleOf": 1.0e-14,
+            "example": "0"
+          },
+          "to_MaterialSerialNumber": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/A_MaterialSerialNumber"
+                }
+              }
+            }
+          },
+          "to_MaterialStock": {
+            "$ref": "#/components/schemas/A_MaterialStock"
+          }
+        },
+        "title": "Material Stock"
+      },
+      "CreateA_MatlStkInAcctMod": {
+        "type": "object",
+        "properties": {
+          "Material": {
+            "type": "string",
+            "maxLength": 40,
+            "title": "Stock Material",
+            "description": "Material in Respect of Which Stock is Managed"
+          },
+          "Plant": {
+            "type": "string",
+            "maxLength": 4,
+            "title": "Plant"
+          },
+          "StorageLocation": {
+            "type": "string",
+            "maxLength": 4,
+            "x-sap-object-node-type-reference": "StorageLocation",
+            "title": "Storage Location"
+          },
+          "Batch": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Batch SID",
+            "description": "Batch Number (Stock Identifier)"
+          },
+          "Supplier": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Supplier SID",
+            "description": "Supplier for Special Stock"
+          },
+          "Customer": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Customer SID",
+            "description": "Customer for Special Stock"
+          },
+          "WBSElementInternalID": {
+            "type": "string",
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Valuated Sales Order Stock WBS Element"
+          },
+          "SDDocument": {
+            "type": "string",
+            "maxLength": 10,
+            "title": "Sales order",
+            "description": "Sales order number of valuated sales order stock"
+          },
+          "SDDocumentItem": {
+            "type": "string",
+            "maxLength": 6,
+            "title": "Sales order item",
+            "description": "Sales Order Item of Valuated Sales Order Stock"
+          },
+          "InventorySpecialStockType": {
+            "type": "string",
+            "maxLength": 1,
+            "x-sap-object-node-type-reference": "InventorySpecialStockType",
+            "title": "Special Stock Type"
+          },
+          "InventoryStockType": {
+            "type": "string",
+            "maxLength": 2,
+            "x-sap-object-node-type-reference": "InventoryStockType",
+            "title": "Stock Type",
+            "description": "Stock Type of Goods Movement (Stock Identifier)"
+          },
+          "WBSElementExternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Work Breakdown Structure Element (WBS Element) Edited"
+          },
+          "MaterialBaseUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Base Unit of Measure"
+          },
+          "MatlWrhsStkQtyInMatlBaseUnit": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 31,
+            "x-sap-scale": 14,
+            "multipleOf": 1.0e-14,
+            "example": "0"
+          },
+          "to_MaterialSerialNumber": {
+            "type": "object",
+            "properties": {
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CreateA_MaterialSerialNumber"
+                }
+              }
+            }
+          },
+          "to_MaterialStock": {
+            "$ref": "#/components/schemas/CreateA_MaterialStock"
+          }
+        },
+        "required": [
+          "Material",
+          "Plant",
+          "StorageLocation",
+          "Batch",
+          "Supplier",
+          "Customer",
+          "WBSElementInternalID",
+          "SDDocument",
+          "SDDocumentItem",
+          "InventorySpecialStockType",
+          "InventoryStockType"
+        ],
+        "title": "Material Stock (for create)"
+      },
+      "UpdateA_MatlStkInAcctMod": {
+        "type": "object",
+        "properties": {
+          "WBSElementExternalID": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 24,
+            "title": "WBS Element",
+            "description": "Work Breakdown Structure Element (WBS Element) Edited"
+          },
+          "MaterialBaseUnit": {
+            "type": "string",
+            "nullable": true,
+            "maxLength": 3,
+            "title": "Base Unit of Measure"
+          },
+          "MatlWrhsStkQtyInMatlBaseUnit": {
+            "type": "string",
+            "nullable": true,
+            "format": "decimal",
+            "x-sap-precision": 31,
+            "x-sap-scale": 14,
+            "multipleOf": 1.0e-14,
+            "example": "0"
+          }
+        },
+        "title": "Material Stock (for update)"
+      },
+      "count": {
+        "type": "string",
+        "description": "The number of entities in the collection. Available when using the [$inlinecount](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=67) query option."
+      },
+      "error": {
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "properties": {
+          "error": {
+            "type": "object",
+            "required": [
+              "code",
+              "message"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "object",
+                "required": [
+                  "lang",
+                  "value"
+                ],
+                "properties": {
+                  "lang": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                }
+              },
+              "innererror": {
+                "type": "object",
+                "description": "The structure of this object is service-specific"
+              }
+            }
+          }
+        }
+      },
+      "A_MaterialSerialNumberOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Material desc",
+            "SerialNumber",
+            "SerialNumber desc",
+            "Plant",
+            "Plant desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "InventorySpecialStockType",
+            "InventorySpecialStockType desc",
+            "Batch",
+            "Batch desc",
+            "InventoryStockType",
+            "InventoryStockType desc",
+            "Equipment",
+            "Equipment desc",
+            "Customer",
+            "Customer desc",
+            "Supplier",
+            "Supplier desc",
+            "SDDocument",
+            "SDDocument desc",
+            "SDDocumentItem",
+            "SDDocumentItem desc",
+            "WBSElementInternalID",
+            "WBSElementInternalID desc",
+            "WBSElementExternalID",
+            "WBSElementExternalID desc"
+          ]
+        }
+      },
+      "A_MaterialSerialNumberSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "SerialNumber",
+            "Plant",
+            "StorageLocation",
+            "InventorySpecialStockType",
+            "Batch",
+            "InventoryStockType",
+            "Equipment",
+            "Customer",
+            "Supplier",
+            "SDDocument",
+            "SDDocumentItem",
+            "WBSElementInternalID",
+            "WBSElementExternalID",
+            "to_MatlStkInAcctMod"
+          ]
+        }
+      },
+      "A_MaterialSerialNumberExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MatlStkInAcctMod"
+          ]
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialSerialNumberOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Material desc",
+            "Plant",
+            "Plant desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "Batch",
+            "Batch desc",
+            "Supplier",
+            "Supplier desc",
+            "Customer",
+            "Customer desc",
+            "WBSElementInternalID",
+            "WBSElementInternalID desc",
+            "SDDocument",
+            "SDDocument desc",
+            "SDDocumentItem",
+            "SDDocumentItem desc",
+            "InventorySpecialStockType",
+            "InventorySpecialStockType desc",
+            "InventoryStockType",
+            "InventoryStockType desc",
+            "WBSElementExternalID",
+            "WBSElementExternalID desc",
+            "MaterialBaseUnit",
+            "MaterialBaseUnit desc",
+            "MatlWrhsStkQtyInMatlBaseUnit",
+            "MatlWrhsStkQtyInMatlBaseUnit desc"
+          ]
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialSerialNumberSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Plant",
+            "StorageLocation",
+            "Batch",
+            "Supplier",
+            "Customer",
+            "WBSElementInternalID",
+            "SDDocument",
+            "SDDocumentItem",
+            "InventorySpecialStockType",
+            "InventoryStockType",
+            "WBSElementExternalID",
+            "MaterialBaseUnit",
+            "MatlWrhsStkQtyInMatlBaseUnit",
+            "to_MaterialSerialNumber",
+            "to_MaterialStock"
+          ]
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialSerialNumberExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MaterialSerialNumber",
+            "to_MaterialStock"
+          ]
+        }
+      },
+      "A_MaterialStockOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Material desc",
+            "MaterialBaseUnit",
+            "MaterialBaseUnit desc"
+          ]
+        }
+      },
+      "A_MaterialStockSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "MaterialBaseUnit",
+            "to_MatlStkInAcctMod"
+          ]
+        }
+      },
+      "A_MaterialStockExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MatlStkInAcctMod"
+          ]
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialStockOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Material desc",
+            "Plant",
+            "Plant desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "Batch",
+            "Batch desc",
+            "Supplier",
+            "Supplier desc",
+            "Customer",
+            "Customer desc",
+            "WBSElementInternalID",
+            "WBSElementInternalID desc",
+            "SDDocument",
+            "SDDocument desc",
+            "SDDocumentItem",
+            "SDDocumentItem desc",
+            "InventorySpecialStockType",
+            "InventorySpecialStockType desc",
+            "InventoryStockType",
+            "InventoryStockType desc",
+            "WBSElementExternalID",
+            "WBSElementExternalID desc",
+            "MaterialBaseUnit",
+            "MaterialBaseUnit desc",
+            "MatlWrhsStkQtyInMatlBaseUnit",
+            "MatlWrhsStkQtyInMatlBaseUnit desc"
+          ]
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialStockSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Plant",
+            "StorageLocation",
+            "Batch",
+            "Supplier",
+            "Customer",
+            "WBSElementInternalID",
+            "SDDocument",
+            "SDDocumentItem",
+            "InventorySpecialStockType",
+            "InventoryStockType",
+            "WBSElementExternalID",
+            "MaterialBaseUnit",
+            "MatlWrhsStkQtyInMatlBaseUnit",
+            "to_MaterialSerialNumber",
+            "to_MaterialStock"
+          ]
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialStockExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MaterialSerialNumber",
+            "to_MaterialStock"
+          ]
+        }
+      },
+      "A_MatlStkInAcctModOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Material desc",
+            "Plant",
+            "Plant desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "Batch",
+            "Batch desc",
+            "Supplier",
+            "Supplier desc",
+            "Customer",
+            "Customer desc",
+            "WBSElementInternalID",
+            "WBSElementInternalID desc",
+            "SDDocument",
+            "SDDocument desc",
+            "SDDocumentItem",
+            "SDDocumentItem desc",
+            "InventorySpecialStockType",
+            "InventorySpecialStockType desc",
+            "InventoryStockType",
+            "InventoryStockType desc",
+            "WBSElementExternalID",
+            "WBSElementExternalID desc",
+            "MaterialBaseUnit",
+            "MaterialBaseUnit desc",
+            "MatlWrhsStkQtyInMatlBaseUnit",
+            "MatlWrhsStkQtyInMatlBaseUnit desc"
+          ]
+        }
+      },
+      "A_MatlStkInAcctModSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Plant",
+            "StorageLocation",
+            "Batch",
+            "Supplier",
+            "Customer",
+            "WBSElementInternalID",
+            "SDDocument",
+            "SDDocumentItem",
+            "InventorySpecialStockType",
+            "InventoryStockType",
+            "WBSElementExternalID",
+            "MaterialBaseUnit",
+            "MatlWrhsStkQtyInMatlBaseUnit",
+            "to_MaterialSerialNumber",
+            "to_MaterialStock"
+          ]
+        }
+      },
+      "A_MatlStkInAcctModExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MaterialSerialNumber",
+            "to_MaterialStock"
+          ]
+        }
+      },
+      "MaterialSerialNumberOfA_MatlStkInAcctModOrderByOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "Material desc",
+            "SerialNumber",
+            "SerialNumber desc",
+            "Plant",
+            "Plant desc",
+            "StorageLocation",
+            "StorageLocation desc",
+            "InventorySpecialStockType",
+            "InventorySpecialStockType desc",
+            "Batch",
+            "Batch desc",
+            "InventoryStockType",
+            "InventoryStockType desc",
+            "Equipment",
+            "Equipment desc",
+            "Customer",
+            "Customer desc",
+            "Supplier",
+            "Supplier desc",
+            "SDDocument",
+            "SDDocument desc",
+            "SDDocumentItem",
+            "SDDocumentItem desc",
+            "WBSElementInternalID",
+            "WBSElementInternalID desc",
+            "WBSElementExternalID",
+            "WBSElementExternalID desc"
+          ]
+        }
+      },
+      "MaterialSerialNumberOfA_MatlStkInAcctModSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "SerialNumber",
+            "Plant",
+            "StorageLocation",
+            "InventorySpecialStockType",
+            "Batch",
+            "InventoryStockType",
+            "Equipment",
+            "Customer",
+            "Supplier",
+            "SDDocument",
+            "SDDocumentItem",
+            "WBSElementInternalID",
+            "WBSElementExternalID",
+            "to_MatlStkInAcctMod"
+          ]
+        }
+      },
+      "MaterialSerialNumberOfA_MatlStkInAcctModExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MatlStkInAcctMod"
+          ]
+        }
+      },
+      "MaterialStockOfA_MatlStkInAcctModSelectOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "Material",
+            "MaterialBaseUnit",
+            "to_MatlStkInAcctMod"
+          ]
+        }
+      },
+      "MaterialStockOfA_MatlStkInAcctModExpandOptions": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "type": "string",
+          "enum": [
+            "to_MatlStkInAcctMod"
+          ]
+        }
+      }
+    },
+    "parameters": {
+      "top": {
+        "name": "$top",
+        "in": "query",
+        "description": "Show only the first n items, see [Paging - Top](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=66)",
+        "schema": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "example": 50
+      },
+      "skip": {
+        "name": "$skip",
+        "in": "query",
+        "description": "Skip the first n items, see [Paging - Skip](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "schema": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "count": {
+        "name": "$inlinecount",
+        "in": "query",
+        "description": "Include count of items, see [Inlinecount](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=67)",
+        "schema": {
+          "type": "string",
+          "enum": [
+            "allpages",
+            "none"
+          ]
+        }
+      },
+      "A_MaterialSerialNumberOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialSerialNumberOrderByOptions"
+        }
+      },
+      "A_MaterialSerialNumberSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialSerialNumberSelectOptions"
+        }
+      },
+      "A_MaterialSerialNumberExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialSerialNumberExpandOptions"
+        }
+      },
+      "A_MaterialSerialNumberByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialSerialNumberSelectOptions"
+        }
+      },
+      "A_MaterialSerialNumberByKeyExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialSerialNumberExpandOptions"
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialSerialNumberOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MatlStkInAcctModOfA_MaterialSerialNumberOrderByOptions"
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialSerialNumberSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MatlStkInAcctModOfA_MaterialSerialNumberSelectOptions"
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialSerialNumberExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MatlStkInAcctModOfA_MaterialSerialNumberExpandOptions"
+        }
+      },
+      "A_MaterialStockOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialStockOrderByOptions"
+        }
+      },
+      "A_MaterialStockSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialStockSelectOptions"
+        }
+      },
+      "A_MaterialStockExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialStockExpandOptions"
+        }
+      },
+      "A_MaterialStockByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialStockSelectOptions"
+        }
+      },
+      "A_MaterialStockByKeyExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MaterialStockExpandOptions"
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialStockOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MatlStkInAcctModOfA_MaterialStockOrderByOptions"
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialStockSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MatlStkInAcctModOfA_MaterialStockSelectOptions"
+        }
+      },
+      "MatlStkInAcctModOfA_MaterialStockExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MatlStkInAcctModOfA_MaterialStockExpandOptions"
+        }
+      },
+      "A_MatlStkInAcctModOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MatlStkInAcctModOrderByOptions"
+        }
+      },
+      "A_MatlStkInAcctModSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MatlStkInAcctModSelectOptions"
+        }
+      },
+      "A_MatlStkInAcctModExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MatlStkInAcctModExpandOptions"
+        }
+      },
+      "A_MatlStkInAcctModByKeySelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MatlStkInAcctModSelectOptions"
+        }
+      },
+      "A_MatlStkInAcctModByKeyExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/A_MatlStkInAcctModExpandOptions"
+        }
+      },
+      "MaterialSerialNumberOfA_MatlStkInAcctModOrderByOptions": {
+        "name": "$orderby",
+        "in": "query",
+        "description": "Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MaterialSerialNumberOfA_MatlStkInAcctModOrderByOptions"
+        }
+      },
+      "MaterialSerialNumberOfA_MatlStkInAcctModSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MaterialSerialNumberOfA_MatlStkInAcctModSelectOptions"
+        }
+      },
+      "MaterialSerialNumberOfA_MatlStkInAcctModExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MaterialSerialNumberOfA_MatlStkInAcctModExpandOptions"
+        }
+      },
+      "MaterialStockOfA_MatlStkInAcctModSelectOptions": {
+        "name": "$select",
+        "in": "query",
+        "description": "Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MaterialStockOfA_MatlStkInAcctModSelectOptions"
+        }
+      },
+      "MaterialStockOfA_MatlStkInAcctModExpandOptions": {
+        "name": "$expand",
+        "in": "query",
+        "description": "Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)",
+        "explode": false,
+        "schema": {
+          "$ref": "#/components/schemas/MaterialStockOfA_MatlStkInAcctModExpandOptions"
+        }
+      }
+    },
+    "responses": {
+      "error": {
+        "description": "Error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/error"
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "OAuth2Auth": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "scopes": {
+              "API_MATERIAL_STOCK_SRV_0001": ""
+            },
+            "refreshUrl": "https://{host}:{port}",
+            "authorizationUrl": "https://{host}:{port}",
+            "tokenUrl": "https://{host}:{port}"
+          }
+        }
+      },
+      "BasicAuth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  },
+  "security": [
+    {
+      "OAuth2Auth": [
+        "API_MATERIAL_STOCK_SRV_0001"
+      ]
+    },
+    {
+      "BasicAuth": []
+    }
+  ]
+}
