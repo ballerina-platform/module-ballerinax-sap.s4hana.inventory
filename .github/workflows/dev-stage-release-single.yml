@@ -17,6 +17,7 @@ on:
         options:
           - api_material_document_srv
           - api_material_stock_srv
+          - api_physical_inventory_doc_srv
 
 jobs:
   publish-release:

@@ -1,0 +1,7 @@
+{
+  "description": "The `ballerinax/sap.s4hana.api_physical_inventory_doc_srv` package provides APIs that enable seamless integration with the [Physical Inventory Documents - Read, Creat API v1.0.0](https://api.sap.com/api/API_PHYSICAL_INVENTORY_DOC_SRV/overview). You can count items and post differences on both document and item level. The service can be consumed by external systems.",
+  "communication-scenario": "Physical Inventory Document Integration",
+  "import-statement": "import ballerinax/sap.s4hana.api_physical_inventory_doc_srv as physicalinventorydoc;",
+  "client-init": "physicalinventorydoc:Client physicalInventoryDocClient = check new (",
+  "api-invocation": "physicalinventorydoc:CollectionOfA_PhysInventoryDocItemWrapper listAPhysInventoryDocItems = check physicalInventoryDocClient->listA_PhysInventoryDocItems();"
+}
