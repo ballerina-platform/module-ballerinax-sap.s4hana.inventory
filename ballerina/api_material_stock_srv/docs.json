@@ -1,0 +1,7 @@
+{
+  "description": "The `ballerinax/sap.s4hana.api_material_stock_srv` package provides APIs that enable seamless integration with the [Material Stock - Read API v1.1.0](https://api.sap.com/api/API_MATERIAL_STOCK_SRV/overview). This service enables you to retrieve material stock information using the OData protocol with filter data provided in the payload. It can be consumed by external warehouse applications.",
+  "communication-scenario": "Material Stock Integration",
+  "import-statement": "import ballerinax/sap.s4hana.api_material_stock_srv as materialstock;",
+  "client-init": "materialstock:Client materialStockClient = check new (",
+  "api-invocation": "materialstock:CollectionOfA_MaterialStockWrapper listAMaterialStocks = check materialStockClient->listA_MaterialStocks();"
+}

@@ -9,6 +9,7 @@ on:
         required: true
         options:
           - api_material_document_srv
+          - api_material_stock_srv
 
 jobs:
   call_workflow:
