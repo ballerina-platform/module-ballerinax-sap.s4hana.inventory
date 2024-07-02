@@ -94,6 +94,7 @@
   "paths": {
     "/ReservationDocument": {
       "get": {
+        "operationId": "listReservationDocuments",
         "summary": "Get entities from ReservationDocument",
         "tags": [
           "Reservation Document Header"
@@ -155,6 +156,7 @@
         }
       },
       "post": {
+        "operationId": "createReservationDocument",
         "summary": "Add new entity to ReservationDocument",
         "tags": [
           "Reservation Document Header"
@@ -201,6 +203,7 @@
         }
       ],
       "get": {
+        "operationId": "getReservationDocument",
         "summary": "Get entity from ReservationDocument by key",
         "tags": [
           "Reservation Document Header"
@@ -230,6 +233,7 @@
         }
       },
       "patch": {
+        "operationId": "patchReservationDocument",
         "summary": "Update entity in ReservationDocument",
         "tags": [
           "Reservation Document Header"
@@ -255,6 +259,7 @@
         }
       },
       "delete": {
+        "operationId": "deleteReservationDocument",
         "summary": "Delete entity from ReservationDocument",
         "tags": [
           "Reservation Document Header"
@@ -283,6 +288,7 @@
         }
       ],
       "get": {
+        "operationId": "listReservationDocumentItemsOfReservationDocument",
         "summary": "Get entities from related _ReservationDocumentItem",
         "tags": [
           "Reservation Document Header",
@@ -345,6 +351,7 @@
         }
       },
       "post": {
+        "operationId": "createReservationDocumentItemOfReservationDocument",
         "summary": "Add new entity to related _ReservationDocumentItem",
         "tags": [
           "Reservation Document Header",
@@ -380,6 +387,7 @@
     },
     "/ReservationDocumentItem": {
       "get": {
+        "operationId": "listReservationDocumentItems",
         "summary": "Get entities from ReservationDocumentItem",
         "tags": [
           "Reservation Document Item"
@@ -475,6 +483,7 @@
         }
       ],
       "get": {
+        "operationId": "getReservationDocumentItem",
         "summary": "Get entity from ReservationDocumentItem by key",
         "tags": [
           "Reservation Document Item"
@@ -504,6 +513,7 @@
         }
       },
       "patch": {
+        "operationId": "patchReservationDocumentItem",
         "summary": "Update entity in ReservationDocumentItem",
         "tags": [
           "Reservation Document Item"
@@ -563,6 +573,7 @@
         }
       ],
       "get": {
+        "operationId": "getReservationDocumentOfReservationDocumentItem",
         "summary": "Get related _ReservationDocument",
         "tags": [
           "Reservation Document Item",
@@ -595,6 +606,7 @@
     },
     "/$batch": {
       "post": {
+        "operationId": "performBatchOperation",
         "summary": "Send a group of requests",
         "description": "Group multiple requests into a single request payload, see [Batch Requests](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_BatchRequests).\n\n*Please note that \"Try it out\" is not supported for this request.*",
         "tags": [
