@@ -87,6 +87,7 @@
   "paths": {
     "/A_PhysInventoryDocHeader": {
       "get": {
+        "operationId": "listA_PhysInventoryDocHeaders",
         "summary": "Reads information on physical inventory document header level",
         "description": "Reads physical inventory document header information to get an overview of the physical inventory document postings.",
         "tags": [
@@ -155,6 +156,7 @@
         }
       },
       "post": {
+        "operationId": "createA_PhysInventoryDocHeader",
         "summary": "Creates a physical inventory document",
         "description": "Creates a physical inventory document compost by header and item to be counted.",
         "tags": [
@@ -218,6 +220,7 @@
         }
       ],
       "get": {
+        "operationId": "getA_PhysInventoryDocHeader",
         "summary": "Reads information for a specific physical inventory document",
         "description": "Reads physical inventory document header information for a specific physical inventory document to get an overview of the physical inventory document posting.",
         "tags": [
@@ -278,6 +281,7 @@
         }
       ],
       "get": {
+        "operationId": "listPhysicalInventoryDocumentItemsOfA_PhysInventoryDocHeader",
         "summary": "Reads information for a specific physical inventory document header and physical inventory document items",
         "description": "Reads physical inventory document header and physical inventory documents items information for a specific physical inventory document to get an overview of the physical inventory document posting.",
         "tags": [
@@ -349,6 +353,7 @@
     },
     "/A_PhysInventoryDocItem": {
       "get": {
+        "operationId": "listA_PhysInventoryDocItems",
         "summary": "Reads information on physical inventory items level",
         "description": "Reads physical inventory document items information to get an overview of the physical inventory document postings.",
         "tags": [
@@ -451,6 +456,7 @@
         }
       ],
       "get": {
+        "operationId": "getA_PhysInventoryDocItem",
         "summary": "Reads information on physical inventory document item level for a specific physical inventory document item",
         "description": "Reads physical inventory document item information for a specific physical inventory document, year and item to get an overview of the physical inventory document posting.",
         "tags": [
@@ -487,6 +493,7 @@
         }
       },
       "patch": {
+        "operationId": "patchA_PhysInventoryDocItem",
         "summary": "Change a specific physical inventory document item",
         "description": "Change a physical inventory document item for a specific physical inventory document, year and item.",
         "tags": [
@@ -553,6 +560,7 @@
         }
       ],
       "get": {
+        "operationId": "getPhysicalInventoryDocumentOfA_PhysInventoryDocItem",
         "summary": "Reads information on physical inventory document item and header level for a specific physical inventory document item",
         "description": "Reads physical inventory document item and header information for a specific physical inventory document, year and item to get an overview of the physical inventory document posting.",
         "tags": [
@@ -624,6 +632,7 @@
         }
       ],
       "get": {
+        "operationId": "listSerialNumberssOfA_PhysInventoryDocItem",
         "summary": "Reads information on serial numbers for a specific physical inventory document item",
         "description": "Reads information on serial numbers for a specific physical inventory document item to get an overview of the book and counted serial numbers.",
         "tags": [
@@ -692,6 +701,7 @@
     },
     "/A_SerialNumberPhysInventoryDoc": {
       "get": {
+        "operationId": "listA_SerialNumberPhysInventoryDocs",
         "summary": "Reads information of serial numbers on physical inventory document items level",
         "description": "Reads information of serial numbers of physical inventory document items to get an overview of the book and counted serial numbers.",
         "tags": [
@@ -811,6 +821,7 @@
         }
       ],
       "get": {
+        "operationId": "getA_SerialNumberPhysInventoryDoc",
         "summary": "Reads information of serial number on physical inventory document item level for a specific physical inventory document, item and year",
         "description": "Reads information of serial number of a specific physical inventory document, item and year to get an overview of the book and counted serial numbers.",
         "tags": [
@@ -844,6 +855,7 @@
         }
       },
       "patch": {
+        "operationId": "patchA_SerialNumberPhysInventoryDoc",
         "summary": "Set a counted serial number for a specific physical inventory document item",
         "description": "Set a counted serial number for a specific physical inventory document, year and item.",
         "tags": [
@@ -878,6 +890,7 @@
     },
     "/PostDifferences": {
       "post": {
+        "operationId": "createPostDifferences",
         "summary": "Creates the material document for the differences",
         "description": "Creates the material document for the differences between book and counted quantities of the physical inventory document.",
         "tags": [
@@ -956,6 +969,7 @@
     },
     "/PostDifferencesOnItem": {
       "post": {
+        "operationId": "createPostDifferencesOnItem",
         "summary": "Creates the material document for the differences for a specific physical inventory document item",
         "description": "Creates the material document for the differences between book and counted quantities of the physical inventory document for a specific physical inventory document item.",
         "tags": [
@@ -1064,6 +1078,7 @@
     },
     "/InitiateRecount": {
       "post": {
+        "operationId": "createInitiateRecount",
         "summary": "Initiates a recount for the physical inventory document",
         "description": "Initiates a recount for the physical inventory document.",
         "tags": [
@@ -1203,6 +1218,7 @@
     },
     "/InitiateRecountOnItem": {
       "post": {
+        "operationId": "createInitiateRecountOnItem",
         "summary": "Initiates a recount for the specific physical inventory document",
         "description": "Initiates a recount for the specific physical inventory document.",
         "tags": [
@@ -1339,6 +1355,7 @@
     },
     "/$batch": {
       "post": {
+        "operationId": "performBatchOperation",
         "summary": "Send a group of requests",
         "description": "Group multiple requests into a single request payload, see [Batch Requests](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=152).\n\n*Please note that \"Try it out\" is not supported for this request.*",
         "tags": [
