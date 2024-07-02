@@ -1,7 +1,7 @@
 {
-  "description": "",
-  "communication-scenario": "",
-  "import-statement": "",
-  "client-init": "",
-  "api-invocation": ""
+  "description": "The `ballerinax/sap.s4hana.api_reservation_document_srv` package provides APIs that enable seamless integration with the [Reservation Document API v1.0.0](https://api.sap.com/api/API_RESERVATION_DOCUMENT_SRV/overview). For example, a user might create a reservation for a material with some quantity and assign that reserved material to a cost center, a sales order or an asset. A reservation can also be created for a transfer posting from one plant to another. For an existing reservation, you can change the updatable fields of the items. The service also allows to delete existing reservation documents. It can be consumed by external systems and user interfaces.",
+  "communication-scenario": "Reservation Integration",
+  "import-statement": "import ballerinax/sap.s4hana.api_reservation_document_srv as reservationdocument;",
+  "client-init": "reservationdocument:Client reservationDocumentClient = check new (",
+  "api-invocation": "reservationdocument:CollectionOfA_ReservationDocumentItemWrapper listAReservationDocumentItems = check reservationDocumentClient->listA_ReservationDocumentItems();"
 }

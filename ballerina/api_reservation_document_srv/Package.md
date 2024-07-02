@@ -3,7 +3,7 @@
 [S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
 designed for large-scale enterprises by SAP SE.
 
-
+The `ballerinax/sap.s4hana.api_reservation_document_srv` package provides APIs that enable seamless integration with the [Reservation Document API v1.0.0](https://api.sap.com/api/API_RESERVATION_DOCUMENT_SRV/overview). For example, a user might create a reservation for a material with some quantity and assign that reserved material to a cost center, a sales order or an asset. A reservation can also be created for a transfer posting from one plant to another. For an existing reservation, you can change the updatable fields of the items. The service also allows to delete existing reservation documents. It can be consumed by external systems and user interfaces.
 
 ## Setup guide
 
@@ -13,7 +13,7 @@ designed for large-scale enterprises by SAP SE.
 
    ![Display Scenarios](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-1-display-scenarios.png)
 
-3. In the search bar, type `` and select the corresponding scenario from the results.
+3. In the search bar, type `Reservation Integration` and select the corresponding scenario from the results.
 
    ![Search Sales Order](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap/main/docs/setup/3-2-search-sales-order.png)
 
@@ -42,6 +42,7 @@ To use the `sap.s4hana.api_reservation_document_srv` connector in your Ballerina
 Import the `sap.s4hana.api_reservation_document_srv` module.
 
 ```ballerina
+import ballerinax/sap.s4hana.api_reservation_document_srv as reservationdocument;
 ```
 
 ### Step 2: Instantiate a new connector
@@ -52,6 +53,8 @@ Use the hostname and credentials to initiate a client
 configurable string hostname = ?;
 configurable string username = ?;
 configurable string password = ?;
+
+reservationdocument:Client reservationDocumentClient = check new (
     hostname = hostname,
     config = {
         auth: {
@@ -67,6 +70,7 @@ configurable string password = ?;
 Now, utilize the available connector operations.
 
 ```ballerina
+reservationdocument:CollectionOfA_ReservationDocumentItemWrapper listAReservationDocumentItems = check reservationDocumentClient->listA_ReservationDocumentItems();
 ```
 
 ### Step 4: Run the Ballerina application
