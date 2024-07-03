@@ -18,87 +18,6 @@
 // under the License.
 
 import ballerina/constraint;
-import ballerina/http;
-
-public type CollectionOfA_MaterialDocumentHeaderWrapper record {
-    CollectionOfA_MaterialDocumentHeader d?;
-};
-
-public type A_MaterialDocumentHeaderWrapper record {
-    A_MaterialDocumentHeader d?;
-};
-
-public type CollectionOfA_MaterialDocumentItem record {
-    count __count?;
-    A_MaterialDocumentItem[] results?;
-};
-
-public type AcceptedAnydata record {|
-    *http:Accepted;
-    anydata body;
-    map<string|string[]> headers;
-|};
-
-public type CollectionOfA_SerialNumberMaterialDocumentWrapper record {
-    CollectionOfA_SerialNumberMaterialDocument d?;
-};
-
-public type CollectionOfA_SerialNumberMaterialDocument record {
-    count __count?;
-    A_SerialNumberMaterialDocument[] results?;
-};
-
-public type A_MaterialDocumentHeader record {
-    @constraint:String {maxLength: 4}
-    string MaterialDocumentYear?;
-    # Number of Material Document
-    @constraint:String {maxLength: 10}
-    string MaterialDocument?;
-    # Transaction/Event Type
-    string? InventoryTransactionType?;
-    # Document Date in Document
-    string? DocumentDate?;
-    # Posting Date in the Document
-    string? PostingDate?;
-    # Day On Which Accounting Document Was Entered
-    string? CreationDate?;
-    string? CreationTime?;
-    string? CreatedByUser?;
-    string? MaterialDocumentHeaderText?;
-    # Reference Document Number
-    string? ReferenceDocument?;
-    # Version for Printing GR/GI Slip
-    string? VersionForPrintingSlip?;
-    # Print via Output Control
-    string? ManualPrintIsTriggered?;
-    # Control posting for external WMS
-    string? CtrlPostgForExtWhseMgmtSyst?;
-    string? GoodsMovementCode?;
-    A_MaterialDocumentHeader_to_MaterialDocumentItem to_MaterialDocumentItem?;
-};
-
-public type CollectionOfA_MaterialDocumentItemWrapper record {
-    CollectionOfA_MaterialDocumentItem d?;
-};
-
-public type OkA_MaterialDocumentHeaderWrapper record {|
-    *http:Ok;
-    A_MaterialDocumentHeaderWrapper body;
-    map<string|string[]> headers;
-|};
-
-public type CreateA_MaterialDocumentItem_to_SerialNumbers record {
-    CreateA_SerialNumberMaterialDocument[] results?;
-};
-
-public type CollectionOfA_MaterialDocumentHeader record {
-    count __count?;
-    A_MaterialDocumentHeader[] results?;
-};
-
-public type A_MaterialDocumentItemOrderByOptions ("MaterialDocumentYear"|"MaterialDocumentYear desc"|"MaterialDocument"|"MaterialDocument desc"|"MaterialDocumentItem"|"MaterialDocumentItem desc"|"Material"|"Material desc"|"Plant"|"Plant desc"|"StorageLocation"|"StorageLocation desc"|"Batch"|"Batch desc"|"GoodsMovementType"|"GoodsMovementType desc"|"InventoryStockType"|"InventoryStockType desc"|"InventoryValuationType"|"InventoryValuationType desc"|"InventorySpecialStockType"|"InventorySpecialStockType desc"|"Supplier"|"Supplier desc"|"Customer"|"Customer desc"|"SalesOrder"|"SalesOrder desc"|"SalesOrderItem"|"SalesOrderItem desc"|"SalesOrderScheduleLine"|"SalesOrderScheduleLine desc"|"PurchaseOrder"|"PurchaseOrder desc"|"PurchaseOrderItem"|"PurchaseOrderItem desc"|"WBSElement"|"WBSElement desc"|"ManufacturingOrder"|"ManufacturingOrder desc"|"ManufacturingOrderItem"|"ManufacturingOrderItem desc"|"GoodsMovementRefDocType"|"GoodsMovementRefDocType desc"|"GoodsMovementReasonCode"|"GoodsMovementReasonCode desc"|"Delivery"|"Delivery desc"|"DeliveryItem"|"DeliveryItem desc"|"AccountAssignmentCategory"|"AccountAssignmentCategory desc"|"CostCenter"|"CostCenter desc"|"ControllingArea"|"ControllingArea desc"|"CostObject"|"CostObject desc"|"GLAccount"|"GLAccount desc"|"FunctionalArea"|"FunctionalArea desc"|"ProfitabilitySegment"|"ProfitabilitySegment desc"|"ProfitCenter"|"ProfitCenter desc"|"MasterFixedAsset"|"MasterFixedAsset desc"|"FixedAsset"|"FixedAsset desc"|"MaterialBaseUnit"|"MaterialBaseUnit desc"|"QuantityInBaseUnit"|"QuantityInBaseUnit desc"|"EntryUnit"|"EntryUnit desc"|"QuantityInEntryUnit"|"QuantityInEntryUnit desc"|"CompanyCodeCurrency"|"CompanyCodeCurrency desc"|"GdsMvtExtAmtInCoCodeCrcy"|"GdsMvtExtAmtInCoCodeCrcy desc"|"SlsPrcAmtInclVATInCoCodeCrcy"|"SlsPrcAmtInclVATInCoCodeCrcy desc"|"FiscalYear"|"FiscalYear desc"|"FiscalYearPeriod"|"FiscalYearPeriod desc"|"FiscalYearVariant"|"FiscalYearVariant desc"|"IssgOrRcvgMaterial"|"IssgOrRcvgMaterial desc"|"IssgOrRcvgBatch"|"IssgOrRcvgBatch desc"|"IssuingOrReceivingPlant"|"IssuingOrReceivingPlant desc"|"IssuingOrReceivingStorageLoc"|"IssuingOrReceivingStorageLoc desc"|"IssuingOrReceivingStockType"|"IssuingOrReceivingStockType desc"|"IssgOrRcvgSpclStockInd"|"IssgOrRcvgSpclStockInd desc"|"IssuingOrReceivingValType"|"IssuingOrReceivingValType desc"|"IsCompletelyDelivered"|"IsCompletelyDelivered desc"|"MaterialDocumentItemText"|"MaterialDocumentItemText desc"|"GoodsRecipientName"|"GoodsRecipientName desc"|"UnloadingPointName"|"UnloadingPointName desc"|"ShelfLifeExpirationDate"|"ShelfLifeExpirationDate desc"|"ManufactureDate"|"ManufactureDate desc"|"SerialNumbersAreCreatedAutomly"|"SerialNumbersAreCreatedAutomly desc"|"Reservation"|"Reservation desc"|"ReservationItem"|"ReservationItem desc"|"ReservationItemRecordType"|"ReservationItemRecordType desc"|"ReservationIsFinallyIssued"|"ReservationIsFinallyIssued desc"|"SpecialStockIdfgSalesOrder"|"SpecialStockIdfgSalesOrder desc"|"SpecialStockIdfgSalesOrderItem"|"SpecialStockIdfgSalesOrderItem desc"|"SpecialStockIdfgWBSElement"|"SpecialStockIdfgWBSElement desc"|"IsAutomaticallyCreated"|"IsAutomaticallyCreated desc"|"MaterialDocumentLine"|"MaterialDocumentLine desc"|"MaterialDocumentParentLine"|"MaterialDocumentParentLine desc"|"HierarchyNodeLevel"|"HierarchyNodeLevel desc"|"GoodsMovementIsCancelled"|"GoodsMovementIsCancelled desc"|"ReversedMaterialDocumentYear"|"ReversedMaterialDocumentYear desc"|"ReversedMaterialDocument"|"ReversedMaterialDocument desc"|"ReversedMaterialDocumentItem"|"ReversedMaterialDocumentItem desc"|"ReferenceDocumentFiscalYear"|"ReferenceDocumentFiscalYear desc"|"InvtryMgmtRefDocumentItem"|"InvtryMgmtRefDocumentItem desc"|"InvtryMgmtReferenceDocument"|"InvtryMgmtReferenceDocument desc"|"MaterialDocumentPostingType"|"MaterialDocumentPostingType desc"|"InventoryUsabilityCode"|"InventoryUsabilityCode desc"|"EWMWarehouse"|"EWMWarehouse desc"|"EWMStorageBin"|"EWMStorageBin desc"|"DebitCreditCode"|"DebitCreditCode desc")[];
-
-public type A_MaterialDocumentHeaderSelectOptions ("MaterialDocumentYear"|"MaterialDocument"|"InventoryTransactionType"|"DocumentDate"|"PostingDate"|"CreationDate"|"CreationTime"|"CreatedByUser"|"MaterialDocumentHeaderText"|"ReferenceDocument"|"VersionForPrintingSlip"|"ManualPrintIsTriggered"|"CtrlPostgForExtWhseMgmtSyst"|"GoodsMovementCode"|"to_MaterialDocumentItem")[];
 
 public type CreateA_MaterialDocumentItem record {
     @constraint:String {maxLength: 4}
@@ -241,6 +160,14 @@ public type A_MaterialDocumentHeader_to_MaterialDocumentItem record {
     A_MaterialDocumentItem[] results?;
 };
 
+public type CollectionOfA_MaterialDocumentHeaderWrapper record {
+    CollectionOfA_MaterialDocumentHeader d?;
+};
+
+public type A_MaterialDocumentHeaderWrapper record {
+    A_MaterialDocumentHeader d?;
+};
+
 public type A_SerialNumberMaterialDocument record {
     # Material Number
     @constraint:String {maxLength: 40}
@@ -258,12 +185,37 @@ public type A_SerialNumberMaterialDocument record {
     string? ManufacturerSerialNumber?;
 };
 
-public type A_MaterialDocumentItemWrapper record {
-    A_MaterialDocumentItem d?;
-};
-
 # The number of entities in the collection. Available when using the [$inlinecount](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=67) query option.
 public type count string;
+
+public type A_MaterialDocumentHeader record {
+    @constraint:String {maxLength: 4}
+    string MaterialDocumentYear?;
+    # Number of Material Document
+    @constraint:String {maxLength: 10}
+    string MaterialDocument?;
+    # Transaction/Event Type
+    string? InventoryTransactionType?;
+    # Document Date in Document
+    string? DocumentDate?;
+    # Posting Date in the Document
+    string? PostingDate?;
+    # Day On Which Accounting Document Was Entered
+    string? CreationDate?;
+    string? CreationTime?;
+    string? CreatedByUser?;
+    string? MaterialDocumentHeaderText?;
+    # Reference Document Number
+    string? ReferenceDocument?;
+    # Version for Printing GR/GI Slip
+    string? VersionForPrintingSlip?;
+    # Print via Output Control
+    string? ManualPrintIsTriggered?;
+    # Control posting for external WMS
+    string? CtrlPostgForExtWhseMgmtSyst?;
+    string? GoodsMovementCode?;
+    A_MaterialDocumentHeader_to_MaterialDocumentItem to_MaterialDocumentItem?;
+};
 
 public type CreateA_MaterialDocumentHeader record {
     @constraint:String {maxLength: 4}
@@ -294,29 +246,24 @@ public type CreateA_MaterialDocumentHeader record {
     CreateA_MaterialDocumentHeader_to_MaterialDocumentItem to_MaterialDocumentItem?;
 };
 
+public type CreateA_MaterialDocumentItem_to_SerialNumbers record {
+    CreateA_SerialNumberMaterialDocument[] results?;
+};
+
 public type A_MaterialDocumentHeaderExpandOptions ("to_MaterialDocumentItem")[];
 
-public type OkA_MaterialDocumentItemWrapper record {|
-    *http:Ok;
-    A_MaterialDocumentItemWrapper body;
-    map<string|string[]> headers;
-|};
+public type CollectionOfA_MaterialDocumentHeader record {
+    count __count?;
+    A_MaterialDocumentHeader[] results?;
+};
 
 public type CreateA_MaterialDocumentHeader_to_MaterialDocumentItem record {
     CreateA_MaterialDocumentItem[] results?;
 };
 
-public type A_SerialNumberMaterialDocumentSelectOptions ("Material"|"SerialNumber"|"MaterialDocument"|"MaterialDocumentItem"|"MaterialDocumentYear"|"ManufacturerSerialNumber")[];
-
-public type A_MaterialDocumentItemExpandOptions ("to_MaterialDocumentHeader"|"to_SerialNumbers")[];
-
-public type A_SerialNumberMaterialDocumentOrderByOptions ("Material"|"Material desc"|"SerialNumber"|"SerialNumber desc"|"MaterialDocument"|"MaterialDocument desc"|"MaterialDocumentItem"|"MaterialDocumentItem desc"|"MaterialDocumentYear"|"MaterialDocumentYear desc"|"ManufacturerSerialNumber"|"ManufacturerSerialNumber desc")[];
-
 public type A_MaterialDocumentItem_to_SerialNumbers record {
     A_SerialNumberMaterialDocument[] results?;
 };
-
-public type A_MaterialDocumentItemSelectOptions ("MaterialDocumentYear"|"MaterialDocument"|"MaterialDocumentItem"|"Material"|"Plant"|"StorageLocation"|"Batch"|"GoodsMovementType"|"InventoryStockType"|"InventoryValuationType"|"InventorySpecialStockType"|"Supplier"|"Customer"|"SalesOrder"|"SalesOrderItem"|"SalesOrderScheduleLine"|"PurchaseOrder"|"PurchaseOrderItem"|"WBSElement"|"ManufacturingOrder"|"ManufacturingOrderItem"|"GoodsMovementRefDocType"|"GoodsMovementReasonCode"|"Delivery"|"DeliveryItem"|"AccountAssignmentCategory"|"CostCenter"|"ControllingArea"|"CostObject"|"GLAccount"|"FunctionalArea"|"ProfitabilitySegment"|"ProfitCenter"|"MasterFixedAsset"|"FixedAsset"|"MaterialBaseUnit"|"QuantityInBaseUnit"|"EntryUnit"|"QuantityInEntryUnit"|"CompanyCodeCurrency"|"GdsMvtExtAmtInCoCodeCrcy"|"SlsPrcAmtInclVATInCoCodeCrcy"|"FiscalYear"|"FiscalYearPeriod"|"FiscalYearVariant"|"IssgOrRcvgMaterial"|"IssgOrRcvgBatch"|"IssuingOrReceivingPlant"|"IssuingOrReceivingStorageLoc"|"IssuingOrReceivingStockType"|"IssgOrRcvgSpclStockInd"|"IssuingOrReceivingValType"|"IsCompletelyDelivered"|"MaterialDocumentItemText"|"GoodsRecipientName"|"UnloadingPointName"|"ShelfLifeExpirationDate"|"ManufactureDate"|"SerialNumbersAreCreatedAutomly"|"Reservation"|"ReservationItem"|"ReservationItemRecordType"|"ReservationIsFinallyIssued"|"SpecialStockIdfgSalesOrder"|"SpecialStockIdfgSalesOrderItem"|"SpecialStockIdfgWBSElement"|"IsAutomaticallyCreated"|"MaterialDocumentLine"|"MaterialDocumentParentLine"|"HierarchyNodeLevel"|"GoodsMovementIsCancelled"|"ReversedMaterialDocumentYear"|"ReversedMaterialDocument"|"ReversedMaterialDocumentItem"|"ReferenceDocumentFiscalYear"|"InvtryMgmtRefDocumentItem"|"InvtryMgmtReferenceDocument"|"MaterialDocumentPostingType"|"InventoryUsabilityCode"|"EWMWarehouse"|"EWMStorageBin"|"DebitCreditCode"|"to_MaterialDocumentHeader"|"to_SerialNumbers")[];
 
 public type A_MaterialDocumentHeaderOrderByOptions ("MaterialDocumentYear"|"MaterialDocumentYear desc"|"MaterialDocument"|"MaterialDocument desc"|"InventoryTransactionType"|"InventoryTransactionType desc"|"DocumentDate"|"DocumentDate desc"|"PostingDate"|"PostingDate desc"|"CreationDate"|"CreationDate desc"|"CreationTime"|"CreationTime desc"|"CreatedByUser"|"CreatedByUser desc"|"MaterialDocumentHeaderText"|"MaterialDocumentHeaderText desc"|"ReferenceDocument"|"ReferenceDocument desc"|"VersionForPrintingSlip"|"VersionForPrintingSlip desc"|"ManualPrintIsTriggered"|"ManualPrintIsTriggered desc"|"CtrlPostgForExtWhseMgmtSyst"|"CtrlPostgForExtWhseMgmtSyst desc"|"GoodsMovementCode"|"GoodsMovementCode desc")[];
 
@@ -473,3 +420,5 @@ public type CreateA_SerialNumberMaterialDocument record {
     # Manufacturer's Serial Number
     string? ManufacturerSerialNumber?;
 };
+
+public type A_MaterialDocumentHeaderSelectOptions ("MaterialDocumentYear"|"MaterialDocument"|"InventoryTransactionType"|"DocumentDate"|"PostingDate"|"CreationDate"|"CreationTime"|"CreatedByUser"|"MaterialDocumentHeaderText"|"ReferenceDocument"|"VersionForPrintingSlip"|"ManualPrintIsTriggered"|"CtrlPostgForExtWhseMgmtSyst"|"GoodsMovementCode"|"to_MaterialDocumentItem")[];

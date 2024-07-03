@@ -54,12 +54,13 @@ service /sap/opu/odata/sap/API_RESERVATION_DOCUMENT_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_ReservationDocumentHeader(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_ReservationDocumentHeaderOrderByOptions? \$orderby, A_ReservationDocumentHeaderSelectOptions? \$select, A_ReservationDocumentHeaderExpandOptions? \$expand) returns CollectionOfA_ReservationDocumentHeaderWrapper|http:Response {
-        return{
+        return {
             "d": {
                 "results": [
-                {
-                    "Reservation": "20000",
-                    "OrderId": "13579"}
+                    {
+                        "Reservation": "20000",
+                        "OrderId": "13579"
+                    }
                 ]
             }
         };
@@ -77,12 +78,13 @@ service /sap/opu/odata/sap/API_RESERVATION_DOCUMENT_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_ReservationDocumentItem(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_ReservationDocumentItemOrderByOptions? \$orderby, A_ReservationDocumentItemSelectOptions? \$select) returns CollectionOfA_ReservationDocumentItemWrapper|http:Response {
-        return{
+        return {
             "d": {
                 "results": [
-                {
-                    "Reservation": "20000",
-                    "ReservationItem": "Fan"}
+                    {
+                        "Reservation": "20000",
+                        "ReservationItem": "Fan"
+                    }
                 ]
             }
         };
@@ -95,12 +97,6 @@ service /sap/opu/odata/sap/API_RESERVATION_DOCUMENT_SRV on ep0 {
     # http:Created (Created entity)
     # http:Response (Error)
     resource function post A_ReservationDocumentHeader(@http:Payload CreateA_ReservationDocumentHeader payload) returns A_ReservationDocumentHeader_1|http:Response {
-        http:Response res = new;
-        res.statusCode = 500;
-        return res;
-    }
-
-    resource function post \$batch(http:Request request) returns AcceptedAnydata|http:Response {
         http:Response res = new;
         res.statusCode = 500;
         return res;

@@ -1,5 +1,5 @@
 {
-  "description": "The `ballerinax/sap.s4hana.api_physical_inventory_doc_srv` package provides APIs that enable seamless integration with the [Physical Inventory Documents - Read, Creat API v1.0.0](https://api.sap.com/api/API_PHYSICAL_INVENTORY_DOC_SRV/overview). This service allows user to read and create physical inventory document.",
+  "description": "The `ballerinax/sap.s4hana.api_physical_inventory_doc_srv` package provides APIs that enable seamless integration with the [Physical Inventory Documents - Read, Create API v1.0.0](https://api.sap.com/api/API_PHYSICAL_INVENTORY_DOC_SRV/overview). This service allows user to read and create physical inventory document.",
   "communication-scenario": "Physical Inventory Document Integration",
   "import-statement": "import ballerinax/sap.s4hana.api_physical_inventory_doc_srv as physicalinventorydoc;",
   "client-init": "physicalinventorydoc:Client physicalInventoryDocClient = check new (",

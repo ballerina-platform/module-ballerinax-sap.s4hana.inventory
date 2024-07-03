@@ -40,6 +40,7 @@ service /sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV on ep0 {
         res.setHeader("X-CSRF-TOKEN", "SAP-Material-Document");
         return res;
     }
+
     # Reads information on material document header level
     #
     # + \$top - Show only the first n items, see [Paging - Top](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=66)
@@ -53,66 +54,13 @@ service /sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_MaterialDocumentHeader(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_MaterialDocumentHeaderOrderByOptions? \$orderby, A_MaterialDocumentHeaderSelectOptions? \$select, A_MaterialDocumentHeaderExpandOptions? \$expand) returns CollectionOfA_MaterialDocumentHeaderWrapper|http:Response {
-        return{
+        return {
             "d": {
                 "results": [
-                {
-                    "MaterialDocumentYear": "2024",
-                    "MaterialDocument": "1000000000"
+                    {
+                        "MaterialDocumentYear": "2024",
+                        "MaterialDocument": "1000000000"
                     }
-                ]
-            }
-        };
-    }
-
-    # Reads information on material document items level
-    #
-    # + \$top - Show only the first n items, see [Paging - Top](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=66)
-    # + \$skip - Skip the first n items, see [Paging - Skip](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)
-    # + \$filter - Filter items by property values, see [Filtering](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=64)
-    # + \$inlinecount - Include count of items, see [Inlinecount](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=67)
-    # + \$orderby - Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)
-    # + \$select - Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)
-    # + \$expand - Expand related entities, see [Expand](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=63)
-    # + return - returns can be any of following types 
-    # http:Ok (Retrieved entities)
-    # http:Response (Error)
-    resource function get A_MaterialDocumentItem(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_MaterialDocumentItemOrderByOptions? \$orderby, A_MaterialDocumentItemSelectOptions? \$select, A_MaterialDocumentItemExpandOptions? \$expand) returns CollectionOfA_MaterialDocumentItemWrapper|http:Response {
-       return {
-            "d": {
-                "results": [
-                {
-                    "Material": "Fan",
-                    "SerialNumber": "12222",
-                    "MaterialDocument": "1000000000",
-                    "MaterialDocumentYear": "2024"
-                }
-                ]
-            } 
-        };
-    }
-
-    # Reads information of serial numbers on material document items level
-    #
-    # + \$top - Show only the first n items, see [Paging - Top](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=66)
-    # + \$skip - Skip the first n items, see [Paging - Skip](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)
-    # + \$filter - Filter items by property values, see [Filtering](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=64)
-    # + \$inlinecount - Include count of items, see [Inlinecount](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=67)
-    # + \$orderby - Order items by property values, see [Sorting](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=65)
-    # + \$select - Select properties to be returned, see [Select](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=68)
-    # + return - returns can be any of following types 
-    # http:Ok (Retrieved entities)
-    # http:Response (Error)
-    resource function get A_SerialNumberMaterialDocument(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_SerialNumberMaterialDocumentOrderByOptions? \$orderby, A_SerialNumberMaterialDocumentSelectOptions? \$select) returns CollectionOfA_SerialNumberMaterialDocumentWrapper|http:Response {
-       return {
-            "d": {
-                "results": [
-                {
-                    "Material": "Fan",
-                    "SerialNumber": "12222",
-                    "MaterialDocument": "1000000000",
-                    "MaterialDocumentYear": "2024"
-                }
                 ]
             }
         };
@@ -125,48 +73,6 @@ service /sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV on ep0 {
     # http:Created (Created entity)
     # http:Response (Error)
     resource function post A_MaterialDocumentHeader(@http:Payload CreateA_MaterialDocumentHeader payload) returns A_MaterialDocumentHeaderWrapper|http:Response {
-        http:Response res = new;
-        res.statusCode = 500;
-        return res;
-    }
-
-    # Cancels a material document
-    #
-    # + MaterialDocumentYear - Material Doc. Year  
-    # (Value needs to be enclosed in single quotes)
-    # + MaterialDocument - Material Document  
-    # (Value needs to be enclosed in single quotes)
-    # + PostingDate - Posting Date  
-    # (Value needs to be enclosed in single quotes and prefixed with `datetime`, e.g. `datetime'2017-12-31T00:00'`)
-    # + return - returns can be any of following types 
-    # http:Ok (Success)
-    # http:Response (Error)
-    resource function post Cancel(string MaterialDocumentYear, string MaterialDocument, string? PostingDate) returns OkA_MaterialDocumentHeaderWrapper|http:Response {
-        http:Response res = new;
-        res.statusCode = 500;
-        return res;
-    }
-
-    # Cancels a material document item
-    #
-    # + MaterialDocumentYear - Material Doc. Year  
-    # (Value needs to be enclosed in single quotes)
-    # + MaterialDocument - Material Document  
-    # (Value needs to be enclosed in single quotes)
-    # + MaterialDocumentItem - Material Doc.Item  
-    # (Value needs to be enclosed in single quotes)
-    # + PostingDate - Posting Date  
-    # (Value needs to be enclosed in single quotes and prefixed with `datetime`, e.g. `datetime'2017-12-31T00:00'`)
-    # + return - returns can be any of following types 
-    # http:Ok (Success)
-    # http:Response (Error)
-    resource function post CancelItem(string MaterialDocumentYear, string MaterialDocument, string MaterialDocumentItem, string? PostingDate) returns OkA_MaterialDocumentItemWrapper|http:Response {
-        http:Response res = new;
-        res.statusCode = 500;
-        return res;
-    }
-
-    resource function post \$batch(http:Request request) returns AcceptedAnydata|http:Response {
         http:Response res = new;
         res.statusCode = 500;
         return res;

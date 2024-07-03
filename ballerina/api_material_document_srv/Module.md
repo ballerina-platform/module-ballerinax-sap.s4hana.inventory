@@ -3,7 +3,7 @@
 [S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
 designed for large-scale enterprises by SAP SE.
 
-The `ballerinax/sap.s4hana.api_material_document_srv` package provides APIs that enable seamless integration with the [Material Document - Read,Create API v1.3.0](https://api.sap.com/api/API_MATERIAL_DOCUMENT_SRV/overview). This service enables you to retrieve and create material documents, for example, to post a goods receipt for a purchase order or to document the transfer of materials between two storage locations. Additionally, the service allows you to cancel existing material documents or single items. It can be consumed by external systems and user interfaces.
+The `ballerinax/sap.s4hana.api_material_document_srv` package provides APIs that enable seamless integration with the [Material Document - Read,Create API v1.3.0](https://api.sap.com/api/API_MATERIAL_DOCUMENT_SRV/overview). This service enables you to retrieve and create material documents, for example, to post a goods receipt for a purchase order or to document the transfer of materials between two storage locations. Additionally, the service allows you to cancel existing material documents or single items.
 
 ## Setup guide
 

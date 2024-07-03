@@ -81,7 +81,8 @@ function testListReservationDocumentItems() returns error? {
 function testCreateReservationDocument() returns error? {
     A_ReservationDocumentHeader_2|error reservationDocument = s4HanaClient->createReservationDocument({
         "Reservation": "145324",
-        "ReservationDate": "22/04/2024"});
+        "ReservationDate": "22/04/2024"
+    });
     test:assertTrue(reservationDocument is error, "The physical inventory document creation response expected to be 500");
     error e = <error>reservationDocument;
     test:assertEquals(e.detail()["statusCode"], 500, "Expected 500 status code");

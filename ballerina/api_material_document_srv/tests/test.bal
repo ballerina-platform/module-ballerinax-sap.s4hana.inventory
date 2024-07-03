@@ -67,7 +67,9 @@ function initializeClientsForS4HanaServer() returns error? {
 function testCreateMaterialDocumentHeader() returns error? {
     A_MaterialDocumentHeaderWrapper|error materialDocument = s4HanaClient->createA_MaterialDocumentHeader({
         MaterialDocument: "1000000000"
-    ,MaterialDocumentYear: "2024"});
+        ,
+        MaterialDocumentYear: "2024"
+    });
     test:assertTrue(materialDocument is error, "The material document creation response expected to be 500");
     error e = <error>materialDocument;
     test:assertEquals(e.detail()["statusCode"], 500, "Expected 500 status code");

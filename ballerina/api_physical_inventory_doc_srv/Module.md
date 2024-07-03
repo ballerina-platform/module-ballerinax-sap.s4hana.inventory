@@ -3,7 +3,7 @@
 [S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
 designed for large-scale enterprises by SAP SE.
 
-The `ballerinax/sap.s4hana.api_physical_inventory_doc_srv` package provides APIs that enable seamless integration with the [Physical Inventory Documents - Read, Creat API v1.0.0](https://api.sap.com/api/API_PHYSICAL_INVENTORY_DOC_SRV/overview). This service allows user to read and create physical inventory document.
+The `ballerinax/sap.s4hana.api_physical_inventory_doc_srv` package provides APIs that enable seamless integration with the [Physical Inventory Documents - Read, Create API v1.0.0](https://api.sap.com/api/API_PHYSICAL_INVENTORY_DOC_SRV/overview). This service allows user to read and create physical inventory document.
 
 ## Setup guide
 
