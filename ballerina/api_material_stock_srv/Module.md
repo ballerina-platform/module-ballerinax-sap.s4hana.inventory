@@ -3,7 +3,7 @@
 [S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
 designed for large-scale enterprises by SAP SE.
 
-The `ballerinax/sap.s4hana.api_material_stock_srv` package provides APIs that enable seamless integration with the [Material Stock - Read API v1.1.0](https://api.sap.com/api/API_MATERIAL_STOCK_SRV/overview). This service enables you to retrieve material stock information using the OData protocol with filter data provided in the payload. It can be consumed by external warehouse applications.
+The `ballerinax/sap.s4hana.api_material_stock_srv` package provides APIs that enable seamless integration with the [Material Stock - Read API v1.1.0](https://api.sap.com/api/API_MATERIAL_STOCK_SRV/overview). This service enables you to retrieve material stock information. It can be consumed by external warehouse applications.
 
 ## Setup guide
 

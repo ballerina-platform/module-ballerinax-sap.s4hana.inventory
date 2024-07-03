@@ -3,7 +3,7 @@
 [S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
 designed for large-scale enterprises by SAP SE.
 
-The `ballerinax/sap.s4hana.ce_apireservationdocument_0001` package provides APIs that enable seamless integration with the [Reservation Document (A2X) API v1.0.3](https://api.sap.com/api/CE_APIRESERVATIONDOCUMENT_0001/overview). This service allows you to create, update, and delete reservation documents for materials, assigning them to cost centers, sales orders, or assets, and handling transfer postings between plants. It can be consumed by external systems and user interfaces.
+The `ballerinax/sap.s4hana.ce_apireservationdocument_0001` package provides APIs that enable seamless integration with the [Reservation Document (A2X) API v1.0.3](https://api.sap.com/api/CE_APIRESERVATIONDOCUMENT_0001/overview). This service allows you to create, update, and delete reservation documents for materials, assigning them to cost centers, sales orders, or assets, and handling transfer postings between plants.
 
 ## Setup guide
 
