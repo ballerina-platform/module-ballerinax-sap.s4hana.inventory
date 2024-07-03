@@ -101,10 +101,4 @@ service /sap/opu/odata/sap/API_RESERVATION_DOCUMENT_SRV on ep0 {
         res.statusCode = 500;
         return res;
     }
-
-    resource function post \$batch(http:Request request) returns AcceptedAnydata|http:Response {
-        http:Response res = new;
-        res.statusCode = 500;
-        return res;
-    }
 }

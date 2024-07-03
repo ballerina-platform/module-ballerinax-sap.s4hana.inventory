@@ -18,7 +18,6 @@
 // under the License.
 
 import ballerina/constraint;
-import ballerina/http;
 
 public type A_ReservationDocumentHeader_to_ReservationDocumentItem record {
     A_ReservationDocumentItem[] results?;
@@ -70,12 +69,6 @@ public type CollectionOfA_ReservationDocumentHeader record {
     count __count?;
     A_ReservationDocumentHeader[] results?;
 };
-
-public type AcceptedAnydata record {|
-    *http:Accepted;
-    anydata body;
-    map<string|string[]> headers;
-|};
 
 # The number of entities in the collection. Available when using the [$inlinecount](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=67) query option.
 public type count string;
