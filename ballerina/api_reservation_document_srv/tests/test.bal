@@ -81,7 +81,8 @@ function testListA_ReservationDocumentItems() returns error? {
 function testCreateReservationDocumentHeader() returns error? {
     A_ReservationDocumentHeader_1|error reservationDocumentHeader = s4HanaClient->createA_ReservationDocumentHeader({
         "Reservation": "200000",
-        "OrderId": "20245"});
+        "OrderId": "20245"
+    });
     test:assertTrue(reservationDocumentHeader is error, "The reservation document creation response expected to be 500");
     error e = <error>reservationDocumentHeader;
     test:assertEquals(e.detail()["statusCode"], 500, "Expected 500 status code");

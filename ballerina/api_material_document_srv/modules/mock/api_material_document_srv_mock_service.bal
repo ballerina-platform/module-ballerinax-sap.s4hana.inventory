@@ -40,6 +40,7 @@ service /sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV on ep0 {
         res.setHeader("X-CSRF-TOKEN", "SAP-Material-Document");
         return res;
     }
+
     # Reads information on material document header level
     #
     # + \$top - Show only the first n items, see [Paging - Top](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=66)
@@ -53,12 +54,12 @@ service /sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_MaterialDocumentHeader(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_MaterialDocumentHeaderOrderByOptions? \$orderby, A_MaterialDocumentHeaderSelectOptions? \$select, A_MaterialDocumentHeaderExpandOptions? \$expand) returns CollectionOfA_MaterialDocumentHeaderWrapper|http:Response {
-        return{
+        return {
             "d": {
                 "results": [
-                {
-                    "MaterialDocumentYear": "2024",
-                    "MaterialDocument": "1000000000"
+                    {
+                        "MaterialDocumentYear": "2024",
+                        "MaterialDocument": "1000000000"
                     }
                 ]
             }
@@ -78,17 +79,17 @@ service /sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_MaterialDocumentItem(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_MaterialDocumentItemOrderByOptions? \$orderby, A_MaterialDocumentItemSelectOptions? \$select, A_MaterialDocumentItemExpandOptions? \$expand) returns CollectionOfA_MaterialDocumentItemWrapper|http:Response {
-       return {
+        return {
             "d": {
                 "results": [
-                {
-                    "Material": "Fan",
-                    "SerialNumber": "12222",
-                    "MaterialDocument": "1000000000",
-                    "MaterialDocumentYear": "2024"
-                }
+                    {
+                        "Material": "Fan",
+                        "SerialNumber": "12222",
+                        "MaterialDocument": "1000000000",
+                        "MaterialDocumentYear": "2024"
+                    }
                 ]
-            } 
+            }
         };
     }
 
@@ -104,15 +105,15 @@ service /sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_SerialNumberMaterialDocument(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_SerialNumberMaterialDocumentOrderByOptions? \$orderby, A_SerialNumberMaterialDocumentSelectOptions? \$select) returns CollectionOfA_SerialNumberMaterialDocumentWrapper|http:Response {
-       return {
+        return {
             "d": {
                 "results": [
-                {
-                    "Material": "Fan",
-                    "SerialNumber": "12222",
-                    "MaterialDocument": "1000000000",
-                    "MaterialDocumentYear": "2024"
-                }
+                    {
+                        "Material": "Fan",
+                        "SerialNumber": "12222",
+                        "MaterialDocument": "1000000000",
+                        "MaterialDocumentYear": "2024"
+                    }
                 ]
             }
         };

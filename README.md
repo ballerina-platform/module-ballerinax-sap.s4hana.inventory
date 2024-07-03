@@ -110,8 +110,7 @@ Execute the commands below to build from the source.
 
 As an open-source project, Ballerina welcomes contributions from the community.
 
-For more information, go to
-the [contribution guidelines](https://github.com/ballerina-platform/ballerina-lang/blob/master/CONTRIBUTING.md).
+For more information, go to the [contribution guidelines](https://github.com/ballerina-platform/ballerina-lang/blob/master/CONTRIBUTING.md).
 
 ## Code of conduct
 
@@ -122,5 +121,4 @@ All the contributors are encouraged to read the [Ballerina Code of Conduct](http
 * For more information go to the [`sap` package](https://lib.ballerina.io/ballerinax/sap/latest).
 * For example demonstrations of the usage, go to [Ballerina By Examples](https://ballerina.io/learn/by-example/).
 * Chat live with us via our [Discord server](https://discord.gg/ballerinalang).
-* Post all technical questions on Stack Overflow with
-  the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.
+* Post all technical questions on Stack Overflow with the [#ballerina](https://stackoverflow.com/questions/tagged/ballerina) tag.

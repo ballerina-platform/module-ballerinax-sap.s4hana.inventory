@@ -40,6 +40,7 @@ service /sap/opu/odata/sap/API_PHYSICAL_INVENTORY_DOC_SRV on ep0 {
         res.setHeader("X-CSRF-TOKEN", "SAP-Material-Document");
         return res;
     }
+
     # Reads information on physical inventory document header level
     #
     # + \$top - Show only the first n items, see [Paging - Top](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=66)
@@ -53,12 +54,13 @@ service /sap/opu/odata/sap/API_PHYSICAL_INVENTORY_DOC_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_PhysInventoryDocHeader(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_PhysInventoryDocHeaderOrderByOptions? \$orderby, A_PhysInventoryDocHeaderSelectOptions? \$select, A_PhysInventoryDocHeaderExpandOptions? \$expand) returns CollectionOfA_PhysInventoryDocHeaderWrapper|http:Response {
-        return{
+        return {
             "d": {
                 "results": [
-                {
-                    "FiscalYear": "2024",
-                    "PhysicalInventoryDocument": "10000000"}
+                    {
+                        "FiscalYear": "2024",
+                        "PhysicalInventoryDocument": "10000000"
+                    }
                 ]
             }
         };
@@ -77,12 +79,13 @@ service /sap/opu/odata/sap/API_PHYSICAL_INVENTORY_DOC_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_PhysInventoryDocItem(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_PhysInventoryDocItemOrderByOptions? \$orderby, A_PhysInventoryDocItemSelectOptions? \$select, A_PhysInventoryDocItemExpandOptions? \$expand) returns CollectionOfA_PhysInventoryDocItemWrapper|http:Response {
-        return{
+        return {
             "d": {
                 "results": [
-                {
-                    "FiscalYear": "2024",
-                    "PhysicalInventoryDocument": "10000000"}
+                    {
+                        "FiscalYear": "2024",
+                        "PhysicalInventoryDocument": "10000000"
+                    }
                 ]
             }
         };
@@ -100,13 +103,14 @@ service /sap/opu/odata/sap/API_PHYSICAL_INVENTORY_DOC_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_SerialNumberPhysInventoryDoc(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_SerialNumberPhysInventoryDocOrderByOptions? \$orderby, A_SerialNumberPhysInventoryDocSelectOptions? \$select) returns CollectionOfA_SerialNumberPhysInventoryDocWrapper|http:Response {
-        return{
+        return {
             "d": {
-                "results": [ 
-                {
-                    "Equipment": "Table",
-                    "FiscalYear": "2024",
-                    "PhysicalInventoryDocument": "10000000"}
+                "results": [
+                    {
+                        "Equipment": "Table",
+                        "FiscalYear": "2024",
+                        "PhysicalInventoryDocument": "10000000"
+                    }
                 ]
             }
         };

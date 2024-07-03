@@ -40,6 +40,7 @@ service /sap/opu/odata4/sap/api_reservation_document/srvd_a2x/sap/apireservation
         res.setHeader("X-CSRF-TOKEN", "SAP-Material-Document");
         return res;
     }
+
     # Get entities from ReservationDocument
     #
     # + \$top - Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)
@@ -54,12 +55,12 @@ service /sap/opu/odata4/sap/api_reservation_document/srvd_a2x/sap/apireservation
     # http:Response (Error)
     resource function get ReservationDocument(int? \$top, int? \$skip, string? \$filter, boolean? \$count, ReservationDocumentOrderByOptions? \$orderby, ReservationDocumentSelectOptions? \$select, ReservationDocumentExpandOptions? \$expand) returns CollectionOfA_ReservationDocumentHeader_2|http:Response {
         return {
-                "value": [
+            "value": [
                 {
                     "Reservation": "43257",
                     "GoodsMovementType": "122"
                 }
-                ]
+            ]
         };
     }
 
@@ -77,12 +78,12 @@ service /sap/opu/odata4/sap/api_reservation_document/srvd_a2x/sap/apireservation
     # http:Response (Error)
     resource function get ReservationDocumentItem(int? \$top, int? \$skip, string? \$filter, boolean? \$count, ReservationDocumentItemOrderByOptions? \$orderby, ReservationDocumentItemSelectOptions? \$select, ReservationDocumentItemExpandOptions? \$expand) returns CollectionOfA_ReservationDocumentItem_2|http:Response {
         return {
-                "value": [
+            "value": [
                 {
                     "Material": "Fan",
                     "ReservationItem": "125"
                 }
-                ]
+            ]
         };
     }
 

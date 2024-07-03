@@ -40,6 +40,7 @@ service /sap/opu/odata/sap/API_MATERIAL_STOCK_SRV on ep0 {
         res.setHeader("X-CSRF-TOKEN", "SAP-Material-Document");
         return res;
     }
+
     # Get entities from A_MaterialSerialNumber
     #
     # + \$top - Show only the first n items, see [Paging - Top](https://help.sap.com/doc/5890d27be418427993fafa6722cdc03b/Cloud/en-US/OdataV2.pdf#page=66)
@@ -53,12 +54,13 @@ service /sap/opu/odata/sap/API_MATERIAL_STOCK_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_MaterialSerialNumber(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_MaterialSerialNumberOrderByOptions? \$orderby, A_MaterialSerialNumberSelectOptions? \$select, A_MaterialSerialNumberExpandOptions? \$expand) returns CollectionOfA_MaterialSerialNumberWrapper|http:Response {
-        return{
+        return {
             "d": {
                 "results": [
-                {
-                    "Material": "20000",
-                    "SerialNumber": "135789"}
+                    {
+                        "Material": "20000",
+                        "SerialNumber": "135789"
+                    }
                 ]
             }
         };
@@ -77,12 +79,13 @@ service /sap/opu/odata/sap/API_MATERIAL_STOCK_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_MaterialStock(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_MaterialStockOrderByOptions? \$orderby, A_MaterialStockSelectOptions? \$select, A_MaterialStockExpandOptions? \$expand) returns CollectionOfA_MaterialStockWrapper|http:Response {
-        return{
+        return {
             "d": {
                 "results": [
-                {
-                    "Material": "20000",
-                    "MaterialBaseUnit": "122"}
+                    {
+                        "Material": "20000",
+                        "MaterialBaseUnit": "122"
+                    }
                 ]
             }
         };
@@ -101,13 +104,14 @@ service /sap/opu/odata/sap/API_MATERIAL_STOCK_SRV on ep0 {
     # http:Ok (Retrieved entities)
     # http:Response (Error)
     resource function get A_MatlStkInAcctMod(int? \$top, int? \$skip, string? \$filter, "allpages"|"none"? \$inlinecount, A_MatlStkInAcctModOrderByOptions? \$orderby, A_MatlStkInAcctModSelectOptions? \$select, A_MatlStkInAcctModExpandOptions? \$expand) returns CollectionOfA_MatlStkInAcctModWrapper|http:Response {
-        return{
+        return {
             "d": {
                 "results": [
-                {
-                    "Material": "20000",
-                    "Plant": "10000",
-                    "StorageLocation":"Warehouse"}
+                    {
+                        "Material": "20000",
+                        "Plant": "10000",
+                        "StorageLocation": "Warehouse"
+                    }
                 ]
             }
         };

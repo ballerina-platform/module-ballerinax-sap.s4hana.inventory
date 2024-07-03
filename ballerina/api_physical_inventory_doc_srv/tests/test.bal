@@ -81,7 +81,8 @@ function testListA_SerialNumberPhysInventoryDocs() returns error? {
 function testCreatePhysInventoryDocHeader() returns error? {
     A_PhysInventoryDocHeader_1|error physicalInventoryDocument = s4HanaClient->createA_PhysInventoryDocHeader({
         "FiscalYear": "2024",
-        "PhysicalInventoryDocument": "10000000"});
+        "PhysicalInventoryDocument": "10000000"
+    });
     test:assertTrue(physicalInventoryDocument is error, "The physical inventory document creation response expected to be 500");
     error e = <error>physicalInventoryDocument;
     test:assertEquals(e.detail()["statusCode"], 500, "Expected 500 status code");
