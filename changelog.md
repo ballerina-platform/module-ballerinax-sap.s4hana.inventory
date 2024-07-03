@@ -45,3 +45,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial client implementation
 
 ### Changed
+
+## sap.s4hana.ce_apireservationdocument_0001
+
+## [Unreleased]
+
+### Added
+
+- Initial client implementation
+
+### Changed
