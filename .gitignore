@@ -30,12 +30,6 @@ hs_err_pid*
 # Ballerina
 Ballerina.lock
 
-# Ignore everything in this directory
-target
-
-# Ballerina
-Ballerina.lock
-
 #Idea files
 .idea
 *.iml
