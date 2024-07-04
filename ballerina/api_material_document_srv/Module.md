@@ -54,7 +54,7 @@ configurable string hostname = ?;
 configurable string username = ?;
 configurable string password = ?;
 
-matrialdocument:Client materialDocumentClient = check new (
+materialdocument:Client materialDocumentClient = check new (
     hostname = hostname,
     config = {
         auth: {
@@ -78,3 +78,10 @@ materialdocument:CollectionOfA_MaterialDocumentItemWrapper listAMaterialDocument
 ```bash
 bal run
 ```
+## Examples
+
+This section includes examples utilizing the APIs available for inventory management in sap.s4hana:
+   
+   1. [Reserve material stock](https://github.com/Ballerina-Inventory/module-ballerinax-sap.s4hana.inventory/tree/main/examples/Reserve-Material-Stock) - Demonstrates checking material stock levels and creating reservation documents in S/4HANA system.
+
+   2. [Create material document](https://github.com/Ballerina-Inventory/module-ballerinax-sap.s4hana.inventory/tree/main/examples/Create-Material-Document) - Utilizes Eden AI OCR services to extract invoice data and create material documents in S/4HANA system.
