@@ -1,0 +1,20 @@
+[package]
+org = "aakif_ahamed"
+name = "material_management"
+version = "0.1.0"
+distribution = "2201.9.0"
+
+[[dependency]]
+org = "ballerinax"
+name = "sap.s4hana.api_material_document_srv"
+version = "1.0.0"
+repository = "local"
+
+[[dependency]]
+org = "ballerinax"
+name = "sap.s4hana.api_physical_inventory_doc_srv"
+version = "1.0.0"
+repository = "local"
+
+[build-options]
+observabilityIncluded = true

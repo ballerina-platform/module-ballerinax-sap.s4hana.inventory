@@ -8,6 +8,9 @@ use cases like accessing S/4HANA Reservation Document (A2X), Material Stock API,
 1. [Reserve Material Stock](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.qm/tree/main/examples/Reserve-Material-Stock) -
    Demonstrates leveraging the `sap.s4hana.api_material_stock_srv:Client` and `sap.s4hana.ce_apireservationdocument_0001:Client` in Ballerina for S/4HANA API interactions. It specifically showcases how to check material stock levels and create reservation documents based on stock availability in the S/4HANA system.
 
+2. [Create Material Document](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.qm/tree/main/examples/Create-Material-Document) -
+    Demonstrates leveraging the `sap.s4hana.api_material_document_srv:Client` in Ballerina for S/4HANA API interactions. This example showcases how the Eden AI OCR service is utilized to extract data from images of invoices uploaded to the system and create material documents in the S/4HANA system.
+
 ## Prerequisites
 
 Each example includes detailed steps.
