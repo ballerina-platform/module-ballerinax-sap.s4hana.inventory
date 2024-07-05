@@ -1,4 +1,5 @@
 # Reserve material stock for items with low inventory levels
+
 This example illustrates how to leverage the `sap.s4hana.ce_apireservationdocument_0001:Client` and `sap.s4hana.api_material_stock_srv:Client` in Ballerina for S/4HANA API interactions. It demonstrates how to reserve material stocks when the inventory levels are low.
 
 ## Prerequisites
@@ -21,5 +22,5 @@ Execute the following command to run the example:
 1. Run the Ballerina service that listens on port 9090.
    `bal run <service_file.bal>`
 
-2. Use curl to send a GET request with query parameters to the service.
+2. Use curl to send a POST request with query parameters to the service.
    `curl "http://localhost:9090/material/stock?material1=100&material2=200"`
