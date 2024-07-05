@@ -3,13 +3,13 @@
 The S/4 HANA Inventory connectors provide practical examples illustrating usage in various
 scenarios. Explore
 these [examples](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/tree/main/examples), covering
-use cases like accessing S/4HANA Reservation Document (A2X), Material Stock API, and Material Document API.
+Use cases like accessing integrating paper delivery note to S/4HANA Material Stock API, and Material Document API.
 
 1. [Reserve Material Stock](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.qm/tree/main/examples/Reserve-Material-Stock) -
-   Demonstrates leveraging the `sap.s4hana.api_material_stock_srv:Client` and `sap.s4hana.ce_apireservationdocument_0001:Client` in Ballerina for S/4HANA API interactions. It specifically showcases how to check material stock levels and create reservation documents based on stock availability in the S/4HANA system.
+   Demonstrates leveraging the `sap.s4hana.api_material_stock_srv:Client` and `sap.s4hana.ce_apireservationdocument_0001:Client` in Ballerina to integrate with S/4HANA APIs. It specifically showcases creating reservation documents based on stock availability in the S/4HANA system.
 
 2. [Create Material Document](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.qm/tree/main/examples/Create-Material-Document) -
-    Demonstrates leveraging the `sap.s4hana.api_material_document_srv:Client` in Ballerina for S/4HANA API interactions. This example showcases how the Eden AI OCR service is utilized to extract data from images of invoices uploaded to the system and create material documents in the S/4HANA system.
+    Demonstrates leveraging the `sap.s4hana.api_material_document_srv:Client` in Ballerina for S/4HANA API interactions. This example showcases how the Eden AI OCR service is utilized to extract data from images of delivery note uploaded to the system and create material documents in the S/4HANA system.
 
 ## Prerequisites
 
