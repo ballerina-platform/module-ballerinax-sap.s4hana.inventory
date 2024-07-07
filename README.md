@@ -12,6 +12,30 @@ designed for large-scale enterprises by SAP SE.
 
 This repository encompasses all Ballerina packages pertaining to the S/4HANA inventory submodule. Notably:
 
+1. The `ballerinax/sap.s4hana.api_material_document_srv` package provides APIs that enable seamless integration with
+   the [Material Document - Read,Create API v1.3.0](https://api.sap.com/api/API_MATERIAL_DOCUMENT_SRV/overview). This
+   service enables you to retrieve and create material documents, for example, to post a goods receipt for a purchase
+   order or to document the transfer of materials between two storage locations. Additionally, the service allows you to
+   cancel existing material documents or single items.
+
+2. The `ballerinax/sap.s4hana.api_material_stock_srv` package provides APIs that enable seamless integration with
+   the [Material Stock - Read API v1.1.0](https://api.sap.com/api/API_MATERIAL_STOCK_SRV/overview). This service enables
+   you to retrieve material stock information. It can be consumed by external warehouse applications.
+
+3. The `ballerinax/sap.s4hana.api_physical_inventory_doc_srv` package provides APIs that enable seamless integration
+   with
+   the [Physical Inventory Documents - Read, Create API v1.0.0](https://api.sap.com/api/API_PHYSICAL_INVENTORY_DOC_SRV/overview).
+   This service allows user to read and create physical inventory document.
+
+4. The `ballerinax/sap.s4hana.api_reservation_document_srv` package provides APIs that enable seamless integration with
+   the [Reservation Document API v1.0.0](https://api.sap.com/api/API_RESERVATION_DOCUMENT_SRV/overview). This service
+   allows user to retrieve, create, update and delete reservation documents.
+
+5. The `ballerinax/sap.s4hana.ce_apireservationdocument_0001` package provides APIs that enable seamless integration
+   with the [Reservation Document (A2X) API v1.0.3](https://api.sap.com/api/CE_APIRESERVATIONDOCUMENT_0001/overview).
+   This service allows you to create, update, and delete reservation documents for materials, assigning them to cost
+   centers, sales orders, or assets, and handling transfer postings between plants.
+
 ## Issues and projects
 
 The **Issues** and **Projects** tabs are disabled for this repository as this is part of the Ballerina library. To

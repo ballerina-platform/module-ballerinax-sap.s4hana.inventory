@@ -1,0 +1,20 @@
+[package]
+org = "wso2"
+name = "pos_to_s4hana"
+version = "0.1.0"
+distribution = "2201.9.0"
+
+[build-options]
+observabilityIncluded = true
+
+[[dependency]]
+org = "ballerinax"
+name = "sap.s4hana.ce_apireservationdocument_0001"
+version = "1.0.0"
+repository = "local"
+
+[[dependency]]
+org = "ballerinax"
+name = "sap.s4hana.api_material_stock_srv"
+version = "1.0.0"
+repository = "local"
