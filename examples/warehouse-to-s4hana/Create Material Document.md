@@ -1,4 +1,5 @@
 # Create material document by extracting information from invoices using Eden AI
+
 This example demonstrates how to utilize the `sap.s4hana.api_material_document_srv:Client` in Ballerina for interactions with the S/4HANA API. It showcases the integration of the Eden AI OCR service to extract data from invoice images uploaded to the system, and subsequently create material documents in the S/4HANA system.
 
 ## Prerequisites
