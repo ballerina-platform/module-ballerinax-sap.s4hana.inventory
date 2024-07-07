@@ -11,19 +11,22 @@ management and operational documentation.
 
 Refer to the Setup Guide for necessary credentials (hostname, username, password).
 
-### 2. Configuration
+### 2. Setup an Eden AI account
+
+Create an Eden AI account. Generate an API token and save it for later use, as specified in the Configuration section.
+
+### 3. Configuration
 
 Configure S/4HANA API credentials in Config.toml in the example directory:
 
 ```
-[sapAuthConfig]
+ocrToken = "<ocrToken>"
+invoiceUrl = "<invoiceUrl>" # Optional. URL the invoice to be processed is exposed
+
+[s4hanaClientConfig]
 username = "<Username>"
 password = "<Password>"
 hostname = "<Hostname>"
-
-[wso2.material_management]
-ocrToken = "<ocrToken>"
-invoiceUrl = "<invoiceUrl>"
 ```
 
 ## Run the Example

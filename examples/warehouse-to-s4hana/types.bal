@@ -13,7 +13,7 @@
 // KIND, either express or implied.  See the License for the
 // specific language governing permissions and limitations
 // under the License.
-type SAPAuthConfig record {|
+type S4HanaClientConfig record {|
     string username;
     string password;
     string hostname;
@@ -21,14 +21,14 @@ type SAPAuthConfig record {|
 
 type ExtractedInvoice record {
     record {
-        PaperInvoice[] extracted_data;
+        PaperDeliveryNote[] extracted_data;
     } eden\-ai;
 };
 
-type PaperInvoice record {
+type PaperDeliveryNote record {
     string invoice_number;
-    record { string customer_name;} customer_information;
-    record { string merchant_name;} merchant_information;
+    record {string customer_name;} customer_information;
+    record {string merchant_name;} merchant_information;
     InvoiceItem[] item_lines;
 };
 
@@ -36,15 +36,3 @@ type InvoiceItem record {
     string description;
     int quantity;
 };
-
-type SAPMaterialDocument record {
-    string MaterialDocumentYear;
-    string MaterialDocument;
-    OrderItem[] OrderItem;
-};
-
-type OrderItem record {
-    string Description;
-    int OrderQuantity;
-};
-

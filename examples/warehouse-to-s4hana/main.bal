@@ -14,60 +14,73 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import ballerina/log;
 import ballerina/http;
-import ballerinax/sap.s4hana.api_material_document_srv as materialdocument;
+import ballerina/log;
+import ballerina/mime;
+import ballerinax/sap.s4hana.api_material_document_srv as matDoc;
+
+configurable S4HanaClientConfig s4hanaClientConfig = ?;
+
+configurable string ocrToken = ?;
+configurable string deliveryNoteUrl = "";
 
 const OCR_REQUEST_PATH = "/invoice_parser";
 const OCR_URL = "https://api.edenai.run/v2/ocr";
-const CONTENT_TYPE = "Content-Type";
-const APPLICATION_JSON = "application/json";
-
 
 final http:Client ocrHttpClient = check new (
-    url = OCR_URL, 
-    auth = {token: ocrToken}, 
+    url = OCR_URL,
+    auth = {token: ocrToken},
     cookieConfig = {enabled: true}
 );
 
-materialdocument:Client materialDocumentClient = check new (
-        config = {
-            auth: {
-                username: sapAuthConfig.username,
-                password:sapAuthConfig.password
-            }
-        },
-        hostname = sapAuthConfig.hostname
-    );
-                                             
-configurable string ocrToken = ?;
-configurable SAPAuthConfig sapAuthConfig = ?;
-configurable string invoiceUrl = ?;
+matDoc:Client materialDocumentClient = check new (
+    config = {
+        auth: {
+            username: s4hanaClientConfig.username,
+            password: s4hanaClientConfig.password
+        }
+    },
+    hostname = s4hanaClientConfig.hostname
+);
 
-public function main() returns error? {
-    PaperInvoice|error invoiceResponse = readPaperInvoice();
-    if invoiceResponse is error {
-        log:printError("Error while reading paper invoice: " + invoiceResponse.message());
+public function main() {
+    PaperDeliveryNote|error noteResponse = readPaperDeliveryNote();
+    if noteResponse is error {
+        log:printError(string `Error while reading paper delivery note : ${noteResponse.message()}`);
         return;
     }
 
-    SAPMaterialDocument sapOrder = check transformOrderData(invoiceResponse);
+    string materialDocumentYear = "2024";
+    string materialDocument = "10000";
+    string materialDocumentItem = "UB";
 
-    materialdocument:CreateA_MaterialDocumentHeader payload = {
-         MaterialDocumentYear:sapOrder.MaterialDocumentYear, 
-         MaterialDocument: sapOrder.MaterialDocument
+    matDoc:CreateA_MaterialDocumentItem[] orderItems = from InvoiceItem lineItem in noteResponse.item_lines
+        select
+        {
+            MaterialDocumentYear: materialDocumentYear,
+            MaterialDocument: materialDocument,
+            MaterialDocumentItem: materialDocumentItem,
+            QuantityInBaseUnit: lineItem.quantity.toString()
+        };
+
+    matDoc:CreateA_MaterialDocumentHeader payload = {
+        MaterialDocumentYear: materialDocumentYear,
+        MaterialDocument: materialDocument,
+        to_MaterialDocumentItem: {
+            results: orderItems
+        }
     };
 
-    materialdocument:A_MaterialDocumentHeaderWrapper|error createAMaterialDocumentHeader = check materialDocumentClient->createA_MaterialDocumentHeader(payload);
-    
-    if createAMaterialDocumentHeader is error {
-    log:printError("Error creating material document: " + createAMaterialDocumentHeader.message());
-    } else {
-    log:printInfo("Material document created successfully: " + createAMaterialDocumentHeader.toString());
+    matDoc:A_MaterialDocumentHeaderWrapper|error response = materialDocumentClient->createA_MaterialDocumentHeader(payload);
+    if response is error {
+        log:printError("Error creating material document: " + response.message());
+        return;
     }
 
+    log:printInfo(string `Material document created successfully: ${response.d?.MaterialDocument ?: ""}`);
 }
-isolated function readPaperInvoice() returns PaperInvoice|error {
+
+isolated function readPaperDeliveryNote() returns PaperDeliveryNote|error {
     ExtractedInvoice|http:Error response = ocrHttpClient->post(
         path = OCR_REQUEST_PATH,
         message = {
@@ -75,9 +88,9 @@ isolated function readPaperInvoice() returns PaperInvoice|error {
         fallback_providers: "",
         providers: "mindee,google",
         language: "en",
-        file_url: invoiceUrl   //The url for the image of the invoice used in this example was included to the config.toml file. For testing purposes your invoice URL link can be included to the config.toml file
+        file_url: deliveryNoteUrl
     },
-        headers = {[CONTENT_TYPE] : APPLICATION_JSON},
+        headers = {[http:CONTENT_TYPE]: mime:APPLICATION_JSON},
         targetType = ExtractedInvoice
     );
 
@@ -85,21 +98,4 @@ isolated function readPaperInvoice() returns PaperInvoice|error {
         return response;
     }
     return response.eden\-ai.extracted_data[0];
-}
-
-isolated function transformOrderData(PaperInvoice paperInvoice) returns SAPMaterialDocument|error {
-    string materialDocumentYear = "2022";
-    string materialDocument = "10000";
-    OrderItem[] orderItems = from InvoiceItem lineItem in paperInvoice.item_lines
-        select
-        {
-            Description: lineItem.description,
-            OrderQuantity: lineItem.quantity
-        };
-
-    return {
-        MaterialDocumentYear:materialDocumentYear,
-        MaterialDocument:materialDocument,
-        OrderItem:orderItems
-    };
 }
