@@ -11,10 +11,10 @@ observabilityIncluded = true
 org = "ballerinax"
 name = "sap.s4hana.ce_apireservationdocument_0001"
 version = "1.0.3"
-repository="local"
+repository = "local"
 
 [[dependency]]
 org = "ballerinax"
 name = "sap.s4hana.api_material_stock_srv"
 version = "1.0.0"
-repository="local"
+repository = "local"
