@@ -15,7 +15,6 @@ Refer to the Setup Guide for necessary credentials (hostname, username, password
 Configure S/4HANA API credentials in Config.toml in the example directory:
 
 ```toml
-[s4hanaClientConfig]
 hostname = "<Hostname>"
 username = "<Username>"
 password = "<Password>"
@@ -32,5 +31,5 @@ Execute the following command to run the example:
 
 2. Use curl to send a POST request with query parameters to the service.
    ```bash
-   curl "http://localhost:9090/material/stock?material1=100&material2=200"
+   curl -X 'POST' 'http://localhost:9090/material/reserve?id=A123&quantity=12' 
    ```
