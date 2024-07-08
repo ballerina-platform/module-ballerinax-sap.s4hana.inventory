@@ -25,23 +25,23 @@ configurable string password = ?;
 configurable string hostname = ?;
 
 final reservation:Client reservationClient = check new (
-    config = {
+    {
         auth: {
             username,
             password
         }
     },
-    hostname = hostname
+    hostname
 );
 
 final stock:Client stockClient = check new (
-    config = {
+    {
         auth: {
             username,
             password
         }
     },
-    hostname = hostname
+    hostname
 );
 
 isolated service /material on new http:Listener(9090) {
