@@ -1,1 +1,1 @@
-../POS TO S4HANA INTEGRATION.md
+../Pos to S4hana.md
