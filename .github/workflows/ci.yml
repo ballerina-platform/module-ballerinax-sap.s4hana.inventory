@@ -16,3 +16,4 @@ jobs:
     secrets: inherit
     with:
       repo-name: module-ballerinax-sap.s4hana.inventory
+      additional-test-flags: "-x :inventory-examples:test"

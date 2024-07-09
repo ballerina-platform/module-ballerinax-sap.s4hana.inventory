@@ -34,13 +34,13 @@ final http:Client ocrHttpClient = check new (
 );
 
 matDoc:Client materialDocumentClient = check new (
-    config = {
+    {
         auth: {
             username: s4hanaClientConfig.username,
             password: s4hanaClientConfig.password
         }
     },
-    hostname = s4hanaClientConfig.hostname
+    s4hanaClientConfig.hostname
 );
 
 public function main() {

@@ -30,6 +30,7 @@ plugins {
 
 rootProject.name = "module-ballerinax-sap.s4hana.inventory"
 
+include ':inventory-sanitation'
 include ':inventory-ballerina'
 include ':inventory-ballerina:api_material_document_srv'
 include ':inventory-ballerina:api_material_stock_srv'
@@ -38,6 +39,7 @@ include ':inventory-ballerina:api_reservation_document_srv'
 include ':inventory-ballerina:ce_apireservationdocument_0001'
 include ':inventory-examples'
 
+project(':inventory-sanitation').projectDir = file("docs/sanitation")
 project(':inventory-ballerina').projectDir = file("ballerina")
 project(':inventory-ballerina:api_material_document_srv').projectDir = file("ballerina/api_material_document_srv")
 project(':inventory-ballerina:api_material_stock_srv').projectDir = file("ballerina/api_material_stock_srv")
