@@ -57,8 +57,8 @@ configurable string password = ?;
 materialdocument:Client materialDocumentClient = check new (
    {
       auth: {
-        username,
-        password
+         username,
+         password
       }
    },
    hostname
