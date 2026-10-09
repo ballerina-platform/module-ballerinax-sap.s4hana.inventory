@@ -35,7 +35,7 @@ public isolated client class Client {
     # + return - An error if connector initialization failed 
     public isolated function init(ConnectionConfig config, string hostname, int port = 443) returns error? {
         string serviceUrl = string `https://${hostname}:${port}/sap/opu/odata/sap/API_MATERIAL_DOCUMENT_SRV`;
-        http:ClientConfiguration httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, timeout: config.timeout, forwarded: config.forwarded, poolConfig: config.poolConfig, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, validation: config.validation};
+        sap:ConnectionConfig httpClientConfig = {auth: config.auth, httpVersion: config.httpVersion, timeout: config.timeout, forwarded: config.forwarded, poolConfig: config.poolConfig, compression: config.compression, circuitBreaker: config.circuitBreaker, retryConfig: config.retryConfig, validation: config.validation};
         do {
             if config.http1Settings is ClientHttp1Settings {
                 ClientHttp1Settings settings = check config.http1Settings.ensureType(ClientHttp1Settings);

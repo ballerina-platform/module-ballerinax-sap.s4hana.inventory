@@ -2,7 +2,7 @@
 org = "ballerinax"
 name = "sap.s4hana.api_material_stock_srv"
 version = "1.0.0"
-distribution = "2201.9.0"
+distribution = "2201.13.0"
 authors = ["Ballerina"]
 keywords = ["Business Management/ERP", "Cost/Paid", "Vendor/SAP", "Materials Management", "MM"]
 export = ["sap.s4hana.api_material_stock_srv"]

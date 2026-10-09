@@ -2,4 +2,4 @@
 org = "wso2"
 name = "pos_to_s4hana"
 version = "0.1.0"
-distribution = "2201.9.0"
+distribution = "2201.13.0"
