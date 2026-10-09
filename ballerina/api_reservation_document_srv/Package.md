@@ -1,9 +1,9 @@
 ## Package Overview
 
+The `ballerinax/sap.s4hana.api_reservation_document_srv` package provides APIs that enable seamless integration with the [Reservation Document API v1.0.0](https://api.sap.com/api/API_RESERVATION_DOCUMENT_SRV/overview). This service allows user to retrieve, create, update and delete reservation documents.
+
 [S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
 designed for large-scale enterprises by SAP SE.
-
-The `ballerinax/sap.s4hana.api_reservation_document_srv` package provides APIs that enable seamless integration with the [Reservation Document API v1.0.0](https://api.sap.com/api/API_RESERVATION_DOCUMENT_SRV/overview). This service allows user to retrieve, create, update and delete reservation documents.
 
 ## Setup guide
 
