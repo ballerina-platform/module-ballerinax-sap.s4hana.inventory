@@ -16,6 +16,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Updated the `ballerinax/sap` dependency to 1.4.0
+- Updated the Ballerina distribution to 2201.13.0 (Swan Lake Update 13)
+
 ## sap.s4hana.api_material_stock_srv
 
 ## [Unreleased]
@@ -25,6 +28,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial client implementation
 
 ### Changed
+
+- Updated the `ballerinax/sap` dependency to 1.4.0
+- Updated the Ballerina distribution to 2201.13.0 (Swan Lake Update 13)
 
 ## sap.s4hana.api_physical_inventory_doc_srv
 
@@ -36,6 +42,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Updated the `ballerinax/sap` dependency to 1.4.0
+- Updated the Ballerina distribution to 2201.13.0 (Swan Lake Update 13)
+
 ## sap.s4hana.api_reservation_document_srv
 
 ## [Unreleased]
@@ -46,6 +55,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Updated the `ballerinax/sap` dependency to 1.4.0
+- Updated the Ballerina distribution to 2201.13.0 (Swan Lake Update 13)
+
 ## sap.s4hana.ce_apireservationdocument_0001
 
 ## [Unreleased]
@@ -55,3 +67,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial client implementation
 
 ### Changed
+
+- Updated the `ballerinax/sap` dependency to 1.4.0
+- Updated the Ballerina distribution to 2201.13.0 (Swan Lake Update 13)
