@@ -72,6 +72,10 @@ _Edition_: Swan Lake
 
    Exceptions: /rejectApprovalRequest, /releaseApprovalRequest, /$batch
 
+6. Remove spaces from schema names so the generated Ballerina type names need no escaping. For example:  
+   `Modified A_PhysInventoryDocItemType` -> `ModifiedA_PhysInventoryDocItemType`  
+   `Modified A_SerialNumberPhysInventoryDocType` -> `ModifiedA_SerialNumberPhysInventoryDocType`
+
 ## Sanitization for SAP S/4HANA OpenAPI Generated Client
 
 1. Import the `ballerinax/sap` package.

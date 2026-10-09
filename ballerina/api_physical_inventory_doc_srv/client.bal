@@ -257,7 +257,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function patchA_PhysInventoryDocItem(string FiscalYear, string PhysicalInventoryDocument, string PhysicalInventoryDocumentItem, Modified\ A_PhysInventoryDocItemType payload, map<string|string[]> headers = {}) returns http:Response|error {
+    remote isolated function patchA_PhysInventoryDocItem(string FiscalYear, string PhysicalInventoryDocument, string PhysicalInventoryDocumentItem, ModifiedA_PhysInventoryDocItemType payload, map<string|string[]> headers = {}) returns http:Response|error {
         string resourcePath = string `/A_PhysInventoryDocItem(FiscalYear='${getEncodedUri(FiscalYear)}',PhysicalInventoryDocument='${getEncodedUri(PhysicalInventoryDocument)}',PhysicalInventoryDocumentItem='${getEncodedUri(PhysicalInventoryDocumentItem)}')`;
         http:Request request = new;
         json jsonBody = payload.toJson();
@@ -275,7 +275,7 @@ public isolated client class Client {
     # + headers - Headers to be sent with the request 
     # + payload - New property values 
     # + return - Success 
-    remote isolated function patchA_SerialNumberPhysInventoryDoc(string Equipment, string FiscalYear, string PhysicalInventoryDocument, string PhysicalInventoryDocumentItem, string SerialNumberPhysicalInvtryType, Modified\ A_SerialNumberPhysInventoryDocType payload, map<string|string[]> headers = {}) returns http:Response|error {
+    remote isolated function patchA_SerialNumberPhysInventoryDoc(string Equipment, string FiscalYear, string PhysicalInventoryDocument, string PhysicalInventoryDocumentItem, string SerialNumberPhysicalInvtryType, ModifiedA_SerialNumberPhysInventoryDocType payload, map<string|string[]> headers = {}) returns http:Response|error {
         string resourcePath = string `/A_SerialNumberPhysInventoryDoc(Equipment='${getEncodedUri(Equipment)}',FiscalYear='${getEncodedUri(FiscalYear)}',PhysicalInventoryDocument='${getEncodedUri(PhysicalInventoryDocument)}',PhysicalInventoryDocumentItem='${getEncodedUri(PhysicalInventoryDocumentItem)}',SerialNumberPhysicalInvtryType='${getEncodedUri(SerialNumberPhysicalInvtryType)}')`;
         http:Request request = new;
         json jsonBody = payload.toJson();
