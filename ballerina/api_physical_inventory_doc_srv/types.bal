@@ -375,7 +375,7 @@ public type ListA_PhysInventoryDocHeadersQueries record {
     A_PhysInventoryDocHeaderSelectOptions \$select?;
 };
 
-public type Modified\ A_PhysInventoryDocItemType record {
+public type ModifiedA_PhysInventoryDocItemType record {
     UpdateA_PhysInventoryDocItem d?;
 };
 
@@ -598,7 +598,7 @@ public type A_SerialNumberPhysInventoryDocWrapper record {
     A_SerialNumberPhysInventoryDoc d?;
 };
 
-public type Modified\ A_SerialNumberPhysInventoryDocType record {
+public type ModifiedA_SerialNumberPhysInventoryDocType record {
     UpdateA_SerialNumberPhysInventoryDoc d?;
 };
 

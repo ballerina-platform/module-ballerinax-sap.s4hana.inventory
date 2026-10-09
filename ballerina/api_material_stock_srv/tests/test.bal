@@ -20,7 +20,7 @@ import ballerina/log;
 import ballerina/os;
 import ballerina/test;
 
-configurable boolean isTestOnLiveServer = os:getEnv("IS_TEST_ON_S4HANA_SERVER") == "false";
+configurable boolean isTestOnLiveServer = os:getEnv("IS_TEST_ON_S4HANA_SERVER") == "true";
 
 configurable string hostname = isTestOnLiveServer ? os:getEnv("HOST_NAME") : "localhost";
 configurable string username = isTestOnLiveServer ? os:getEnv("USERNAME") : "admin";
