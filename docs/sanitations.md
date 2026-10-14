@@ -92,7 +92,7 @@ _Edition_: Swan Lake
 
 2. Initialize the module with `bal new .`
 
-3. Add `Module.md`, `Package.md`, `docs.json` files. For sample, Refer to `api_salesdistrict_srv` module.
+3. Add a `docs.json` file. The module `README.md` is generated from it and `build-config/resources/README.md` during the build. For sample, Refer to `api_salesdistrict_srv` module.
 
 4. Add module to the build.
 
