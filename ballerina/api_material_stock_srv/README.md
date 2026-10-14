@@ -16,7 +16,7 @@ WSO2 SAP S/4HANA Material Stock provides a way to interact with the [Material St
 
 This connector uses **Basic Authentication** with an SAP S/4HANA Cloud communication user. Each S/4HANA API is
 exposed through a communication scenario, so the user must be assigned to a communication arrangement for the
-`Material Stock Integration` scenario before the connector can call it.
+**Material Stock Integration (`SAP_COM_0164`)** scenario before the connector can call it.
 
 All the apps used below are in the **Communication Management** group of the SAP Fiori launchpad.
 
@@ -49,9 +49,12 @@ Note the user name and password. These are the credentials the connector uses.
 ### Step 3: Create a communication arrangement
 
 1. Open the **Communication Arrangements** app and choose **New**.
-2. In the **Scenario** value help, search for `Material Stock Integration` and select it. Check that the scenario's
-   inbound services include `API_MATERIAL_STOCK_SRV`. The screenshots in this step show the Material Document Integration
-   scenario as an example.
+2. In the **Scenario** value help, search for **Material Stock Integration** and select **`SAP_COM_0164`**.
+   This is the scenario that exposes `API_MATERIAL_STOCK_SRV`, the service this connector calls.
+
+   > **Note:** The screenshots in this step show an arrangement for the Material Document Integration
+   > (`SAP_COM_0108`) scenario as an example. The scenario this connector needs is
+   > **Material Stock Integration (`SAP_COM_0164`)**.
 
    ![Search for the communication scenario](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-3-search-scenario.png)
 

@@ -17,11 +17,12 @@ Create an Eden AI account. Generate an API token and save it for later use, as s
 
 ### 3. Configuration
 
-Configure S/4HANA API credentials in Config.toml in the example directory:
+Configure the Eden AI token, the delivery note URL and the S/4HANA API credentials in Config.toml in the example
+directory:
 
-```
+```toml
 ocrToken = "<ocrToken>"
-invoiceUrl = "<invoiceUrl>" # Optional. URL the invoice to be processed is exposed
+deliveryNoteUrl = "<deliveryNoteUrl>" # Publicly reachable URL of the delivery note image or PDF to process
 
 [s4hanaClientConfig]
 username = "<Username>"

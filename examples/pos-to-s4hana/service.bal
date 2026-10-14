@@ -78,8 +78,7 @@ isolated service /material on new http:Listener(9090) {
 }
 
 isolated function createReservation(string product, float quantity, string unit) returns reservation:A_ReservationDocumentHeader_2|error {
-    time:Utc currentUtcTime = time:utcNow();
-    string currentDate = currentUtcTime.toString().substring(0, 11);
+    string currentDate = time:utcToString(time:utcNow()).substring(0, 10);
     string uniqueId = uuid:createType4AsString().substring(0, 11);
     reservation:CreateA_ReservationDocumentHeader_2 payload = {
         Reservation: uniqueId,

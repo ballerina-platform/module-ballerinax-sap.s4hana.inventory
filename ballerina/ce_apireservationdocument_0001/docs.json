@@ -1,6 +1,7 @@
 {
   "description": "WSO2 SAP S/4HANA Reservation Document (A2X) provides a way to interact with the [Reservation Document (A2X) API](https://api.sap.com/api/CE_APIRESERVATIONDOCUMENT_0001/overview). The service allows to create, update and delete reservation documents for materials, assign them to cost centers, sales orders or assets, and handle transfer postings between plants.",
   "communication-scenario": "Reservation Integration",
+  "communication-scenario-id": "SAP_COM_0112",
   "import-statement": "import ballerinax/sap.s4hana.ce_apireservationdocument_0001 as ceRsvDoc;",
   "client-init": "ceRsvDoc:Client ceReservationDocumentClient = check new (",
   "api-invocation": "ceRsvDoc:CollectionOfA_ReservationDocumentItem_2 listReservationDocItems = check ceReservationDocumentClient->listReservationDocumentItems();",
