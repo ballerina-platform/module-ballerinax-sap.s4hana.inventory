@@ -52,10 +52,6 @@ Note the user name and password. These are the credentials the connector uses.
 2. In the **Scenario** value help, search for **Reservation Integration** and select **`SAP_COM_0112`**.
    This is the scenario that exposes `API_RESERVATION_DOCUMENT_SRV`, the service this connector calls.
 
-   > **Note:** The screenshots in this step show an arrangement for the Material Document Integration
-   > (`SAP_COM_0108`) scenario as an example. The scenario this connector needs is
-   > **Reservation Integration (`SAP_COM_0112`)**.
-
    ![Search for the communication scenario](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-3-search-scenario.png)
 
 3. Enter a unique name for the arrangement and choose **Create**.
