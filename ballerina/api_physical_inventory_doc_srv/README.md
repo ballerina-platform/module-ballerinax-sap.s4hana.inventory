@@ -34,21 +34,37 @@ Note the user name and password. These are the credentials the connector uses.
 
 1. Open the **Communication Systems** app and choose **New**.
 2. Enter a system ID and a system name, and choose **Create**.
+
+   ![Create a communication system](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-1-communication-system.png)
+
 3. Under **General** > **Technical Data**, enter a host name and a **Logical System** (an uppercase ID of up to
    10 characters, for example, `INTEGRATOR`). Some scenarios refuse to activate when the logical system is empty.
 4. Under **Users for Inbound Communication**, add the communication user from Step 1 with the
    **User Name and Password** authentication method.
+
+   ![Add the communication user for inbound communication](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-2-communication-system-users.png)
+
 5. Choose **Save**.
 
 ### Step 3: Create a communication arrangement
 
 1. Open the **Communication Arrangements** app and choose **New**.
 2. In the **Scenario** value help, search for `Physical Inventory Document Integration` and select it. Check that the scenario's
-   inbound services include `API_PHYSICAL_INVENTORY_DOC_SRV`.
-3. Enter a unique name for the arrangement.
+   inbound services include `API_PHYSICAL_INVENTORY_DOC_SRV`. The screenshots in this step show the Material Document Integration
+   scenario as an example.
+
+   ![Search for the communication scenario](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-3-search-scenario.png)
+
+3. Enter a unique name for the arrangement and choose **Create**.
+
+   ![Name the communication arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-4-new-arrangement.png)
+
 4. Select the communication system from Step 2. The communication user from Step 1 is filled in as the inbound user.
    If the scenario lists outbound services that the integration does not need, clear their **Active** check boxes so
    that no outbound user is required.
+
+   ![Communication arrangement details](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-5-arrangement-details.png)
+
 5. Choose **Save**.
 
 ### Step 4: Note the hostname
