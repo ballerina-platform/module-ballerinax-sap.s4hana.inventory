@@ -14,7 +14,7 @@ and materials management, including inventory and warehouse operations.
 
 This connector uses **Basic Authentication** with an SAP S/4HANA Cloud communication user. Each S/4HANA API is
 exposed through a communication scenario, so the user must be assigned to a communication arrangement for the
-`@communication-scenario@` scenario before the connector can call it.
+**@communication-scenario@ (`@communication-scenario-id@`)** scenario before the connector can call it.
 
 All the apps used below are in the **Communication Management** group of the SAP Fiori launchpad.
 
@@ -47,9 +47,8 @@ Note the user name and password. These are the credentials the connector uses.
 ### Step 3: Create a communication arrangement
 
 1. Open the **Communication Arrangements** app and choose **New**.
-2. In the **Scenario** value help, search for `@communication-scenario@` and select it. Check that the scenario's
-   inbound services include `@service-name@`. The screenshots in this step show the Material Document Integration
-   scenario as an example.
+2. In the **Scenario** value help, search for **@communication-scenario@** and select **`@communication-scenario-id@`**.
+   This is the scenario that exposes `@service-name@`, the service this connector calls.
 
    ![Search for the communication scenario](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-3-search-scenario.png)
 

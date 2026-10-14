@@ -1,6 +1,7 @@
 {
   "description": "WSO2 SAP S/4HANA Material Document provides a way to interact with the [Material Document - Read, Create API](https://api.sap.com/api/API_MATERIAL_DOCUMENT_SRV/overview). The service allows to retrieve and create material documents, for example, to post a goods receipt for a purchase order or to document the transfer of materials between two storage locations, and to cancel existing material documents or single items.",
   "communication-scenario": "Material Document Integration",
+  "communication-scenario-id": "SAP_COM_0108",
   "import-statement": "import ballerinax/sap.s4hana.api_material_document_srv as materialdocument;",
   "client-init": "materialdocument:Client materialDocumentClient = check new (",
   "api-invocation": "materialdocument:CollectionOfA_MaterialDocumentItemWrapper listAMaterialDocumentItems = check materialDocumentClient->listA_MaterialDocumentItems();",

@@ -16,7 +16,7 @@ WSO2 SAP S/4HANA Reservation Document provides a way to interact with the [Reser
 
 This connector uses **Basic Authentication** with an SAP S/4HANA Cloud communication user. Each S/4HANA API is
 exposed through a communication scenario, so the user must be assigned to a communication arrangement for the
-`Reservation Integration` scenario before the connector can call it.
+**Reservation Integration (`SAP_COM_0112`)** scenario before the connector can call it.
 
 All the apps used below are in the **Communication Management** group of the SAP Fiori launchpad.
 
@@ -49,9 +49,8 @@ Note the user name and password. These are the credentials the connector uses.
 ### Step 3: Create a communication arrangement
 
 1. Open the **Communication Arrangements** app and choose **New**.
-2. In the **Scenario** value help, search for `Reservation Integration` and select it. Check that the scenario's
-   inbound services include `API_RESERVATION_DOCUMENT_SRV`. The screenshots in this step show the Material Document Integration
-   scenario as an example.
+2. In the **Scenario** value help, search for **Reservation Integration** and select **`SAP_COM_0112`**.
+   This is the scenario that exposes `API_RESERVATION_DOCUMENT_SRV`, the service this connector calls.
 
    ![Search for the communication scenario](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-3-search-scenario.png)
 

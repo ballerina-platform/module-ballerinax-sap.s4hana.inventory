@@ -1,6 +1,7 @@
 {
   "description": "WSO2 SAP S/4HANA Reservation Document provides a way to interact with the [Reservation Document API](https://api.sap.com/api/API_RESERVATION_DOCUMENT_SRV/overview). The service allows to retrieve, create and delete reservation documents.",
   "communication-scenario": "Reservation Integration",
+  "communication-scenario-id": "SAP_COM_0112",
   "import-statement": "import ballerinax/sap.s4hana.api_reservation_document_srv as rsvDoc;",
   "client-init": "rsvDoc:Client reservationDocumentClient = check new (",
   "api-invocation": "rsvDoc:CollectionOfA_ReservationDocumentItemWrapper listAReservationDocumentItems = check reservationDocumentClient->listA_ReservationDocumentItems();",

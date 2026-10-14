@@ -1,6 +1,7 @@
 {
   "description": "WSO2 SAP S/4HANA Material Stock provides a way to interact with the [Material Stock - Read API](https://api.sap.com/api/API_MATERIAL_STOCK_SRV/overview). The service allows to retrieve material stock information, for example, for consumption by external warehouse applications.",
   "communication-scenario": "Material Stock Integration",
+  "communication-scenario-id": "SAP_COM_0164",
   "import-statement": "import ballerinax/sap.s4hana.api_material_stock_srv as materialstock;",
   "client-init": "materialstock:Client materialStockClient = check new (",
   "api-invocation": "materialstock:CollectionOfA_MaterialStockWrapper listAMaterialStocks = check materialStockClient->listA_MaterialStocks();",

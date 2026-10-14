@@ -52,6 +52,7 @@ task updateDocumentationFiles {
             newReadmeMdFile = newReadmeMdFile.replace("@service-name@", dir.toUpperCase())
             newReadmeMdFile = newReadmeMdFile.replace("@description@", parsedJson.description)
             newReadmeMdFile = newReadmeMdFile.replace("@key-features@", parsedJson."key-features".collect { "- ${it}" }.join("\n"))
+            newReadmeMdFile = newReadmeMdFile.replace("@communication-scenario-id@", parsedJson."communication-scenario-id")
             newReadmeMdFile = newReadmeMdFile.replace("@communication-scenario@", parsedJson."communication-scenario")
             newReadmeMdFile = newReadmeMdFile.replace("@import-statement@", parsedJson."import-statement")
             newReadmeMdFile = newReadmeMdFile.replace("@client-init@", parsedJson."client-init")

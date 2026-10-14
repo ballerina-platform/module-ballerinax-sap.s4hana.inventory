@@ -1,6 +1,7 @@
 {
   "description": "WSO2 SAP S/4HANA Physical Inventory Document provides a way to interact with the [Physical Inventory Documents - Read, Create API](https://api.sap.com/api/API_PHYSICAL_INVENTORY_DOC_SRV/overview). The service allows to read and create physical inventory documents.",
   "communication-scenario": "Physical Inventory Document Integration",
+  "communication-scenario-id": "SAP_COM_0107",
   "import-statement": "import ballerinax/sap.s4hana.api_physical_inventory_doc_srv as physicalinventorydoc;",
   "client-init": "physicalinventorydoc:Client physicalInventoryDocClient = check new (",
   "api-invocation": "physicalinventorydoc:CollectionOfA_PhysInventoryDocItemWrapper listAPhysInventoryDocItems = check physicalInventoryDocClient->listA_PhysInventoryDocItems();",
