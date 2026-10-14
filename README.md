@@ -1,40 +1,38 @@
-# module-ballerinax-sap.s4hana.inventory
+# Ballerina SAP S/4HANA Inventory Connectors
 
 [![Build](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/actions/workflows/ci.yml/badge.svg)](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/ballerina-platform/module-ballerinax-sap.s4hana.inventory/branch/main/graph/badge.svg)](https://codecov.io/gh/ballerina-platform/module-ballerinax-sap.s4hana.inventory)
-[![Trivy](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/actions/workflows/trivy-scan.yml/badge.svg)](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/actions/workflows/trivy-scan.yml)
-[![GraalVM Check](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/actions/workflows/build-with-bal-test-graalvm.yml/badge.svg)](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/actions/workflows/build-with-bal-test-graalvm.yml)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/ballerina-platform/module-ballerinax-sap.s4hana.inventory.svg)](https://github.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/commits/main)
 [![GitHub Issues](https://img.shields.io/github/issues/ballerina-platform/ballerina-library/module/s4hana.svg?label=Open%20Issues)](https://github.com/ballerina-platform/ballerina-library/labels/module%2Fs4hana)
 
-[S/4HANA](https://www.sap.com/india/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
-designed for large-scale enterprises by SAP SE.
+[SAP S/4HANA](https://www.sap.com/products/erp/s4hana.html) is a robust enterprise resource planning (ERP) solution,
+designed for large-scale enterprises by SAP SE. It covers core business processes such as finance, procurement, sales,
+and materials management, including inventory and warehouse operations.
 
-This repository encompasses all Ballerina packages pertaining to the S/4HANA inventory submodule. Notably:
+This repository encompasses all Ballerina packages pertaining to the SAP S/4HANA Inventory module. Notably:
 
-1. The `ballerinax/sap.s4hana.api_material_document_srv` package provides APIs that enable seamless integration with
-   the [Material Document - Read,Create API v1.3.0](https://api.sap.com/api/API_MATERIAL_DOCUMENT_SRV/overview). This
-   service enables you to retrieve and create material documents, for example, to post a goods receipt for a purchase
-   order or to document the transfer of materials between two storage locations. Additionally, the service allows you to
-   cancel existing material documents or single items.
+1. [SAP S/4HANA Material Document](ballerina/api_material_document_srv) provides a way to interact with the
+   [Material Document - Read, Create API](https://api.sap.com/api/API_MATERIAL_DOCUMENT_SRV/overview).
+   The service allows to retrieve and create material documents, for example, to post a goods receipt for a purchase
+   order or to document the transfer of materials between two storage locations, and to cancel existing material
+   documents or single items.
 
-2. The `ballerinax/sap.s4hana.api_material_stock_srv` package provides APIs that enable seamless integration with
-   the [Material Stock - Read API v1.1.0](https://api.sap.com/api/API_MATERIAL_STOCK_SRV/overview). This service enables
-   you to retrieve material stock information. It can be consumed by external warehouse applications.
+2. [SAP S/4HANA Material Stock](ballerina/api_material_stock_srv) provides a way to interact with the
+   [Material Stock - Read API](https://api.sap.com/api/API_MATERIAL_STOCK_SRV/overview).
+   The service allows to retrieve material stock information, for example, for consumption by external warehouse
+   applications.
 
-3. The `ballerinax/sap.s4hana.api_physical_inventory_doc_srv` package provides APIs that enable seamless integration
-   with
-   the [Physical Inventory Documents - Read, Create API v1.0.0](https://api.sap.com/api/API_PHYSICAL_INVENTORY_DOC_SRV/overview).
-   This service allows user to read and create physical inventory document.
+3. [SAP S/4HANA Physical Inventory Document](ballerina/api_physical_inventory_doc_srv) provides a way to interact
+   with the [Physical Inventory Documents - Read, Create API](https://api.sap.com/api/API_PHYSICAL_INVENTORY_DOC_SRV/overview).
+   The service allows to read and create physical inventory documents.
 
-4. The `ballerinax/sap.s4hana.api_reservation_document_srv` package provides APIs that enable seamless integration with
-   the [Reservation Document API v1.0.0](https://api.sap.com/api/API_RESERVATION_DOCUMENT_SRV/overview). This service
-   allows user to retrieve, create, update and delete reservation documents.
+4. [SAP S/4HANA Reservation Document](ballerina/api_reservation_document_srv) provides a way to interact with the
+   [Reservation Document API](https://api.sap.com/api/API_RESERVATION_DOCUMENT_SRV/overview).
+   The service allows to retrieve, create and delete reservation documents.
 
-5. The `ballerinax/sap.s4hana.ce_apireservationdocument_0001` package provides APIs that enable seamless integration
-   with the [Reservation Document (A2X) API v1.0.3](https://api.sap.com/api/CE_APIRESERVATIONDOCUMENT_0001/overview).
-   This service allows you to create, update, and delete reservation documents for materials, assigning them to cost
-   centers, sales orders, or assets, and handling transfer postings between plants.
+5. [SAP S/4HANA Reservation Document (A2X)](ballerina/ce_apireservationdocument_0001) provides a way to interact
+   with the [Reservation Document (A2X) API](https://api.sap.com/api/CE_APIRESERVATIONDOCUMENT_0001/overview).
+   The service allows to create, update and delete reservation documents for materials, assign them to cost centers,
+   sales orders or assets, and handle transfer postings between plants.
 
 ## Issues and projects
 
@@ -51,8 +49,8 @@ This repository only contains the source code for the package.
 1. Download and install Java SE Development Kit (JDK) version 17. You can download it from either of the following
    sources:
 
-    * [Oracle JDK](https://www.oracle.com/java/technologies/downloads/)
-    * [OpenJDK](https://adoptium.net/)
+   * [Oracle JDK](https://www.oracle.com/java/technologies/downloads/)
+   * [OpenJDK](https://adoptium.net/)
 
    > **Note:** After installation, remember to set the `JAVA_HOME` environment variable to the directory where JDK was
    installed.
@@ -79,19 +77,19 @@ Execute the commands below to build from the source.
    ./gradlew clean test
    ```
 
-3. To build the without the tests:
+3. To build without the tests:
 
    ```bash
    ./gradlew clean build -x test
    ```
 
-4. To build only one specific package
+4. To build only one specific package:
 
    ```bash
-   ./gradlew clean :inventory-ballerina:<api_name>:build
+   ./gradlew clean :inventory-ballerina:<module_name>:build
    ```
 
-   | API Name                       | Connector                                            |
+   | Module Name                    | Connector                                            |
    |--------------------------------|------------------------------------------------------|
    | api_material_document_srv      | ballerinax/sap.s4hana.api_material_document_srv      |
    | api_material_stock_srv         | ballerinax/sap.s4hana.api_material_stock_srv         |
@@ -99,12 +97,17 @@ Execute the commands below to build from the source.
    | api_reservation_document_srv   | ballerinax/sap.s4hana.api_reservation_document_srv   |
    | ce_apireservationdocument_0001 | ballerinax/sap.s4hana.ce_apireservationdocument_0001 |
 
-5. To run tests against different environment:
+5. To run tests against a live server, add a `tests/Config.toml` file to the package with the live server details
+   and run the tests (`Config.toml` files are ignored by Git):
 
-   ```bash
-   isTestOnLiveServer=true ./gradlew clean test 
+   ```toml
+   isTestOnLiveServer = true
+   hostname = "<unique id>-api.s4hana.cloud.sap"
+   username = "<communication user>"
+   password = "<password>"
    ```
-   **Note**: `isTestOnLiveServer` is false by default, tests are run against mock server.
+
+   **Note**: Tests are run against the mock server by default.
 
 6. To debug packages with a remote debugger:
 
@@ -120,9 +123,9 @@ Execute the commands below to build from the source.
 
 8. Publish the generated artifacts to the local Ballerina Central repository:
 
-    ```bash
-    ./gradlew clean build -PpublishToLocalCentral=true
-    ```
+   ```bash
+   ./gradlew clean build -PpublishToLocalCentral=true
+   ```
 
 9. Publish the generated artifacts to the Ballerina Central repository:
 
