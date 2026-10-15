@@ -52,11 +52,11 @@ Note the user name and password. These are the credentials the connector uses.
 2. In the **Scenario** value help, search for **Physical Inventory Document Integration** and select **`SAP_COM_0107`**.
    This is the scenario that exposes `API_PHYSICAL_INVENTORY_DOC_SRV`, the service this connector calls.
 
-   ![Search for the communication scenario](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-3-search-scenario.png)
+   ![Search for the communication scenario](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-3-search-scenario-sap-com-0107.png)
 
 3. Enter a unique name for the arrangement and choose **Create**.
 
-   ![Name the communication arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-4-new-arrangement.png)
+   ![Name the communication arrangement](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-sap.s4hana.inventory/main/docs/setup/s4-4-new-arrangement-sap-com-0107.png)
 
 4. Select the communication system from Step 2. The communication user from Step 1 is filled in as the inbound user.
    If the scenario lists outbound services that the integration does not need, clear their **Active** check boxes so
